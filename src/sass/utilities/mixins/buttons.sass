@@ -5,6 +5,20 @@
 // TODO: any notes for svgs should be added to styleguide directions not listed in comments
 // --------------------------------------------------------
 
+@mixin basic-button ($color, $border-background, $color-2)
+  display: inline-block
+  transition: background .15s ease-in, color .15s ease-in
+  border: 2px solid $border-background
+  border-radius: 2rem
+  background: transparent
+  cursor: pointer
+  padding: .5rem 2rem
+  color: $color
+
+  &:hover
+    background: $border-background
+    color: $color-2
+
 @mixin hero-button($max-width, $height, $color, $bg-color, $color-hover)
   display: block
   position: relative
