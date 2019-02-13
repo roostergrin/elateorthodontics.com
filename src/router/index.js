@@ -33,4 +33,11 @@ const router = new VueRouter({
   scrollBehavior
 })
 
+router.beforeEach((to, from, next) => {
+  if (from.path !== to.path) {
+    window.scrollTo(0, 0)
+  }
+  next()
+})
+
 export default router

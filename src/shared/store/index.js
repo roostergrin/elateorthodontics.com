@@ -14,8 +14,7 @@ const store = new Vuex.Store({
     body: {},
     types: {},
     showModal: {},
-    modalContent: {},
-    loading: true
+    modalContent: {}
   },
   mutations: mutations,
   actions: actions

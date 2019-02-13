@@ -40,18 +40,38 @@ const actions = {
       try {
         const response = await axios.get(`${api}/wp/v2/app`)
         const data = response.data.reduce(
-          (allData, data) => ({ ...allData, [data.slug]: data }),
+          (allData, data) => ({ ...allData, [data.slug]: { title: data.title.rendered, ...data.acf } }),
           {}
         )
         commit(GET_APP, data)
       } catch (e) { console.log('APP API: ' + e) }
     })()
   },
+  // GET_INSTAGRAM ({ commit }) {
+  //   (async () => {
+  //     try {
+  //       const response = await axios.get('https://api.instagram.com/v1/users/#{USER_ID}/media/recent?access_token=#{ACCESS_TOKEN}')
+  //       const data = response.data.data.reduce((allData, data) => {
+  //         console.log(data)
+  //         let newData = { image: data.images.standard_resolution.url, text: data.caption.text, video: data.videos }
+  //         allData.push(newData)
+  //         return allData
+  //       }, [])
+  //       commit(GET_INSTAGRAM, data)
+  //       console.log(response, 'delete me after I work')
+  //     } catch (e) { console.log('INSTA API: ' + e) }
+  //   })()
+  // },
   // GET_BLOG ({ commit }) {
   //   (async () => {
   //     try {
-  //       const response = await axios.get(`${api}/wp/v2/posts?per_page=10&_embed`)
-  //       commit(GET_BLOG, response)
+  //       const response = await axios.get(`${api}/wp/v2/posts?per_page=100`)
+  //       const data = response.data.reduce((blogList, blog) => {
+  //         const newBlog = { ...blog.acf, slug: blog.slug, categories: blog.categories }
+  //         blogList.push(newBlog)
+  //         return blogList
+  //       }, [])
+  //       commit(GET_BLOG, data)
   //     } catch (e) {
   //       console.log(e)
   //     }
