@@ -1,0 +1,4 @@
+.lazy-image(ref='container')
+  .lazy-image__trigger(v-waypoint="{ active: true, callback: onWaypoint, options: intersectionOptions }" v-if='!loaded && componentLoaded')
+  .lazy-image__trigger.lazy-image__trigger--backup(v-waypoint="{ active: true, callback: onWaypoint, options: intersectionOptions }" v-if='!loaded')
+  img(:src='loaded ? src : compSrc', :class="[{ cover: imageFit === 'cover', contain: imageFit === 'contain', loaded: loaded,'square-image': width === height, 'wide-image': width > height, 'tall-image': height > width, 'wide-container': (naturalWidth / naturalHeight) > (width / height), 'tall-container': (naturalWidth / naturalHeight) < (width / height) }, position]", :alt='alt' ref='image')

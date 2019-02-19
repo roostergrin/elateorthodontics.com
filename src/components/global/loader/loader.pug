@@ -1,0 +1,6 @@
+.loader(v-if='!loaded')
+  .loader__left(:class="{ 'loader__left--animate': animate }")
+    .loader__left-background
+  Icon.loader__icon(:class="{ 'loader__icon--animate': animate }" name='loader-icon')
+  .loader__right(:class="{ 'loader__right--animate': animate }")
+    .loader__right-background

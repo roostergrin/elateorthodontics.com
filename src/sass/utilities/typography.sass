@@ -1,57 +1,35 @@
-body
-  line-height: 1.25
-  font-family: Poppins
-  font-size: 16px
+h1
+  font-family: $lato
+  font-size: 48px
+  font-weight: 500
 
-%h1, h1
-  font-family: Poppins
+h2
+  font-family: $lato
   font-size: 36px
-  font-weight: 500
 
+h3
+  font-family: $lato
+  font-size: 24px
+  font-weight: 300
 
-%h2, h2
-  font-family: Poppins
-  font-size: 30px
-  font-weight: 500
-
-
-%h3, h3
-  font-family: Poppins
-  font-size: 23px
-  font-weight: 500
-
-
-%h3l
-  font-family: Lato
-  font-size: 23px
-
-%h3lb
-  font-family: Lato
-  font-size: 23px
-  font-weight: bold
-
-
-%h4
-  font-family: Poppins
-  font-size: 18px
-
-%h4b, h4
-  font-family: Poppins
-  font-size: 18px
-  font-weight: 500
-
-%h4l
-  font-family: Lato
-  font-size: 18px
-  font-weight: bold
-
-%p1
-  line-height: 1.25
-  font-family: Poppins
+p
+  font-family: $lato
   font-size: 16px
+  font-weight: 300
 
-%p1b
-  letter-spacing: 1px
-  font-family: Poppins
+.p2
+  font-family: $lato
   font-size: 16px
   font-weight: 500
+
+.p3
+  font-family: $lato
+  font-size: 16px
+
+body
+  @extend p
+
+a
+  @extend p
+  text-decoration: none
+  color: inherit

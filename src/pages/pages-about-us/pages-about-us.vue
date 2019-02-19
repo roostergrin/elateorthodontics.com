@@ -3,7 +3,7 @@
 <script>
 
 export default {
-  name: 'About Us',
+  name: 'About-Us',
   computed: {
     props () {
       return this.$store.state.pages['about-us']

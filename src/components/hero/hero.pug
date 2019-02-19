@@ -1,0 +1,34 @@
+.hero(v-if='content')
+  router-link.hero__logo(to='/' @click.native='setPageHome("/")')
+    Icon.hero__logo-icon(name='Footer')
+  .hero__background
+    .hero__background-image(v-for='(image, i) in content')
+  .hero__hamburger(:class="{ 'hero__hamburger--active': menuOpen }" @click='toggleMenu')
+    span
+    span
+  .hero__hamburger.hero__hamburger--white(:class="{ 'hero__hamburger--active': menuOpen }" @click='toggleMenu')
+    span
+    span
+  
+  .hero__contact(:class="{ 'hero__contact--active': !menuOpen }")
+    a.hero__contact-link(v-for='(contact, i) in content.social_bar', :key="'contact-' + i", :href='contact.href')
+      Icon.hero__contact-icon(:name='contact.icon')
+      
+  .hero__links(:class="{ 'hero__links--active': menuOpen }")
+    router-link.hero__link(v-for='(link, i) in links', :key="'link-' + i", :to='link.path', :class="{ 'hero__link--active': link.path === hoveredPage }" v-html='link.name' v-if='link.navigation' @click.native='setPage(link.path)' @mouseover.native='setHovered(link.path)')
+    .hero__links-contact
+      a.hero__contact-link(v-for='(contact, i) in content.social_bar', :key="'contact-' + i", :href='contact.href')
+        Icon.hero__contact-icon(:name='contact.icon')
+      
+  .hero__home(:class="{ 'hero__home--active': $route.path === '/' && !menuOpen }")
+    h1.hero__home-title(v-html='content.home.title')
+    router-link.hero__home-button(:to='content.home.button.to')
+      .hero__home-button-overlay
+      .hero__home-button-label(v-html='content.home.button.label')
+  
+  .hero__drawer(v-if='drawer.navigation' v-for='(drawer, i) in links', :key="'drawer-' + i", :class="{ 'hero__drawer--active': currentPage === drawer.path && !menuOpen }")
+    h1.hero__drawer-title(v-html='drawer.name')
+    router-link.hero__drawer-link(v-for='(child, j) in drawer.children', :key="'child-' + j" v-html='child.name', :to='child.path')
+  
+  .hero__tagline(v-for='(tagline, i) in content.heroes', :key="'tagline-' + i", :class="{ 'hero__tagline--active': hoveredPage === tagline.path }")
+    .hero__tagline-text(v-html='tagline.tagline')

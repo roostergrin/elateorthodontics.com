@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import scrollBehavior from '@/shared/functionality/scroll-behavior.js'
 
 const Home = () => import('@/pages/pages-home/pages-home')
 const AboutUs = () => import('@/pages/pages-about-us/pages-about-us')
@@ -17,26 +18,64 @@ const router = new VueRouter({
     {
       path: '/',
       name: 'home',
-      navigation: true,
+      navigation: false,
       component: Home
     },
     {
       path: '/about-us',
       name: 'about us',
       navigation: true,
-      component: AboutUs
-    },
-    {
-      path: '/get-started',
-      name: 'get started',
-      navigation: true,
-      component: GetStarted
+      component: AboutUs,
+      children: [
+        {
+          path: '/about-us#doctors',
+          name: 'Meet The Doctors'
+        },
+        {
+          path: '/about-us#office',
+          name: 'Office Tour'
+        }
+      ]
     },
     {
       path: '/treatments',
       name: 'treatments',
       navigation: true,
-      component: Treatments
+      component: Treatments,
+      children: [
+        {
+          path: '/treatments#invisalign',
+          name: 'Invisalign'
+        },
+        {
+          path: '/treatments#metal',
+          name: 'Metal'
+        },
+        {
+          path: '/treatments#ceramic',
+          name: 'Ceramic'
+        }
+      ]
+    },
+    {
+      path: '/get-started',
+      name: 'get started',
+      navigation: true,
+      component: GetStarted,
+      children: [
+        {
+          path: '/get-started#complimentary',
+          name: 'Complimentary Consultation'
+        },
+        {
+          path: '/get-started#forms',
+          name: 'Patient Forms'
+        },
+        {
+          path: '/get-started#financing',
+          name: 'Innovative Financing'
+        }
+      ]
     },
     {
       path: '/contact',

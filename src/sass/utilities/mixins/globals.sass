@@ -7,22 +7,33 @@
       width: $width
       height: auto
 
-@mixin button-normal ($color, $color-2, $background)
-  @extend %h4b
-  display: inline-block
-  transition: color .25s ease-in, background .25s ease-in
-  border: 1px solid $background
-  cursor: pointer
+@mixin button-gradient
+  @extend .p3
+  position: relative
+  background: $cobalt-blue
   padding: .5rem 1rem
-  text-decoration: none
-  color: $color
+  font-weight: 400
 
-  &:hover
-    background: $background
-    color: $color-2
+  &-overlay
+    position: absolute
+    top: 0
+    left: 0
+    transition: opacity .15s ease-in
+    opacity: 0
+    z-index: 0
+    background: radial-gradient(circle at 50% 50%, $cobalt-blue, $cobalt-blue 49%, $marine)
+    width: 100%
+    height: 100%
+
+    &:hover
+      opacity: 1
+
+  &-label
+    position: relative
+    z-index: 1
+    pointer-events: none
 
 @mixin button-fill ($color, $color-2, $background, $background-2)
-  @extend %h4b
   display: inline-block
   transition: color .25s ease-in, background .25s ease-in
   background: $background

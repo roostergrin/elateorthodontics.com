@@ -3,7 +3,7 @@
 <script>
 
 export default {
-  name: 'Get Started',
+  name: 'Get-Started',
   computed: {
     props () {
       return this.$store.state.pages['get-started']

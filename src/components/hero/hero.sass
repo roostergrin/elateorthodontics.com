@@ -1,0 +1,200 @@
+.hero
+  position: relative
+  background-image: radial-gradient(circle at 50% 38%, rgba(255, 255, 255, 0.07), rgba(94, 94, 94, 0.26) 35%, $black-34)
+  height: 100vh
+  overflow: hidden
+
+  &__logo
+    position: absolute
+    top: 2rem
+    left: 2rem
+
+    &-icon
+      @include svg-size(7rem, 7rem)
+
+  &__hamburger
+    position: absolute
+    top: 50%
+    left: 4rem
+    transform: translateY(-50%)
+    z-index: 1
+    width: 2.5rem
+    height: 2.5rem
+
+    &:before
+      display: block
+      position: absolute
+      top: 2px
+      left: 0
+      transition: opacity .1s ease-in
+      content: 'menu'
+
+    span
+      display: block
+      position: absolute
+      left: 50%
+      transform: translateX(-50%)
+      transition: top .25s ease-in, transform .25s ease-in
+      z-index: 0
+      border-radius: 2px
+      background: $cobalt-blue
+      width: 100%
+      height: 4px
+      transform-origin: center
+
+      &:first-child
+        top: calc(100% / 4 * 2.5)
+
+      &:last-child
+        top: calc(100% / 4 * 3.5)
+
+    &--white
+      &:before
+        display: none
+      top: calc(50% + 3px)
+      z-index: 2
+      span
+        background: $white
+
+    &--active
+      &:before
+        opacity: 0
+
+      span
+        &:first-child
+          top: 50%
+          transform: translate(-50%, -50%) rotate(45deg)
+
+        &:last-child
+          top: 50%
+          transform: translate(-50%, -50%) rotate(-45deg)
+
+  &__contact
+    @extend .flex-end-center
+    position: absolute
+    top: calc(50% + 2rem)
+    left: 4.5rem
+    flex-direction: column
+    transition: opacity .25s ease-in
+    opacity: 0
+    pointer-events: none
+
+    &--active
+      opacity: 1
+      pointer-events: all
+
+    &-link
+      padding-bottom: .5rem
+
+      .hero__links-contact &
+        padding-right: .5rem
+
+    &-icon
+      @include svg-size(1.5rem, 1.5rem)
+
+  &__home
+    @extend .flex-start-center
+    position: absolute
+    top: 45%
+    right: 4.5rem
+    flex-direction: column
+    transition: opacity .25s ease-in
+    opacity: 0
+    color: $white
+    pointer-events: none
+
+    &--active
+      opacity: 1
+      pointer-events: all
+
+    &-title
+      padding-bottom: 2rem
+
+    &-button
+      @include button-gradient
+
+  &__links
+    @extend .flex-end-center
+    position: absolute
+    top: 0
+    right: 0
+    flex-direction: column
+    transition: opacity .25s ease-in
+    opacity: 0
+    padding-right: 4rem
+    width: 50%
+    max-width: 30rem
+    height: 100vh
+    text-transform: uppercase
+    pointer-events: none
+
+    &--active
+      opacity: 1
+      pointer-events: all
+
+    &-contact
+      @extend .flex-center
+      padding-top: 2rem
+
+  &__link
+    @extend h2
+    color: $white
+
+    &.router-link-exact-active
+      color: $cobalt-blue
+
+    &--active
+      color: $cobalt-blue-50
+
+  &__drawer
+    @extend .flex-start-center
+    position: absolute
+    top: 0
+    right: 0
+    flex-direction: column
+    transform: translateX(100%)
+    transition: transform .5s ease-in
+    background: $white
+    padding-left: 3rem
+    width: 50%
+    min-width: 30rem
+    height: 100vh
+
+    &--active
+      transform: none
+
+    &-title
+      @extend h2
+      padding-bottom: 2rem
+      text-transform: uppercase
+      color: $cobalt-blue
+
+    &-link
+      @extend h3
+      padding-bottom: 1rem
+
+  &__tagline
+    @extend .flex-center-start
+    position: absolute
+    bottom: 0
+    left: 0
+    transition: opacity .25s ease-in
+    opacity: 0
+    padding-left: 4rem
+    width: 100%
+    height: 5rem
+    color: $white
+
+    &--active
+      opacity: 1
+
+    &-text
+      position: relative
+      &:after
+        position: absolute
+        top: calc(50% + 2px)
+        left: calc(100% + 1rem)
+        background: $white
+        width: 100vw
+        height: .5px
+        content: ''
