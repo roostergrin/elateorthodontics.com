@@ -4,6 +4,7 @@
 import BlockScroll from 'components/block/block-scroll/block-scroll'
 import BlockScrollOverlap from 'components/block/block-scroll-overlap/block-scroll-overlap'
 import BlockTextImage from 'components/block/block-text-image/block-text-image'
+import CustomHomeTestimonials from 'components/custom/custom-home-testimonials/custom-home-testimonials'
 import CustomHomeWelcome from 'components/custom/custom-home-welcome/custom-home-welcome'
 
 export default {
@@ -17,6 +18,7 @@ export default {
     BlockScroll,
     BlockScrollOverlap,
     BlockTextImage,
+    CustomHomeTestimonials,
     CustomHomeWelcome
   }
 }

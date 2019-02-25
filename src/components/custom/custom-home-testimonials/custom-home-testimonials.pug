@@ -1,0 +1,10 @@
+.custom-home-testimonials
+  .custom-home-testimonials__slider
+    .custom-home-testimonials__button(@click='this.setSlide') Next >
+    .custom-home-testimonials__slide(v-for='(image, i) in content', :key="'image - ' + (i + 1)", :class="{ 'custom-home-testimonials__slide--active': activeSlide === i }" role='img', :aria-label="'testimonial slide for ' + image.name", :style="{ backgroundImage: 'url(' + image.image + ')' }")
+  .custom-home-testimonials__text-box
+    .custom-home-testimonials__content(v-for='(textbox, i) in content', :key="'textbox - ' + (i + 1)", :class="{ 'custom-home-testimonials__content--active': activeSlide === i }")
+      Icon.custom-home-testimonials__quote-left(name='quoteLft')
+      .custom-home-testimonials__body(v-html='textbox.body')
+      .custom-home-testimonials__name(v-html='textbox.name')
+      Icon.custom-home-testimonials__quote-right(name='quoteRt')

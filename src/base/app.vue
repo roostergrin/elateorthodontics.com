@@ -2,6 +2,7 @@
 
 <script>
 import Hero from 'components/hero/hero'
+import Footer from 'components/footer/footer'
 
 export default {
   async created () {
@@ -14,6 +15,7 @@ export default {
     this.$store.dispatch('VIEW_MODALCONTENT', false)
   },
   components: {
+    Footer,
     Hero
   }
 }

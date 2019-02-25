@@ -1,1 +1,14 @@
-<svg id="cc66cb7f-7586-4a7c-be35-5524c1b34f17" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.52 30"><title>FB</title><g id="d29fa308-5783-42c4-8b45-be47d7a3c376" data-name="Pages"><g id="5e12c544-bd0e-49d3-826f-49f5fc3eac3b" data-name="Home"><g id="824dccf2-b136-4787-a42f-e0ba02b53799" data-name="Footer"><g id="8860ffd7-5b13-40d4-89b0-f555684f6b7e" data-name="Group-4"><path id="21271cca-7597-4646-b393-663131db698e" data-name="Fill-1" d="M10.13,30V16.33h1.58c.87,0,1.73,0,2.6,0A.53.53,0,0,0,14.7,16c.24-1.66.44-3.33.67-5.06H10.19c0-1.47-.08-2.9,0-4.3.08-1,.68-1.48,1.7-1.59C12.73,5,13.55,5,14.37,5h1.15V.23c-.26,0-.51-.08-.77-.09A16.53,16.53,0,0,0,9,.36,6,6,0,0,0,4.67,5.74c-.1,1.53-.07,3.07-.1,4.6V11H0v5.34H4.53V30c-.11,0-.23,0-.36,0" transform="translate(0 0)" style="fill:#fff"/></g></g></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) -->
+<svg version="1.1" id="cc66cb7f-7586-4a7c-be35-5524c1b34f17" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve">
+  <style type="text/css">
+    .icon-fill {
+      fill: #FFFFFF;
+    }
+  </style>
+  <path
+    class="icon-fill"
+    d="M17.4,30V16.3H19c0.9,0,1.7,0,2.6,0c0.2,0,0.3-0.2,0.4-0.3
+					c0.2-1.7,0.4-3.3,0.7-5.1h-5.2c0-1.5-0.1-2.9,0-4.3c0.1-1,0.7-1.5,1.7-1.6C20,5,20.8,5,21.6,5h1.1V0.2c-0.3,0-0.5-0.1-0.8-0.1
+					c-1.9-0.3-3.9-0.2-5.8,0.2c-2.4,0.7-4.2,2.9-4.3,5.4c-0.1,1.5-0.1,3.1-0.1,4.6V11H7.2v5.3h4.5V30c-0.1,0-0.2,0-0.4,0"/>
+</svg>
