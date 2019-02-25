@@ -1,1 +1,13 @@
-.block-scroll-overlap
+.block-scroll-overlap(:style="{ height: content.scroll.length * 100 + 'vh' }" ref='component')
+  .block-scroll-overlap__waypoint(v-for='(waypoint, i) in content.scroll.length - 1', :key='"waypoint-" + i' v-waypoint="{ active: true, callback: onWaypoint, options: intersectionOptions }", :style="{ top: 150 + (75 * i) +'vh' }")
+  .block-scroll-overlap__scroll(:style="{ transform: 'translate3d(0, ' + offset + 'px, 0)' }")
+    .block-scroll-overlap__content(v-for='(section, i) in content.scroll', :key="'section-' + (i + 1)")
+      .block-scroll-overlap__container
+        .block-scroll-overlap__col-1(:class="{ 'block-scroll-overlap__col-1--active': active === i }", :style="{ top: 2 * (i + 1) + 'rem' }")
+          h3.block-scroll-overlap__title
+            .block-scroll-overlap__title-text(v-html='section.title')
+            .block-scroll-overlap__title-line(:style="{ transition: 'translateY(' + active * 2 + 'rem)' }")
+          .block-scroll-overlap__body(v-html='section.body')
+          router-link.block-scroll-overlap__button(:to='section.button.href' v-if='section.button.href')
+            .block-scroll-overlap__button-click(v-html='section.button.label')
+        .block-scroll-overlap__image(:style="{ backgroundImage: 'url(' + section.image + ')' }", :class="{ 'block-scroll-overlap__image--active': active === i }" role='img', :aria-label='"treatment image " + (i + 1)')

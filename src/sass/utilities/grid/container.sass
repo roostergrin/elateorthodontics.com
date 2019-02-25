@@ -15,21 +15,14 @@
 // --------------------------------------------------------
 
 .container
-  @extend .clearfix
-  display: block
+  display: flex
   position: relative
+  flex-wrap: wrap
+  align-items: stretch
+  justify-content: flex-start
   margin: 0 auto
   width: 100%
   max-width: calc(#{$width} + #{$gutter})
-
-  @supports (display: flex)
-    display: flex
-    flex-wrap: wrap
-    align-items: stretch
-    justify-content: flex-start
-    &:before,
-    &:after
-      display: none
 
 // --------------------------------------------------------
 // NOTE: allows for a container that's larger than the standard for the website
@@ -37,18 +30,11 @@
 // --------------------------------------------------------
 
 .container-large
-  @extend .clearfix
-  display: block
+  display: flex
   position: relative
+  flex-wrap: wrap
+  align-items: stretch
+  justify-content: flex-start
   margin: 0 auto
   width: 100%
   max-width: calc(#{$width-large} + #{$gutter})
-
-  @supports (display: flex)
-    display: flex
-    flex-wrap: wrap
-    align-items: stretch
-    justify-content: flex-start
-    &:before,
-    &:after
-      display: none

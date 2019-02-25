@@ -1,8 +1,10 @@
-.hero(v-if='content')
+.hero(v-if='content', :class="{ 'hero--home': $route.path === '/' }")
   router-link.hero__logo(to='/' @click.native='setPageHome("/")')
     Icon.hero__logo-icon(name='Footer')
+      
   .hero__background
-    .hero__background-image(v-for='(image, i) in content')
+    .hero__background-image(v-for='(image, i) in content.heroes', :key="'hero-' + i", :style="{ backgroundImage: 'url(' + image.image + ')' }", :class="{ 'hero__background-image--active': hoveredPage === image.path, 'hero__background-image--trans': !menuOpen }")
+      
   .hero__hamburger(:class="{ 'hero__hamburger--active': menuOpen }" @click='toggleMenu')
     span
     span

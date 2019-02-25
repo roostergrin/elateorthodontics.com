@@ -1,2 +1,6 @@
-.pages-home 
-  pre {{ props }}
+.pages-home(v-if='props')
+  CustomHomeWelcome(:content='props.welcome')
+  BlockScroll(:content='props.scroll')
+  BlockTextImage(:content='props.text_image')
+  BlockScrollOverlap(:content='props.scroll_overlap')
+  pre {{ props.testimonials }}

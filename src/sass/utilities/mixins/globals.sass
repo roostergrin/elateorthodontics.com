@@ -33,15 +33,17 @@
     z-index: 1
     pointer-events: none
 
-@mixin button-fill ($color, $color-2, $background, $background-2)
+@mixin button-transparent
+  @extend .p2
   display: inline-block
-  transition: color .25s ease-in, background .25s ease-in
-  background: $background
-  cursor: pointer
+  transition: box-shadow .15s ease-in, text-shadow .15s ease-in
+  border: 2px solid $cobalt-blue
+  box-shadow: inset 0 2px 7px 0 $white, 0 2px 7px 0 $white
+  background: transparent
   padding: .5rem 1rem
-  text-decoration: none
-  color: $color
+  text-shadow: 0 2px 7px $white
+  color: $cobalt-blue
 
   &:hover
-    background: $background-2
-    color: $color-2
+    box-shadow: inset 0 2px 7px 0 rgba(0, 0, 0, 0.5), 0 2px 7px 0 rgba(0, 0, 0, 0.5)
+    text-shadow: 0 2px 7px rgba(0, 0, 0, 0.5)

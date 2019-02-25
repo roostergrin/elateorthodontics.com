@@ -1,6 +1,8 @@
 <template lang="pug" src="./hero.pug"></template>
 
 <script>
+import VueScrollTo from 'vue-scrollto'
+
 export default {
   props: ['props'],
   data () {
@@ -20,6 +22,7 @@ export default {
   },
   mounted () {
     this.currentPage = this.$route.path
+    this.hoveredPage = this.$route.path
   },
   methods: {
     setPage (i) {
@@ -38,12 +41,25 @@ export default {
       this.hoveredPage = i
     },
     toggleMenu () {
-      this.menuOpen = !this.menuOpen
-      if (this.menuOpen) {
-        document.body.classList.add('body-stop')
+      if (window.scrollY > 0) {
+        VueScrollTo.scrollTo('#top', { offset: 0, easing: 'ease-in', duration: 500 })
+        setTimeout(() => {
+          this.menuOpen = !this.menuOpen
+          if (this.menuOpen) {
+            document.body.classList.add('body-stop')
+          } else {
+            this.hoveredPage = this.currentPage
+            document.body.classList.remove('body-stop')
+          }
+        }, 500)
       } else {
-        this.hoveredPage = this.currentPage
-        document.body.classList.remove('body-stop')
+        this.menuOpen = !this.menuOpen
+        if (this.menuOpen) {
+          document.body.classList.add('body-stop')
+        } else {
+          this.hoveredPage = this.currentPage
+          document.body.classList.remove('body-stop')
+        }
       }
     }
   }
