@@ -9,7 +9,8 @@ export default {
     return {
       menuOpen: false,
       currentPage: null,
-      hoveredPage: null
+      hoveredPage: null,
+      hoveredSection: null
     }
   },
   computed: {
@@ -21,13 +22,19 @@ export default {
     }
   },
   mounted () {
-    this.currentPage = this.$route.path
-    this.hoveredPage = this.$route.path
+    this.$nextTick(() => {
+      this.currentPage = document.location.pathname
+      this.hoveredPage = document.location.pathname
+      this.hoveredSection = null
+    })
   },
   methods: {
     setPage (i) {
       this.currentPage = i
       this.toggleMenu()
+    },
+    setSection (i) {
+      this.hoveredSection = i
     },
     setPageHome (i) {
       this.currentPage = i

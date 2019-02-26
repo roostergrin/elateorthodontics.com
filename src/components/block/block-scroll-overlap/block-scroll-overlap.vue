@@ -2,7 +2,7 @@
 
 <script>
 export default {
-  props: ['content'],
+  props: ['content', 'alt'],
   data () {
     return {
       intersectionOptions: {
@@ -26,7 +26,19 @@ export default {
   },
   methods: {
     onScroll () {
-      if ((this.$refs.component.clientHeight / (this.content.scroll.length / 2)) >= window.scrollY - this.$refs.component.offsetTop && window.scrollY > this.$refs.component.offsetTop) {
+      // Finds Ratio of Component to Scroll
+      let scrollRatio = (this.content.scroll.length - 1) / this.content.scroll.length
+
+      // Height of whole container
+      let containerHeight = this.$refs.component.clientHeight
+
+      // Finds point on page where the container is
+      let scrollDistance = window.scrollY - this.$refs.component.offsetTop
+
+      // Toggles the start of the component
+      let isInside = window.scrollY > this.$refs.component.offsetTop
+
+      if ((containerHeight * scrollRatio) >= scrollDistance && isInside) {
         this.offset = window.scrollY - this.$refs.component.offsetTop
       }
     },

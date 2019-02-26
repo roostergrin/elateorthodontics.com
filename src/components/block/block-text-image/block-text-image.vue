@@ -2,7 +2,7 @@
 
 <script>
 export default {
-  props: ['content'],
+  props: ['content', 'alt'],
   data () {
     return {
       intersectionOptions: {

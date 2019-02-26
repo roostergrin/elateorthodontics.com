@@ -30,7 +30,7 @@
   
   .hero__drawer(v-if='drawer.navigation' v-for='(drawer, i) in links', :key="'drawer-' + i", :class="{ 'hero__drawer--active': currentPage === drawer.path && !menuOpen }")
     h1.hero__drawer-title(v-html='drawer.name')
-    router-link.hero__drawer-link(v-for='(child, j) in drawer.children', :key="'child-' + j" v-html='child.name', :to='child.path')
+    router-link.hero__drawer-link(v-for='(child, j) in drawer.children', :key="'child-' + j" v-html='child.name', :to='child.path' @mouseover.native='setSection(j)', :class="{ 'hero__drawer-link--active': hoveredSection === j, 'hero__drawer-link--trans': hoveredSection !== null }")
   
   .hero__tagline(v-for='(tagline, i) in content.heroes', :key="'tagline-' + i", :class="{ 'hero__tagline--active': hoveredPage === tagline.path }")
     .hero__tagline-text(v-html='tagline.tagline')

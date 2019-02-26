@@ -13,10 +13,19 @@
   &__container
     @extend .container
 
+    .block-text-image--alt &
+      flex-direction: row-reverse
+      justify-content: flex-end
+
   &__col
     @extend .col-5
     @extend .col-1--offset
     position: relative
+
+
+    &-1
+      .block-text-image--alt &
+        margin-left: 0
 
   &__image
     position: absolute
@@ -55,6 +64,10 @@
       background-size: cover
       width: 55%
       height: 70%
+
+      .block-text-image--alt &
+        right: -10%
+        left: auto
 
 
   &__title

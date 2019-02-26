@@ -191,6 +191,7 @@
 
     &--active
       transform: none
+      z-index: 99
 
     &-title
       @extend h2
@@ -200,7 +201,27 @@
 
     &-link
       @extend h3
+      position: relative
       padding-bottom: 1rem
+
+      &:after
+        position: absolute
+        top: 35%
+        left: calc(100% + 1rem)
+        transform: translateY(-50%) translateX(100%)
+        transition: transform .5s ease-in
+        background: $black
+        width: 50vw
+        height: 1px
+        content: ''
+
+      &--active
+        &:after
+          transform: translateY(-50%)
+
+      &--trans
+        &:after
+          transition-delay: .35s
 
   &__tagline
     @extend .flex-center-start
@@ -210,9 +231,10 @@
     left: 0
     transition: opacity .25s ease-in
     opacity: 0
+    background: linear-gradient(to bottom, transparent, $black-34)
     padding-left: 4rem
     width: 100%
-    height: 5rem
+    height: 8rem
     color: $white
 
     &--active

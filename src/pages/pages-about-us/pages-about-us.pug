@@ -1,2 +1,3 @@
-.pages-home 
-  pre {{ props }}
+.pages-home(v-if='props')
+  BlockScroll#doctors(:content='props.scroll')
+  CustomAboutTour#office(:content='props.tour')

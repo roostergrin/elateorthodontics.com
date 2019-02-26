@@ -1,4 +1,4 @@
-.footer
+.footer(v-if='content')
   .footer__contact
     .footer__contact-title(v-html='content.title')
     a.footer__contact-address(:href='content.address.href', v-html='content.address.label')

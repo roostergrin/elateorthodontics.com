@@ -8,7 +8,7 @@
             .block-scroll__title-text(v-html='section.title')
             .block-scroll__title-line(:style="{ transition: 'translateY(' + active * 2 + 'rem)' }")
           .block-scroll__body(v-html='section.body')
-          router-link.block-scroll__button(:to='section.button.href')
+          router-link.block-scroll__button(:to='section.button.href' v-if='section.button.href')
             .block-scroll__button-click(v-html='section.button.label')
         .block-scroll__col-2
           .block-scroll__image(:style="{ backgroundImage: 'url(' + section.image + ')' }", role='img', aria-label='Doctors and their Children')

@@ -1,2 +1,3 @@
-.pages-treatments
-  pre {{ props }}
+.pages-treatments(v-if='props')
+  BlockTextImage(:content='props.text_image', :alt='true')
+  BlockScrollOverlap(:content='props.scroll_overlap', :alt='true')
