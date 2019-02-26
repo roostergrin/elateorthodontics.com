@@ -1,2 +1,4 @@
-.pages-get-started
-  pre {{ props }}
+.pages-get-started(v-if='props')
+  CustomGetConsultation#consultation(:content='props.consultation', :alt='true')
+  pre#forms {{ props.forms }}
+  BlockTextImage#financing(:content='props.text_image')

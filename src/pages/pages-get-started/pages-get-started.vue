@@ -1,6 +1,8 @@
 <template lang="pug" src="./pages-get-started.pug"></template>
 
 <script>
+import BlockTextImage from 'components/block/block-text-image/block-text-image'
+import CustomGetConsultation from 'components/custom/custom-get-consultation/custom-get-consultation'
 
 export default {
   name: 'Get-Started',
@@ -8,6 +10,10 @@ export default {
     props () {
       return this.$store.state.pages['get-started']
     }
+  },
+  components: {
+    BlockTextImage,
+    CustomGetConsultation
   }
 }
 </script>

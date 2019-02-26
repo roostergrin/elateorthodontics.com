@@ -1,5 +1,5 @@
-.block-scroll-overlap(:class="{ 'block-scroll-overlap--alt': alt }", :style="{ height: content.scroll.length * 100 + 'vh' }" ref='component')
-  .block-scroll-overlap__waypoint(v-for='(waypoint, i) in content.scroll.length - 1', :key='"waypoint-" + i' v-waypoint="{ active: true, callback: onWaypoint, options: intersectionOptions }", :style="{ top: 150 + (75 * i) +'vh' }")
+.block-scroll-overlap#ceramic(:class="{ 'block-scroll-overlap--alt': alt }", :style="{ height: content.scroll.length * 100 + 'vh' }" ref='component')
+  .block-scroll-overlap__waypoint#metal(v-for='(waypoint, i) in content.scroll.length - 1', :key='"waypoint-" + i' v-waypoint="{ active: true, callback: onWaypoint, options: intersectionOptions }", :style="{ top: 150 + (75 * i) +'vh' }")
   .block-scroll-overlap__scroll(:style="{ transform: 'translate3d(0, ' + offset + 'px, 0)' }")
     h2.block-scroll-overlap__section-title(v-html='content.title')
     .block-scroll-overlap__content(v-for='(section, i) in content.scroll', :key="'section-' + (i + 1)")
