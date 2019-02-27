@@ -1,0 +1,66 @@
+.custom-get-forms
+  padding: 4rem 0
+
+  &__title
+    padding-bottom: 4rem
+    text-align: center
+    text-transform: uppercase
+    color: $cobalt-blue
+
+  &__container
+    @extend .container
+
+  &__col
+    @extend .col-6
+    position: relative
+    text-align: center
+
+    &:hover
+      .custom-get-forms__overlay
+        opacity: 0
+
+      .custom-get-forms__overlay-blue
+        opacity: 1
+
+      .custom-get-forms__label
+        padding: 28rem 0 4rem
+
+      .custom-get-forms__image
+        filter: grayscale(1)
+
+  &__image
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translateX(-50%)
+    transition: filter .25s ease-in
+    z-index: -1
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    width: calc(100% - #{$gutter})
+    height: 100%
+    filter: none
+
+  &__overlay,
+  &__overlay-blue
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translateX(-50%)
+    transition: opacity .25s ease-in
+    opacity: 1
+    z-index: -1
+    background: linear-gradient(to bottom, transparent, $black-34)
+    width: calc(100% - #{$gutter})
+    height: 100%
+
+  &__overlay-blue
+    opacity: 0
+    background: linear-gradient(to bottom, transparent, $cobalt-blue-50)
+
+  &__label
+    transition: padding .25s ease-in
+    padding: 30rem 0 2rem
+    text-transform: uppercase
+    color: $white

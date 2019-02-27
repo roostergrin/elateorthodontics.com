@@ -1,14 +1,14 @@
 .block-text-image
   position: relative
-  padding: 4rem 0 6rem
+  padding: 8rem 0 10rem
 
   &__waypoint
     position: absolute
-    top: 50%
+    top: 25%
     left: 50%
     transform: translate(-50%, -50%)
     width: 100%
-    height: 100vh
+    height: 1px
 
   &__container
     @extend .container
@@ -29,14 +29,25 @@
       .block-text-image--alt &
         margin-left: 0
 
+    &-2
+      min-height: 22.5rem
+
   &__image
     position: absolute
     top: 50%
     left: 50%
     transform: translate(-50%, -50%)
+    transition: opacity .45s ease-in
+    opacity: 0
     z-index: 1
     width: calc(100% - #{$gutter})
     height: 100%
+
+    .block-text-image--alt &
+      transition-delay: .6s
+
+    .block-text-image--active &
+      opacity: 1
 
     &-container
       position: absolute
@@ -59,7 +70,7 @@
     &-background
       position: absolute
       top: 55%
-      left: -10%
+      left: -20%
       z-index: -1
       background-repeat: no-repeat
       background-position: center
@@ -73,11 +84,37 @@
 
 
   &__title
+    transform: translateX(2rem)
+    transition: transform .35s ease-in, opacity .35s ease-in
+    opacity: 0
     padding: 2rem 0
     text-transform: uppercase
     color: $cobalt-blue
+    transition-delay: .45s
+
+    .block-text-image--alt &
+      transition-delay: 0
+
+    .block-text-image--active &
+      transform: none
+      opacity: 1
 
   &__body
+    position: absolute
+    top: 7rem
+    transform: translateY(1rem)
+    transition: transform .55s ease-in, opacity .55s ease-in, line-height .55s ease-in
+    opacity: 0
     padding-bottom: 2rem
     max-width: 85%
+    line-height: 2
     color: $warm-grey
+    transition-delay: .75s
+
+    .block-text-image--alt &
+      transition-delay: .25s
+
+    .block-text-image--active &
+      transform: none
+      opacity: 1
+      line-height: inherit

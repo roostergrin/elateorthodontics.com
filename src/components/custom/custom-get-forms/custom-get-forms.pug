@@ -1,0 +1,8 @@
+.custom-get-forms
+  h2.custom-get-forms__title(v-html='content.title')
+  .custom-get-forms__container
+    a.custom-get-forms__col(v-for='(tile, i) in content.forms', :key='"tile - " + i', :href='tile.href' target="_blank")
+      .custom-get-forms__image(:style="{ backgroundImage: 'url(' + tile.image + ')' }")
+      .custom-get-forms__overlay
+      .custom-get-forms__overlay-blue
+      h2.custom-get-forms__label(v-html='tile.label')

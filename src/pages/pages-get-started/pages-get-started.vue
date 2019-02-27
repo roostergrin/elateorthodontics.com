@@ -3,6 +3,7 @@
 <script>
 import BlockTextImage from 'components/block/block-text-image/block-text-image'
 import CustomGetConsultation from 'components/custom/custom-get-consultation/custom-get-consultation'
+import CustomGetForms from 'components/custom/custom-get-forms/custom-get-forms'
 
 export default {
   name: 'Get-Started',
@@ -13,7 +14,8 @@ export default {
   },
   components: {
     BlockTextImage,
-    CustomGetConsultation
+    CustomGetConsultation,
+    CustomGetForms
   }
 }
 </script>
