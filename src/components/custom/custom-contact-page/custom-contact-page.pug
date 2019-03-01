@@ -1,0 +1,13 @@
+.custom-contact-page(:style="{ backgroundImage: 'url(' + content.background + ')' }" v-if='content')
+  .custom-contact-page__overlay
+  .custom-contact-page__title-box
+    h2.custom-contact-page__title(v-for='(form, i) in content.forms' v-html='form.title', :class="{ 'custom-contact-page__title--active': active === i }" @click='setActive(i)')
+  .custom-contact-page__container
+    .custom-contact-page__address
+      .custom-contact-page__address-title(v-html='content.address.title')
+      .custom-contact-page__address-body(v-html='content.address.body')
+      a.custom-contact-page__address-button(:href='content.address.href', v-html='content.address.label')
+    .custom-contact-page__hours(v-html='content.hours')
+    .custom-contact-page__contacts
+      .custom-contact-page__contact(v-for='(link, i) in content.contacts')
+    pre {{ content.contacts }}

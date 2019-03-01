@@ -1,0 +1,63 @@
+.custom-contact-page
+  position: absolute
+  top: 0
+  left: 0
+  transition: transform .5s ease-in
+  z-index: 9999
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+  width: 100%
+  height: 100vh
+
+  &__overlay
+    position: absolute
+    top: 0
+    left: 0
+    z-index: -1
+    background: $black-34
+    width: 100%
+    height: 100%
+
+  &__title-box
+    @extend .flex-center
+    padding: 2rem 0
+    text-transform: uppercase
+
+  &__title
+    transition: color .25s ease-in
+    cursor: pointer
+    padding-left: 1rem
+    color: $white-42
+
+    &--active
+      color: $white
+
+    &:after
+      padding-left: 1rem
+      color: $white
+      content: '|'
+
+    &:first-child
+      padding-left: 0
+
+    &:last-child
+      &:after
+        padding-left: 0
+        content: ''
+
+  &__container
+    margin: 0 2rem
+    background: $black-34
+    padding: 2rem 3rem
+    width: calc(100% - 4rem)
+    color: $white
+
+  &__address,
+  &__hours
+    display: inline-block
+    width: 50%
+    vertical-align: top
+
+  pre
+    color: $white

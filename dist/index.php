@@ -20,5 +20,6 @@
     try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
     catch(e){window.attachEvent("onload", $buo_f)}
   </script>
+  <script defer src="https://connect.podium.com/widget.js#API_TOKEN=3ce11a45-65aa-4d0b-a753-e3a9dc1febdc" id="podium-widget" data-api-token="3ce11a45-65aa-4d0b-a753-e3a9dc1febdc"></script>
 </body>
 </html>
