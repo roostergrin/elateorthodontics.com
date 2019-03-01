@@ -8,7 +8,7 @@
       .block-scroll-overlap__container
         .block-scroll-overlap__col-1(:class="{ 'block-scroll-overlap__col-1--active': active === i }", :style="{ top: 2 * (i + 1) + 'rem' }")
           h3.block-scroll-overlap__title
-            .block-scroll-overlap__title-text(v-html='section.title')
+            .block-scroll-overlap__title-text(v-html='section.title', :style="{ transition: 'opacity .45s ' + (.75 + (.15 * i)) + 's ease-in'  }")
             .block-scroll-overlap__title-line(:style="{ transition: 'translateY(' + active * 2 + 'rem)' }")
           .block-scroll-overlap__body(v-html='section.body')
           router-link.block-scroll-overlap__button(:to='section.button.href' v-if='section.button.href')
