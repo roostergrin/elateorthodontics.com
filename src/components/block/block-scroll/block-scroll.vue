@@ -11,8 +11,8 @@ export default {
         threshold: [0]
       },
       active: 0,
-      upActive: true,
-      downActive: true,
+      showing: false,
+      transformed: false,
       offset: 0
     }
   },
@@ -25,6 +25,14 @@ export default {
     window.removeEventListener('scroll', this.onScroll)
   },
   methods: {
+    onWaypointIn ({going, direction, _entry}) {
+      if (going === 'in' && direction === 'top') {
+        this.showing = true
+        setTimeout(() => {
+          this.transformed = true
+        }, 1250)
+      }
+    },
     onScroll () {
       // Finds Ratio of Component to Scroll
       let scrollRatio = (this.content.length - 1) / this.content.length

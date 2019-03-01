@@ -1,4 +1,5 @@
-.custom-home-testimonials
+.custom-home-testimonials(:class="{ 'custom-home-testimonials--showing': showing }")
+  .custom-home-testimonials__waypoint(v-waypoint='{ active: true, callback: onWaypoint, options: intersectionOptions }')
   .custom-home-testimonials__slider
     .custom-home-testimonials__button(@click='this.setSlide') Next >
     .custom-home-testimonials__slide(v-for='(image, i) in content', :key="'image - ' + (i + 1)", :class="{ 'custom-home-testimonials__slide--active': activeSlide === i }" role='img', :aria-label="'testimonial slide for ' + image.name", :style="{ backgroundImage: 'url(' + image.image + ')' }")

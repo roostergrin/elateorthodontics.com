@@ -11,8 +11,8 @@ export default {
         threshold: [0]
       },
       active: 0,
-      upActive: true,
-      downActive: true,
+      showing: false,
+      transformed: false,
       offset: 0
     }
   },
@@ -40,6 +40,14 @@ export default {
 
       if ((containerHeight * scrollRatio) >= scrollDistance && isInside) {
         this.offset = window.scrollY - this.$refs.component.offsetTop
+      }
+    },
+    onWaypointIn ({going, direction, _entry}) {
+      if (going === 'in' && direction === 'top') {
+        this.showing = true
+        setTimeout(() => {
+          this.transformed = true
+        }, 1250)
       }
     },
     onWaypoint ({going, direction, _entry}) {

@@ -1,4 +1,5 @@
-.block-scroll(:style="{ height: content.length * 100 + 'vh' }" ref='component')
+.block-scroll(:class="{ 'block-scroll--active': showing, 'block-scroll--transformed': transformed }", :style="{ height: content.length * 100 + 'vh' }" ref='component')
+  .block-scroll__waypoint.block-scroll__waypoint--in(v-waypoint="{ active: true, callback: onWaypointIn, options: intersectionOptions }")
   .block-scroll__waypoint(v-waypoint="{ active: true, callback: onWaypoint, options: intersectionOptions }")
   .block-scroll__scroll(:style="{ transform: 'translate3d(0, ' + offset + 'px, 0)' }")
     .block-scroll__content(v-for='(section, i) in content', :key="'section-' + (i + 1)")

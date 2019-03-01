@@ -29,7 +29,6 @@ export default {
     onWaypoint ({going, direction, _entry}) {
       if (going === 'in') {
         this.active = true
-        console.log(this.active)
       }
     },
     onScroll () {
@@ -55,7 +54,7 @@ export default {
       }
 
       if (halfContainerHeight >= windowTopOffest && bottomHalf) {
-        this.percentage = 1 + ((negHalfOffset + 4) / 50)
+        this.percentage = 1 + ((negHalfOffset - 0.03 + 4) / 50)
         this.transform = (halfOffset - 4) * 1.5
       }
     }

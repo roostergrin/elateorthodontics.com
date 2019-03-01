@@ -5,10 +5,21 @@ export default {
   props: ['content'],
   data () {
     return {
-      activeSlide: 0
+      intersectionOptions: {
+        root: null,
+        rootMargin: '0px 0px 0px 0px',
+        threshold: [0]
+      },
+      activeSlide: 0,
+      showing: null
     }
   },
   methods: {
+    onWaypoint ({going, direction, _entry}) {
+      if (going === 'in' && direction === 'top') {
+        this.showing = true
+      }
+    },
     setSlide () {
       if (this.activeSlide === this.content.length - 1) {
         this.activeSlide = 0

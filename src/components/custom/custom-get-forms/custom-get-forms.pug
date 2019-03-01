@@ -1,7 +1,8 @@
-.custom-get-forms
+.custom-get-forms(:class="{ 'custom-get-forms--showing': showing }")
+  .custom-get-forms__waypoint(v-waypoint='{ active: true, callback: onWaypoint, options: intersectionOptions }')
   h2.custom-get-forms__title(v-html='content.title')
   .custom-get-forms__container
-    a.custom-get-forms__col(v-for='(tile, i) in content.forms', :key='"tile - " + i', :href='tile.href' target="_blank")
+    a.custom-get-forms__col(v-for='(tile, i) in content.forms', :key='"tile - " + i', :href='tile.href' target="_blank", :style="{ transitionDelay: .35 * (i + 1) + 's' }")
       .custom-get-forms__image(:style="{ backgroundImage: 'url(' + tile.image + ')' }")
       .custom-get-forms__overlay
       .custom-get-forms__overlay-blue

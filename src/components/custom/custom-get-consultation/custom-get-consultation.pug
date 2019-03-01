@@ -1,15 +1,14 @@
-.custom-get-consultation
+.custom-get-consultation(ref='component', :class="{ 'custom-get-consultation--showing': showing }")
   .custom-get-consultation__waypoint(v-waypoint='{ active: true, callback: onWaypoint, options: intersectionOptions }')
-  .custom-get-consultation__waypoint(v-waypoint='{ active: true, callback: onWaypointFade, options: intersectionOptionsFade }' v-if='!active')
   .custom-get-consultation__container
     h2.custom-get-consultation__title(v-html='content.title')
     .custom-get-consultation__col.custom-get-consultation__col-1
       .custom-get-consultation__image
         .custom-get-consultation__image-container
           .custom-get-consultation__image-image(:style="{ backgroundImage: 'url(' + content.image + ')', transform: 'scale(' + this.percentage + ')' }")
-        .custom-get-consultation__image-background(v-parallax='-.025', :style="{ backgroundImage: 'url(' + content.image_background + ')' }")
+        .custom-get-consultation__image-background(:style="{ backgroundImage: 'url(' + content.image_background + ')', transform: 'translateX(' + transform + '%)' }")
     .custom-get-consultation__col.custom-get-consultation__col-2
       .custom-get-consultation__body(v-html='content.body')
-      .custom-get-consultation__tile(v-for='(tile, i) in content.tiles', :key='"tile - " + i')
+      .custom-get-consultation__tile(v-for='(tile, i) in content.tiles', :key='"tile - " + i', :style="{ transitionDelay: i * .15 + .85 + 's'}")
         .custom-get-consultation__tile-body(v-html='tile.body', :title='(i + 1)')
         router-link.custom-get-consultation__tile-button(v-if='tile.button.href', :to='tile.button.href' v-html='tile.button.label')
