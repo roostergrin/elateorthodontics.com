@@ -33,6 +33,9 @@ export default {
         }, 1250)
       }
     },
+    cleanStr (i) {
+      return i.toLowerCase().replace(/[.,/#!$%^&*;:{}=\-_`~()\s]/g, '')
+    },
     onScroll () {
       // Finds Ratio of Component to Scroll
       let scrollRatio = (this.content.length - 1) / this.content.length

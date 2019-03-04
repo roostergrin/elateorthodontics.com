@@ -8,9 +8,12 @@ export default {
   data () {
     return {
       menuOpen: false,
+      showing: null,
+      active: null,
       currentPage: null,
       hoveredPage: null,
-      hoveredSection: null
+      hoveredSection: null,
+      delaySection: null
     }
   },
   computed: {
@@ -39,6 +42,12 @@ export default {
       this.currentPage = document.location.pathname
       this.hoveredPage = document.location.pathname
       this.hoveredSection = null
+      setTimeout(() => {
+        this.showing = true
+      }, 500)
+      setTimeout(() => {
+        this.active = true
+      }, 2500)
     })
   },
   methods: {
@@ -48,6 +57,9 @@ export default {
     },
     setSection (i) {
       this.hoveredSection = i
+      setTimeout(() => {
+        this.delaySection = true
+      }, 450)
     },
     setPageHome (i) {
       this.currentPage = i

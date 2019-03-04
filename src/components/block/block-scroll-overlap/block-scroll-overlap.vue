@@ -25,6 +25,9 @@ export default {
     window.removeEventListener('scroll', this.onScroll)
   },
   methods: {
+    cleanStr (i) {
+      return i.toLowerCase().replace(/[.,/#!$%^&*;:{}=\-_`~()\s]/g, '')
+    },
     onScroll () {
       // Finds Ratio of Component to Scroll
       let scrollRatio = (this.content.scroll.length - 1) / this.content.scroll.length

@@ -8,8 +8,14 @@ export default {
   props: ['content'],
   data () {
     return {
-      active: 0
+      active: 0,
+      showing: null
     }
+  },
+  mounted () {
+    setTimeout(() => {
+      this.showing = true
+    }, 450)
   },
   methods: {
     setActive (i) {

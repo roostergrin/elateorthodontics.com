@@ -1,6 +1,6 @@
-.hero(v-if='content && props', :class="{ 'hero--home': $route.path === '/' }")
+.hero(v-if='content && props', :class="{ 'hero--home': $route.path === '/', 'hero--showing': showing, 'hero--active': active }")
   router-link.hero__logo(to='/' @click.native='setPageHome("/")')
-    Icon.hero__logo-icon(name='Footer')
+    Icon.hero__logo-icon(name='elate-logo')
       
   .hero__background
     .hero__background-image(v-for='(image, i) in content.heroes', :key="'hero-' + i", :style="{ backgroundImage: 'url(' + image.image + ')' }", :class="{ 'hero__background-image--active': hoveredPage === image.path, 'hero__background-image--trans': !menuOpen }")
@@ -29,9 +29,11 @@
       .hero__home-button-label(v-html='content.home.button.label')
   
   .hero__drawer(v-if='drawer.navigation' v-for='(drawer, i) in links', :key="'drawer-' + i", :class="{ 'hero__drawer--active': currentPage === drawer.path && !menuOpen }")
-    h1.hero__drawer-title(v-html='drawer.name')
-    router-link.hero__drawer-link(v-for='(child, j) in drawer.children', :key="'child-' + j" v-html='child.name', :to='child.path' @mouseover.native='setSection(j)', :class="{ 'hero__drawer-link--active': hoveredSection === j, 'hero__drawer-link--trans': hoveredSection !== null }")
+    h1.hero__drawer-title(v-html='drawer.name' v-if='!$route.path.includes("/contact")')
+    router-link.hero__drawer-link(v-for='(child, j) in drawer.children', :key="'child-' + j" v-html='child.name', :to='child.path' @mouseover.native='setSection(j)', :class="{ 'hero__drawer-link--active': hoveredSection === j, 'hero__drawer-link--trans': delaySection !== null }" v-if='!$route.path.includes("/contact")')
     CustomContactPage(:content='props.page' v-if='$route.path.includes("/contact")')
   
   .hero__tagline(v-for='(tagline, i) in content.heroes', :key="'tagline-' + i", :class="{ 'hero__tagline--active': hoveredPage === tagline.path }")
-    .hero__tagline-text(v-html='tagline.tagline')
+    .hero__tagline-textbox
+      .hero__tagline-text(v-html='tagline.tagline')
+      .hero__tagline-line

@@ -13,10 +13,17 @@
       bottom: auto
       height: 1px
 
+  &__anchor
+    position: absolute
+    left: 0
+    width: 100%
+    height: 3px
+
   &__scroll
     position: relative
     transition: translate .5s linear
     height: 40rem
+    pointer-events: none
 
   &__section-title
     position: absolute
@@ -48,6 +55,7 @@
   &__container
     @extend .container
     height: calc(100vh - 8rem)
+    pointer-events: none
 
   &__col
     position: relative
@@ -74,7 +82,7 @@
     top: 50%
     left: calc(75% + (#{$gutter} / 2))
     transform: translate(-40%, -50%)
-    transition: opacity .5s .35s ease-in, transform .25s .35s ease-in
+    transition: opacity .5s .35s ease-in, transform .25s .35s ease
     opacity: 0
     z-index: -1
     background-repeat: no-repeat
@@ -111,7 +119,9 @@
 
     &-text
       opacity: 0
+      cursor: pointer
       min-width: 10rem
+      pointer-events: all
 
       .block-scroll-overlap--active &
         opacity: 1
@@ -157,3 +167,6 @@
   &__button
     &-click
       @include button-transparent
+
+    .block-scroll-overlap__col-1--active &
+      pointer-events: all

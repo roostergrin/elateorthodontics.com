@@ -13,6 +13,12 @@
       bottom: auto
       height: 1px
 
+  &__anchor
+    position: absolute
+    left: 0
+    width: 100%
+    height: 3px
+
   &__scroll
     position: relative
     height: 40rem
@@ -32,6 +38,7 @@
   &__container
     @extend .container
     height: calc(100vh - 8rem)
+    pointer-events: none
 
   &__col
     position: relative
@@ -51,7 +58,7 @@
     top: 50%
     left: 50%
     transform: translate(-40%, -50%)
-    transition: transform .5s .5s ease-in, opacity .5s .5s ease-in
+    transition: transform .5s .5s ease-in, opacity .5s .5s ease
     opacity: 0
     background-repeat: no-repeat
     background-position: center
@@ -59,21 +66,24 @@
     width: calc(100% - #{$gutter})
     height: 100%
 
-    &--active
-      .block-scroll--active &
-        transition: opacity .5s ease-in
-        opacity: 1
-
     .block-scroll--active &
       transform: translate(-50%, -50%)
+      transition-delay: 0s
+
+    &--active
+      .block-scroll--active &
+        transition: opacity .5s .5s ease-in
+        opacity: 1
 
   &__title
     position: absolute
     top: 2rem
     right: calc(#{$gutter} / 2)
     transition: color .25s ease-in
-    z-index: 99
+    z-index: 999
+    cursor: pointer
     text-align: right
+    pointer-events: all
 
     .block-scroll__col-1--1 &
       top: 4rem
@@ -127,8 +137,12 @@
     padding-top: 10rem
     padding-right: 1rem
     padding-bottom: 4rem
+    pointer-events: none
 
 
   &__button
     &-click
       @include button-transparent
+
+    .block-scroll__col-1--active &
+      pointer-events: all

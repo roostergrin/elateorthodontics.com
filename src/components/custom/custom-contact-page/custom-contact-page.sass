@@ -22,8 +22,13 @@
 
   &__title-box
     @extend .flex-center
+    transition: opacity .45s ease-in
+    opacity: 0
     padding: 2rem 0
     text-transform: uppercase
+
+    .custom-contact-page--active &
+      opacity: 1
 
   &__title
     transition: color .25s ease-in
@@ -48,10 +53,16 @@
         content: ''
 
   &__container
+    transition: opacity .45s ease-in
+    opacity: 0
     margin: auto
     background: $black-34
     width: calc(100% - 8rem)
     color: $white
+    transition-delay: .25s
+
+    .custom-contact-page--active &
+      opacity: 1
 
   &__content
     margin: auto

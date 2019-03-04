@@ -1,4 +1,4 @@
-.custom-contact-page(:style="{ backgroundImage: 'url(' + content.background + ')' }" v-if='content')
+.custom-contact-page(:style="{ backgroundImage: 'url(' + content.background + ')' }", :class="{ 'custom-contact-page--active': showing }" v-if='content')
   .custom-contact-page__overlay
   .custom-contact-page__title-box
     h2.custom-contact-page__title(v-for='(form, i) in content.forms' v-html='form.title', :class="{ 'custom-contact-page__title--active': active === i }" @click='setActive(i)')
