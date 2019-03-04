@@ -41,13 +41,13 @@ export default {
       let containerHeight = this.$refs.component.clientHeight
 
       // Finds point on page where the container is
-      let scrollDistance = window.scrollY - this.$refs.component.offsetTop
+      let scrollDistance = window.pageYOffset - this.$refs.component.offsetTop
 
       // Toggles the start of the component
-      let isInside = window.scrollY > this.$refs.component.offsetTop
+      let isInside = window.pageYOffset > this.$refs.component.offsetTop
 
       if ((containerHeight * scrollRatio) >= scrollDistance && isInside) {
-        this.offset = window.scrollY - this.$refs.component.offsetTop
+        this.offset = window.pageYOffset - this.$refs.component.offsetTop
       }
     },
     onWaypoint ({going, direction, _entry}, i) {

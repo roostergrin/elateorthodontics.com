@@ -24,13 +24,6 @@ export default {
       return this.$router.options.routes
     }
   },
-  mounted () {
-    this.$nextTick(() => {
-      this.currentPage = document.location.pathname
-      this.hoveredPage = document.location.pathname
-      this.hoveredSection = null
-    })
-  },
   watch: {
     $route: function () {
       this.currentPage = document.location.pathname
@@ -38,9 +31,15 @@ export default {
       this.hoveredSection = null
       if (this.$route.path.includes('/contact')) {
         document.body.classList.add('body-stop')
-        console.log(true)
       }
     }
+  },
+  mounted () {
+    this.$nextTick(() => {
+      this.currentPage = document.location.pathname
+      this.hoveredPage = document.location.pathname
+      this.hoveredSection = null
+    })
   },
   methods: {
     setPage (i) {
@@ -62,7 +61,7 @@ export default {
       this.hoveredPage = i
     },
     toggleMenu () {
-      if (window.scrollY > 0) {
+      if (window.pageYOffset > 0) {
         VueScrollTo.scrollTo('#top', { offset: 0, easing: 'ease-in', duration: 500 })
         setTimeout(() => {
           this.menuOpen = !this.menuOpen

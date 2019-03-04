@@ -1,6 +1,9 @@
 <template lang='pug' src='./custom-contact-page.pug'></template>
 
 <script>
+import MainForm from 'components/form/main-form/main-form'
+import ReferralForm from 'components/form/referral-form/referral-form'
+
 export default {
   props: ['content'],
   data () {
@@ -12,6 +15,10 @@ export default {
     setActive (i) {
       this.active = i
     }
+  },
+  components: {
+    MainForm,
+    ReferralForm
   }
 }
 </script>

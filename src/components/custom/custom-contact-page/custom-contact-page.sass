@@ -4,6 +4,7 @@
   left: 0
   transition: transform .5s ease-in
   z-index: 9999
+  background-color: $black
   background-repeat: no-repeat
   background-position: center
   background-size: cover
@@ -47,11 +48,36 @@
         content: ''
 
   &__container
-    margin: 0 2rem
+    margin: auto
     background: $black-34
-    padding: 2rem 3rem
-    width: calc(100% - 4rem)
+    width: calc(100% - 8rem)
     color: $white
+
+  &__content
+    margin: auto
+    padding: 2rem 0
+    width: 30rem
+
+  &__form
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translateX(-50%)
+    transition: opacity .25s ease-in
+    opacity: 0
+    width: 100%
+    pointer-events: none
+
+    &-container
+      position: relative
+      width: 100%
+      height: 25rem
+
+    &--active
+      opacity: 1
+      pointer-events: all
+      transition-delay: .25s
+
 
   &__address,
   &__hours
@@ -59,5 +85,24 @@
     width: 50%
     vertical-align: top
 
-  pre
-    color: $white
+  &__address-button
+    &:hover
+      color: $white-42
+
+  &__contact
+    @extend .flex-center-start
+    padding: 1rem 0 .5rem
+
+    &:hover
+      color: $white-42
+      .icon-fill
+        fill: $white-42
+
+    &:last-child
+      padding-top: 0
+
+    &-icon
+      @include svg-size(1.5rem, 1.5rem)
+
+    &-label
+      padding-left: .5rem
