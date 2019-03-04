@@ -46,10 +46,10 @@ export default {
       this.hoveredSection = null
       setTimeout(() => {
         this.showing = true
-      }, 500)
+      }, 1500)
       setTimeout(() => {
         this.active = true
-      }, 2500)
+      }, 3000)
     })
   },
   methods: {
