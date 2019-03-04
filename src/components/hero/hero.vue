@@ -34,6 +34,8 @@ export default {
       this.hoveredSection = null
       if (this.$route.path.includes('/contact')) {
         document.body.classList.add('body-stop')
+      } else {
+        document.body.classList.remove('body-stop')
       }
     }
   },
