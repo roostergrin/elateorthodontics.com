@@ -13,7 +13,9 @@
     span
   
   .hero__contact(:class="{ 'hero__contact--active': !menuOpen }")
-    a.hero__contact-link(v-for='(contact, i) in content.social_bar', :key="'contact-' + i", :href='contact.href')
+    a.hero__contact-link(v-for='(contact, i) in content.social_bar', :key="'contact-' + i", :href='contact.href' v-if='i !== 1')
+      Icon.hero__contact-icon(:name='contact.icon')
+    router-link.hero__contact-link(v-for='(contact, i) in content.social_bar', :key="'contact-' + i", :to='contact.href' v-if='i === 1')
       Icon.hero__contact-icon(:name='contact.icon')
       
   .hero__links(:class="{ 'hero__links--active': menuOpen }")
