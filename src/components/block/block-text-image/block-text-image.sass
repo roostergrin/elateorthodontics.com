@@ -14,7 +14,7 @@
 
   &__container
     @extend .container
-    align-items: center
+    align-items: flex-start
 
     .block-text-image--alt &
       flex-direction: row-reverse
@@ -27,12 +27,12 @@
 
 
     &-1
-      min-height: 27rem
+      min-height: 20rem
       .block-text-image--alt &
         margin-left: 0
 
     &-2
-      min-height: 30rem
+      min-height: 27rem
       overflow: hidden
 
   &__image
@@ -92,7 +92,7 @@
     transform: translateX(2rem)
     transition: transform .35s ease-in, opacity .35s ease-in
     opacity: 0
-    padding: 2rem 0
+    padding: 4rem 0 2rem
     text-transform: uppercase
     color: $cobalt-blue
     transition-delay: .45s
@@ -106,10 +106,10 @@
 
   &__body
     @include phone-lg
-      top: 8rem
+      top: 10rem
       max-width: none
     position: absolute
-    top: 7rem
+    top: 9rem
     transform: translateY(1rem)
     transition: transform .55s ease-in, opacity .55s ease-in, line-height .55s ease-in
     opacity: 0
