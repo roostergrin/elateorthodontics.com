@@ -23,25 +23,37 @@
 
   &__label
     position: absolute
-    top: 0
+    top: 50%
     left: 0
-    padding: 1.25rem 0 1.25rem .75rem
-    height: 100%
+    transform: translateY(-50%)
+    transition: font-size .25s ease-in, transform .25s ease-in, top .25s ease-in
+    padding-left: .75rem
     pointer-events: none
+
+    .referral-form__group-message &
+      top: 2rem
+
+    &--active
+      top: .25rem
+      transform: translateY(0)
+      color: $white
+      font-size: 11px
+
+      .referral-form__group-message &
+        top: .75rem
 
   &__input
     @extend p
     border-bottom: 1px solid $white
     background: transparent
-    padding: .75rem .75rem .75rem 4.5rem
+    padding: .75rem
     width: 100%
     color: $white
 
     .referral-form__group-message &
       border: 1px solid $white
-      padding: .75rem
+      padding: 1rem .75rem
       min-height: 10rem
-      text-indent: 6rem
 
     &:focus,
     &:active
@@ -49,10 +61,19 @@
 
     &:focus + .referral-form__label,
     &:active + .referral-form__label
+      top: .25rem
+      transform: translateY(0)
       color: $white
+      font-size: 11px
+
+      .referral-form__group-message &
+        top: .75rem
 
     &--error
       border-color: $danger
+
+      .referral-form__group-message &
+        border-color: $danger
 
     &--error,
     &--error + .referral-form__label,
@@ -61,6 +82,7 @@
 
   &__message
     position: absolute
+    right: 0
     bottom: -1.25rem
     padding: .25rem .75rem
     font-size: 9px

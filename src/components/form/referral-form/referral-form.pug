@@ -12,22 +12,22 @@
     
     .referral-form__group.referral-form__group--name
       input.referral-form__input(name='fullName', v-model='fullName', v-validate="'required|alpha_spaces'", :class="{ 'referral-form__input--error': errors.has('fullName') }", type='text')
-      label.referral-form__label Name
+      label.referral-form__label(:class="{ 'referral-form__label--active': fullName }") Name
       .referral-form__message(v-show="errors.has('fullName')") Your name is required.
       
     .referral-form__group.referral-form__group--name
       input.referral-form__input(name='docName', v-model='docName', v-validate="'required|alpha_spaces'", :class="{ 'referral-form__input--error': errors.has('docName') }", type='text')
-      label.referral-form__label Doctor
+      label.referral-form__label(:class="{ 'referral-form__label--active': docName }") Doctor
       .referral-form__message(v-show="errors.has('docName')") Your name is required.
     
     .referral-form__group
-      input.referral-form__input(name='clientEmail', v-model='clientEmail', v-validate="'required|numeric'", :class="{ 'input': true, 'referral-form__input--error': errors.has('clientEmail') }")
-      label.referral-form__label Phone
-      .referral-form__message(v-show="errors.has('clientEmail')") Please Input a Valid Phone Number
+      input.referral-form__input(name='clientEmail', v-model='clientEmail', v-validate="'required|email'", :class="{ 'input': true, 'referral-form__input--error': errors.has('clientEmail') }")
+      label.referral-form__label(:class="{ 'referral-form__label--active': clientEmail }") E-mail
+      .referral-form__message(v-show="errors.has('clientEmail')") Please Input a Valid E-mail
     
     .referral-form__group.referral-form__group-message
       textarea.referral-form__input(name='comments', v-model='comments', v-validate="'required'", :class="{ 'input': true, 'referral-form__input--error': errors.has('comments') }")
-      label.referral-form__label Comments
+      label.referral-form__label(:class="{ 'referral-form__label--active': comments }") Comments
       .referral-form__message(v-show="errors.has('comments')") Please Input a Reason for Contacting Us
     
     .referral-form__button-group

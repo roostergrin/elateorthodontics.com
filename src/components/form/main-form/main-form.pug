@@ -12,17 +12,17 @@
     
     .main-form__group
       input.main-form__input(name='fullName', v-model='fullName', v-validate="'required|alpha_spaces'", :class="{ 'main-form__input--error': errors.has('fullName') }", type='text')
-      label.main-form__label Name
+      label.main-form__label(:class="{ 'main-form__label--active': fullName }") Name
       .main-form__message(v-show="errors.has('fullName')") Your name is required.
     
     .main-form__group
-      input.main-form__input(name='clientEmail', v-model='clientEmail', v-validate="'required|numeric'", :class="{ 'input': true, 'main-form__input--error': errors.has('clientEmail') }")
-      label.main-form__label Phone
-      .main-form__message(v-show="errors.has('clientEmail')") Please Input a Valid Phone Number
+      input.main-form__input(name='clientEmail', v-model='clientEmail', v-validate="'required|email'", :class="{ 'input': true, 'main-form__input--error': errors.has('clientEmail') }")
+      label.main-form__label(:class="{ 'main-form__label--active': clientEmail }") E-mail
+      .main-form__message(v-show="errors.has('clientEmail')")  Please Input a Valid E-mail
     
     .main-form__group.main-form__group-message
       textarea.main-form__input(name='comments', v-model='comments', v-validate="'required'", :class="{ 'input': true, 'main-form__input--error': errors.has('comments') }")
-      label.main-form__label Comments
+      label.main-form__label(:class="{ 'main-form__label--active': comments }") Comments
       .main-form__message(v-show="errors.has('comments')") Please Input a Reason for Contacting Us
     
     .main-form__button-group
