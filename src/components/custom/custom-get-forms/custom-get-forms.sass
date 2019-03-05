@@ -25,6 +25,10 @@
 
   &__col
     @extend .col-6
+    @include tablet-lg
+      width: 50%
+    @include phone-lg
+      width: 100%
     position: relative
     transform: translateY(2rem)
     transition: transform .35s ease-in, opacity .35s ease-in

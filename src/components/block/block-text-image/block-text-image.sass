@@ -1,4 +1,6 @@
 .block-text-image
+  @include phone-lg
+    padding: 2rem 0
   position: relative
   padding: 8rem 0 10rem
 
@@ -30,7 +32,10 @@
         margin-left: 0
 
     &-2
+      @include phone-lg
+        min-height: 30rem
       min-height: 22.5rem
+      overflow: hidden
 
   &__image
     position: absolute
@@ -68,6 +73,8 @@
       height: 100%
 
     &-background
+      @include max-container
+        display: none
       position: absolute
       top: 55%
       left: -20%
@@ -93,13 +100,16 @@
     transition-delay: .45s
 
     .block-text-image--alt &
-      transition-delay: 0
+      transition-delay: 0s
 
     .block-text-image--active &
       transform: none
       opacity: 1
 
   &__body
+    @include phone-lg
+      top: 8rem
+      max-width: none
     position: absolute
     top: 7rem
     transform: translateY(1rem)

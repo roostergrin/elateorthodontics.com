@@ -54,7 +54,6 @@ $half: $columns / 2 - 1
           width: 100%
 
     &--offset
-      margin-left: calc((#{$i} / #{$columns}) * 100%)
-
-      @media screen and (max-width: $screen-tablet-lg)
+      @include tablet-lg
         margin-left: 0
+      margin-left: calc((#{$i} / #{$columns}) * 100%)

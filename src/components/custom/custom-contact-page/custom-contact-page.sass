@@ -31,6 +31,8 @@
       opacity: 1
 
   &__title
+    @include max-container
+      font-size: 30px
     transition: color .25s ease-in
     cursor: pointer
     padding-left: 1rem
@@ -68,6 +70,8 @@
       opacity: 1
 
   &__content
+    @include max-container
+      width: 20rem
     margin: auto
     padding: 2rem 0
     width: 30rem
@@ -95,6 +99,8 @@
 
   &__address,
   &__hours
+    @include max-container
+      display: none
     display: inline-block
     width: 50%
     vertical-align: top

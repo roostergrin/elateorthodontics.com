@@ -1,6 +1,7 @@
 .block-scroll-overlap
   position: relative
   transition: opacity .35s ease-in
+  overflow: hidden
 
   &--scrolling
     opacity: 0
@@ -84,12 +85,16 @@
 
       .block-scroll-overlap--alt &
         @extend .col-6--offset
+        @include tablet-lg
+          margin-left: calc((6 / 12) * 100%)
 
     &-2
       @extend .col-5
       position: relative
 
   &__image
+    @include max-container
+      background-position: top
     position: absolute
     top: 50%
     left: calc(75% + (#{$gutter} / 2))
