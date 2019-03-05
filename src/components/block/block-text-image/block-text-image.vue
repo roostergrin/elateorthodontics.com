@@ -39,10 +39,10 @@ export default {
       let halfContainerHeight = this.$refs.component.clientHeight / 2
 
       // Checks if scrolling out of image
-      let bottomHalf = (window.pageYOffset + window.innerHeight) > (this.$refs.component.offsetTop + this.$refs.component.clientHeight)
+      let bottomHalf = window.pageYOffset >= this.$refs.component.offsetTop
 
       // Checks if scrolling into the image
-      let topHalf = (window.pageYOffset + window.innerHeight) < (this.$refs.component.offsetTop + this.$refs.component.clientHeight)
+      let topHalf = window.pageYOffset <= this.$refs.component.offsetTop
 
       // Finds offset distance from half
       let halfOffset = (this.$refs.component.offsetTop - window.pageYOffset) / 100
@@ -54,8 +54,8 @@ export default {
       }
 
       if (halfContainerHeight >= windowTopOffest && bottomHalf) {
-        this.percentage = 1 + (((negHalfOffset + 0.03) + 3.5) / 50)
-        this.transform = (halfOffset - 3.5) * 1.5
+        this.percentage = 1 + (negHalfOffset / 50)
+        this.transform = halfOffset * 1.5
       }
     }
   }

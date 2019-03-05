@@ -69,6 +69,8 @@
       background: $warm-grey
 
   &__content
+    @include tablet-lg
+      padding: 3rem
     position: absolute
     top: 50%
     left: 50%
@@ -91,6 +93,8 @@
   &__quote-left,
   &__quote-right
     @include svg-size(5rem, 5rem)
+    @include tablet-lg
+      @include svg-size(3rem, 3rem)
     position: absolute
     top: 0
     left: 4rem

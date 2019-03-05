@@ -1,6 +1,8 @@
 <template lang="pug" src="./block-scroll-overlap.pug"></template>
 
 <script>
+import VueScrollTo from 'vue-scrollto'
+
 export default {
   props: ['content', 'alt'],
   data () {
@@ -10,10 +12,12 @@ export default {
         rootMargin: '0px 0px 0px 0px',
         threshold: [0]
       },
+      scrolling: null,
       active: 0,
       showing: false,
       transformed: false,
-      offset: 0
+      fixed: false,
+      positionBottom: false
     }
   },
   mounted () {
@@ -27,6 +31,10 @@ export default {
   methods: {
     cleanStr (i) {
       return i.toLowerCase().replace(/[.,/#!$%^&*;:{}=\-_`~()\s]/g, '')
+    },
+    moveTo (i) {
+      let destination = this.cleanStr(i)
+      VueScrollTo.scrollTo('#' + destination, { offset: 0, easing: 'linear', duration: 500 })
     },
     onScroll () {
       // Finds Ratio of Component to Scroll
@@ -42,7 +50,15 @@ export default {
       let isInside = window.pageYOffset > this.$refs.component.offsetTop
 
       if ((containerHeight * scrollRatio) >= scrollDistance && isInside) {
-        this.offset = window.pageYOffset - this.$refs.component.offsetTop
+        this.fixed = true
+      } else {
+        this.fixed = false
+      }
+
+      if ((containerHeight * scrollRatio) <= scrollDistance && isInside) {
+        this.positionBottom = true
+      } else {
+        this.positionBottom = false
       }
     },
     onWaypointIn ({going, direction, _entry}) {

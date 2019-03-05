@@ -1,13 +1,13 @@
 .block-scroll(:class="{ 'block-scroll--active': showing, 'block-scroll--transformed': transformed }", :style="{ height: content.length * 100 + 'vh' }" ref='component')
   .block-scroll__waypoint.block-scroll__waypoint--in(v-waypoint="{ active: true, callback: onWaypointIn, options: intersectionOptions }")
   .block-scroll__waypoint(v-waypoint="{ active: true, callback: onWaypoint, options: intersectionOptions }")
-  .block-scroll__anchor(v-for='(item, i) in content', :key='"anchor - " + i', :id='cleanStr(item.title)', :style="{ top: i * 100 + 'vh' }")
-  .block-scroll__scroll(:style="{ transform: 'translate3d(0, ' + offset + 'px, 0)' }")
+  .block-scroll__anchor(v-for='(item, i) in content', :key='"anchor - " + i', :id='cleanStr(item.title)', :style="{ top: 'calc(1vh + ' + i * 100 + 'vh)' }")
+  .block-scroll__scroll(:class="{ 'block-scroll__scroll--fixed': fixed}", :style='{ transform: positionBottom ? "translate3d(-50%, calc(100% - 50vh), 0)" : "translate3d(-50%, -50%, 0)" }')
     .block-scroll__content(v-for='(section, i) in content', :key="'section-' + (i + 1)", :class="{ 'block-scroll__content--active': active === i }")
       .block-scroll__container
         .block-scroll__col-1(:class="[ { 'block-scroll__col-1--active': active === i }, 'block-scroll__col-1--' + i ]")
-          h3.block-scroll__title
-            .block-scroll__title-text(v-html='section.title', :style="{ transitionDelay: i * .15 + 's' }" v-scroll-to='{ el: "#" + cleanStr(section.title), easing: "ease" }')
+          h3.block-scroll__title(:class="{ 'block-scroll__title--active': fixed }")
+            .block-scroll__title-text(v-html='section.title', :style="{ transitionDelay: i * .15 + 's' }" v-scroll-to='{ el: "#" + cleanStr(section.title), easing: "linear" }')
             .block-scroll__title-line(:style="{ transition: 'translateY(' + active * 2 + 'rem)' }")
           .block-scroll__body(v-html='section.body')
           router-link.block-scroll__button(:to='section.button.href' v-if='section.button.href')

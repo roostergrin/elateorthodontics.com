@@ -17,13 +17,13 @@
       @include svg-size(7rem, 7rem)
 
   &__hamburger
-    position: absolute
+    position: fixed
     top: 50%
     left: 4rem
     transform: translateY(-50%)
     transition: opacity .35s 1.25s ease-in
     opacity: 0
-    z-index: 1
+    z-index: 9998
     cursor: pointer
     width: 2.5rem
     height: 2.5rem
@@ -81,12 +81,13 @@
 
   &__contact
     @extend .flex-end-center
-    position: absolute
+    position: fixed
     top: calc(50% + 2rem)
     left: 4.5rem
     flex-direction: column
     transition: opacity .35s 1.25s ease-in
     opacity: 0
+    z-index: 9998
     pointer-events: none
 
     .hero--active &
@@ -106,6 +107,8 @@
 
     &-icon
       @include svg-size(1.5rem, 1.5rem)
+      border-radius: 50%
+      box-shadow: 0 2px 7px 0 $cobalt-blue-50
 
   &__background
     position: absolute

@@ -36,6 +36,9 @@
     padding-left: 1rem
     color: $white-42
 
+    &:hover
+      color: $white
+
     &--active
       color: $white
 
@@ -96,9 +99,13 @@
     width: 50%
     vertical-align: top
 
-  &__address-button
-    &:hover
-      color: $white-42
+  &__address
+    &-body
+      padding: .5rem 0
+      
+    &-button
+      &:hover
+        color: $white-42
 
   &__contact
     @extend .flex-center-start

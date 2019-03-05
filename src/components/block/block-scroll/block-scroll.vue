@@ -1,6 +1,8 @@
 <template lang="pug" src="./block-scroll.pug"></template>
 
 <script>
+import VueScrollTo from 'vue-scrollto'
+
 export default {
   props: ['content'],
   data () {
@@ -13,7 +15,8 @@ export default {
       active: 0,
       showing: false,
       transformed: false,
-      offset: 0
+      fixed: false,
+      positionBottom: false
     }
   },
   mounted () {
@@ -36,6 +39,16 @@ export default {
     cleanStr (i) {
       return i.toLowerCase().replace(/[.,/#!$%^&*;:{}=\-_`~()\s]/g, '')
     },
+    moveTo (i) {
+      let destination = this.cleanStr(i)
+      this.scrolling = true
+      setTimeout(() => {
+        VueScrollTo.scrollTo('#' + destination, { offset: 0, easing: 'linear', duration: 500 })
+      }, 350)
+      setTimeout(() => {
+        this.scrolling = null
+      }, 850)
+    },
     onScroll () {
       // Finds Ratio of Component to Scroll
       let scrollRatio = (this.content.length - 1) / this.content.length
@@ -50,7 +63,15 @@ export default {
       let isInside = window.pageYOffset > this.$refs.component.offsetTop
 
       if ((containerHeight * scrollRatio) >= scrollDistance && isInside) {
-        this.offset = window.pageYOffset - this.$refs.component.offsetTop
+        this.fixed = true
+      } else {
+        this.fixed = false
+      }
+
+      if ((containerHeight * scrollRatio) <= scrollDistance && isInside) {
+        this.positionBottom = true
+      } else {
+        this.positionBottom = false
       }
     },
     onWaypoint ({going, direction, _entry}, i) {
