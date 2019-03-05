@@ -1,1 +1,12 @@
-<svg id="d81d1d92-ef72-409e-8993-2065209b04d7" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 32"><title>nextdoor</title><g id="ddc243b4-45ab-4ed1-9bf2-d198fe0349aa" data-name="Pages"><g id="28151d56-f1d9-41ca-b781-c02cd66217e3" data-name="Home"><g id="e07cadbb-99a5-4a6a-81e7-961fba0002ab" data-name="Footer"><g id="e9de4694-311b-4880-abd6-70f48dffce29" data-name="Group-4"><g id="29c2a0cd-d1ca-4d36-b987-4d5b90c30982" data-name="nextdoor"><path id="e5d193ce-f617-4a22-ac50-df2541383bae" data-name="Shape" d="M39,12.21a.77.77,0,0,0-.34-.48L31.2,7.12,25.12,3.35,19.9.11a.77.77,0,0,0-.8,0L13.48,3.59V.77A.76.76,0,0,0,12.72,0H7a.76.76,0,0,0-.76.77V8.06L.36,11.73a.77.77,0,0,0-.34.48.74.74,0,0,0,.1.58L3.36,18a.75.75,0,0,0,1.05.24L6.28,17V31.23A.76.76,0,0,0,7,32H32.26a.76.76,0,0,0,.76-.77v-14l1.57,1a.75.75,0,0,0,1-.24l3.24-5.18A.74.74,0,0,0,39,12.21Z" transform="translate(0 0)" style="fill:#fff"/></g></g></g></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 40 40" style="enable-background:new 0 0 40 40;" xml:space="preserve">
+<style type="text/css">
+	.icon-fill{fill:#FFFFFF;}
+</style>
+<path class="icon-fill" d="M39.5,16.2c0-0.2-0.2-0.4-0.3-0.5l-7.5-4.6l-6.1-3.8l-5.2-3.2c-0.2-0.1-0.6-0.1-0.8,0L14,7.6V4.8
+	C14,4.4,13.6,4,13.2,4c0,0,0,0,0,0H7.5C7.1,4,6.7,4.3,6.7,4.8c0,0,0,0,0,0v7.3l-5.9,3.7c-0.2,0.1-0.3,0.3-0.3,0.5
+	c0,0.2,0,0.4,0.1,0.6L3.9,22c0.2,0.4,0.7,0.5,1,0.3c0,0,0,0,0,0L6.8,21v14.2c0,0.4,0.3,0.7,0.7,0.8h25.3c0.4,0,0.8-0.3,0.8-0.8
+	c0,0,0,0,0,0v-14l1.6,1c0.3,0.2,0.8,0.1,1-0.2l3.2-5.2C39.5,16.6,39.5,16.4,39.5,16.2z"/>
+</svg>
