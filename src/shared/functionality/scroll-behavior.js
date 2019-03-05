@@ -1,7 +1,7 @@
 import VueScrollTo from 'vue-scrollto'
 
 const scrollBehavior = function (to, from) {
-  if (to.hash) {
+  if (to.hash && to.hash !== 'refer') {
     VueScrollTo.scrollTo(to.hash, { offset: 0, easing: 'ease-in' })
   } else {
     return { x: 0, y: 0 }

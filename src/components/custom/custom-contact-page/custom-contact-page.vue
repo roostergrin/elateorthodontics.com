@@ -16,6 +16,9 @@ export default {
     setTimeout(() => {
       this.showing = true
     }, 450)
+    if (this.$route.hash === '#refer') {
+      this.active = 1
+    }
   },
   methods: {
     setActive (i) {
