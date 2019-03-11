@@ -67,6 +67,9 @@
   &__image
     @include max-container
       background-position: top
+    @include tablet-lg
+      top: 75%
+      height: 50%
     position: absolute
     top: 50%
     left: 50%
@@ -142,11 +145,12 @@
     opacity: 0
 
     .block-scroll--transformed &
-      transition-delay: .25s
+      transition-delay: 0s
 
     .block-scroll__col-1--active &
       .block-scroll--active &
         opacity: 1
+        transition-delay: .35s
 
 
   &__body

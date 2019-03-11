@@ -1,4 +1,6 @@
 .custom-contact-page
+  @include tablet-lg
+    padding-top: 8rem
   position: absolute
   top: 0
   left: 0
@@ -101,6 +103,8 @@
   &__hours
     @include max-container
       display: none
+    @include tablet-lg
+      display: inline-block
     display: inline-block
     width: 50%
     vertical-align: top
