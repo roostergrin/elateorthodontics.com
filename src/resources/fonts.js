@@ -7,9 +7,14 @@
 var WebFont = require('webfontloader')
 
 const fonts = () => {
+  // WebFont.load({
+  //   google: {
+  //     families: [ 'Lato:300,400,500' ]
+  //   }
+  // })
   WebFont.load({
-    google: {
-      families: [ 'Lato:300,400,500' ]
+    typekit: {
+      id: 'vyu7jue'
     }
   })
 }
