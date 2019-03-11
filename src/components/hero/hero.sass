@@ -19,6 +19,9 @@
         @include svg-size(5rem, 5rem)
 
   &__hamburger
+    @include tablet-lg
+      top: 4rem
+      left: calc(100% - 6rem)
     position: fixed
     top: 50%
     left: 4rem
@@ -39,6 +42,7 @@
       top: 2px
       left: 0
       transition: opacity .1s ease-in
+      font-size: 16.5px
       content: 'menu'
 
     span
@@ -61,6 +65,8 @@
         top: calc(100% / 4 * 3.5)
 
     &--white
+      @include tablet-lg
+        top: calc(4rem + 3px)
       &:before
         display: none
       top: calc(50% + 3px)
@@ -81,8 +87,17 @@
           top: 50%
           transform: translate(-50%, -50%) rotate(-45deg)
 
+    &--contact
+      @include tablet-lg
+        color: $white
+        span
+          background: $white
+
   &__contact
     @extend .flex-end-center
+    @include tablet-lg
+      display: none
+      left: calc(100% - 5.5rem)
     position: fixed
     top: calc(50% + 2rem)
     left: 4.5rem
@@ -121,6 +136,8 @@
     height: 100%
 
     &-image
+      @include tablet-lg
+        background-position: 25%
       position: absolute
       top: 0
       left: 0
@@ -144,15 +161,27 @@
         .hero--home &
           transform: none
 
+      &--right
+        @include tablet-lg
+          background-position: 65%
+
+
   &__home
     @extend .flex-start-center
+    @include tablet-lg
+      top: 50%
+      right: 0
+      transform: translateY(-50%)
+      width: 40%
+    @include tablet
+      top: 45%
     position: absolute
     top: 45%
     right: 4.5rem
     flex-direction: column
     transition: opacity .45s .75s ease-in
     opacity: 0
-    color: $white
+    color: $cobalt-blue
     pointer-events: none
 
     .hero--active &
@@ -164,10 +193,13 @@
         pointer-events: all
 
     &-title
+      @include tablet
+        font-size: 2rem
       padding-bottom: 2rem
 
     &-button
       @include button-gradient
+      color: $white
 
   &__links
     @extend .flex-end-center
@@ -204,6 +236,8 @@
 
   &__drawer
     @extend .flex-start-center
+    @include tablet-lg
+      min-width: 0
     position: absolute
     top: 0
     right: 0
@@ -221,7 +255,6 @@
       z-index: 99
 
     &-title
-      @extend h2
       padding-bottom: 2rem
       text-transform: uppercase
       color: $cobalt-blue

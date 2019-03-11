@@ -3,12 +3,12 @@
     Icon.hero__logo-icon(name='elate-logo')
       
   .hero__background
-    .hero__background-image(v-for='(image, i) in content.heroes', :key="'hero-' + i", :style="{ backgroundImage: 'url(' + image.image + ')' }", :class="{ 'hero__background-image--active': hoveredPage === image.path, 'hero__background-image--trans': !menuOpen }")
+    .hero__background-image(v-for='(image, i) in content.heroes', :key="'hero-' + i", :style="{ backgroundImage: 'url(' + image.image + ')' }", :class="{ 'hero__background-image--active': hoveredPage === image.path, 'hero__background-image--trans': !menuOpen, 'hero__background-image--right': $route.path.includes('/treatments') || $route.path.includes('/get-started') }")
       
-  .hero__hamburger(:class="{ 'hero__hamburger--active': menuOpen }" @click='toggleMenu')
+  .hero__hamburger(:class="{ 'hero__hamburger--active': menuOpen, 'hero__hamburger--contact': $route.path.includes('/contact') }" @click='toggleMenu')
     span
     span
-  .hero__hamburger.hero__hamburger--white(:class="{ 'hero__hamburger--active': menuOpen }" @click='toggleMenu')
+  .hero__hamburger.hero__hamburger--white(:class="{ 'hero__hamburger--active': menuOpen, 'hero__hamburger--contact': $route.path.includes('/contact') }" @click='toggleMenu')
     span
     span
   
