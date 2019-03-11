@@ -9,8 +9,9 @@ export default {
     return {
       fullName: '',
       docName: '',
-      comments: '',
       clientEmail: '',
+      clientPhone: '',
+      comments: '',
       postUrl: api + '/rg-mail/v1/refer',
       formSubmitted: false,
       formSuccess: false
@@ -34,8 +35,9 @@ export default {
       axios.post(this.postUrl, {
         fullName: this.fullName,
         docName: this.docName,
-        comments: this.comments,
-        clientEmail: this.clientEmail
+        clientEmail: this.clientEmail,
+        clientPhone: this.clientPhone,
+        comments: this.comments
       })
         .then(res => {
           this.formSuccess = true
@@ -45,8 +47,9 @@ export default {
           }, 1500)
           this.fullName = ''
           this.docName = ''
-          this.comments = ''
           this.clientEmail = ''
+          this.clientPhone = ''
+          this.comments = ''
         })
         .catch(e => {
           console.log(e, 'submitted')

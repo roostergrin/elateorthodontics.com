@@ -25,6 +25,7 @@ function rg_serve_route () {
   $message = '<html><body>';
   $message .= '<p><h4><strong>Form Submission by: </strong></h4>' . $data['fullName'] . '</p>';
   $message .= '<p><h4><strong>Email: </strong></h4>' . $data['clientEmail'] . '</p>';
+  $message .= '<p><h4><strong>Phone: </strong></h4>' . $data['clientPhone'] . '</p>';
   $message .= '<p><h4><strong>Message:</strong></h4> ' . $data['comments'] . '</p>';
   $message .= '</body></html>';
 
@@ -71,6 +72,7 @@ function rg_serve_route_refer () {
   $message .= '<p><h4><strong>Form Submission by: </strong></h4>' . $data['fullName'] . '</p>';
   $message .= '<p><h4><strong>Referred by: </strong></h4>' . $data['docName'] . '</p>';
   $message .= '<p><h4><strong>Email: </strong></h4>' . $data['clientEmail'] . '</p>';
+  $message .= '<p><h4><strong>Phone: </strong></h4>' . $data['clientPhone'] . '</p>';
   $message .= '<p><h4><strong>Message:</strong></h4> ' . $data['comments'] . '</p>';
   $message .= '</body></html>';
 

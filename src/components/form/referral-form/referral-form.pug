@@ -10,20 +10,25 @@
         
   form.referral-form__form(@submit.prevent='validate', method='post', v-if='!formSubmitted')
     
-    .referral-form__group.referral-form__group--name
+    .referral-form__group.referral-form__group--half
       input.referral-form__input(name='fullName', v-model='fullName', v-validate="'required|alpha_spaces'", :class="{ 'referral-form__input--error': errors.has('fullName') }", type='text')
       label.referral-form__label(:class="{ 'referral-form__label--active': fullName }") Name
       .referral-form__message(v-show="errors.has('fullName')") Your name is required.
       
-    .referral-form__group.referral-form__group--name
+    .referral-form__group.referral-form__group--half
       input.referral-form__input(name='docName', v-model='docName', v-validate="'required|alpha_spaces'", :class="{ 'referral-form__input--error': errors.has('docName') }", type='text')
       label.referral-form__label(:class="{ 'referral-form__label--active': docName }") Doctor
       .referral-form__message(v-show="errors.has('docName')") Your name is required.
     
-    .referral-form__group
+    .referral-form__group.referral-form__group--half
       input.referral-form__input(name='clientEmail', v-model='clientEmail', v-validate="'required|email'", :class="{ 'input': true, 'referral-form__input--error': errors.has('clientEmail') }")
       label.referral-form__label(:class="{ 'referral-form__label--active': clientEmail }") E-mail
       .referral-form__message(v-show="errors.has('clientEmail')") Please Input a Valid E-mail
+    
+    .referral-form__group.referral-form__group--half
+      input.referral-form__input(name='clientPhone', v-model='clientPhone', v-validate="'required|email'", :class="{ 'input': true, 'referral-form__input--error': errors.has('clientPhone') }")
+      label.referral-form__label(:class="{ 'referral-form__label--active': clientPhone }") Phone
+      .referral-form__message(v-show="errors.has('clientPhone')") Please Input a Valid Phone Number, Only Numbers
     
     .referral-form__group.referral-form__group-message
       textarea.referral-form__input(name='comments', v-model='comments', v-validate="'required'", :class="{ 'input': true, 'referral-form__input--error': errors.has('comments') }")
