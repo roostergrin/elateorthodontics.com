@@ -32,7 +32,7 @@
         margin-left: 0
 
     &-2
-      min-height: 27rem
+      min-height: 20rem
       overflow: hidden
 
   &__image
@@ -89,10 +89,12 @@
 
 
   &__title
+    @include tablet-lg
+      padding-top: 0
     transform: translateX(2rem)
     transition: transform .35s ease-in, opacity .35s ease-in
     opacity: 0
-    padding: 4rem 0 2rem
+    padding: 2rem 0
     text-transform: uppercase
     color: $cobalt-blue
     transition-delay: .45s
@@ -105,11 +107,15 @@
       opacity: 1
 
   &__body
+    @include max-container
+      top: 8rem
+    @include tablet-lg
+      top: 6rem
     @include phone-lg
-      top: 10rem
+      top: 7rem
       max-width: none
     position: absolute
-    top: 9rem
+    top: 6rem
     transform: translateY(1rem)
     transition: transform .55s ease-in, opacity .55s ease-in, line-height .55s ease-in
     opacity: 0

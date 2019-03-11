@@ -5,7 +5,6 @@
       .block-text-image__image
         .block-text-image__image-container
           .block-text-image__image-image(:style="{ backgroundImage: 'url(' + content.image + ')', transform: 'scale(' + this.percentage + ')' }")
-        .block-text-image__image-background(:style="{ backgroundImage: 'url(' + content.image_background + ')', transform: 'translateX(' + transform + '%)' }")
     .block-text-image__col.block-text-image__col-2
       h2.block-text-image__title(v-html='content.title')
       .block-text-image__body(v-html='content.body')

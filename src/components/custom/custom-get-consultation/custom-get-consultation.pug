@@ -6,7 +6,6 @@
       .custom-get-consultation__image
         .custom-get-consultation__image-container
           .custom-get-consultation__image-image(:style="{ backgroundImage: 'url(' + content.image + ')', transform: 'scale(' + this.percentage + ')' }")
-        .custom-get-consultation__image-background(:style="{ backgroundImage: 'url(' + content.image_background + ')', transform: 'translateX(' + transform + '%)' }")
     .custom-get-consultation__col.custom-get-consultation__col-2
       .custom-get-consultation__body(v-html='content.body')
       .custom-get-consultation__tile(v-for='(tile, i) in content.tiles', :key='"tile - " + i', :style="{ transitionDelay: i * .15 + .85 + 's'}")
