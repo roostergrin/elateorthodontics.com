@@ -6,7 +6,7 @@ import VueParallaxJS from 'vue-parallax-js'
 
 const vendors = () => {
   Vue.use(VeeValidate)
-  Vue.use(VueParallaxJS, {minWidth: 1024})
+  Vue.use(VueParallaxJS, {minWidth: 768})
   Vue.use(VueWaypoint)
   Vue.use(VueScrollTo, {
     container: 'body',
