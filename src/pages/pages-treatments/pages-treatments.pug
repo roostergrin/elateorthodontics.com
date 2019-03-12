@@ -1,3 +1,5 @@
 .pages-treatments(v-if='props')
   BlockTextImage#invisalign(:content='props.text_image', :alt='true')
-  BlockScrollOverlap(:content='props.scroll_overlap', :alt='true')
+  BlockOverlap(:content='props.scroll_overlap', :alt='true')
+  BlockOverlapTablet(:content='props.scroll_overlap', :alt='true')
+  BlockOverlapMobile(:content='props.scroll_overlap')

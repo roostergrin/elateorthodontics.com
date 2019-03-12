@@ -1,3 +1,5 @@
 .pages-home(v-if='props')
   BlockScroll#doctors(:content='props.scroll')
+  BlockScrollTablet#doctors(:content='props.scroll')
+  BlockScrollMobile#doctors(:content='props.scroll')
   CustomAboutTour#office(:content='props.tour')

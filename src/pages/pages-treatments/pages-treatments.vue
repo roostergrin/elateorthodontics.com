@@ -1,7 +1,9 @@
 <template lang="pug" src="./pages-treatments.pug"></template>
 
 <script>
-import BlockScrollOverlap from 'components/block/block-scroll-overlap/block-scroll-overlap'
+import BlockOverlap from 'components/block/block-overlap/block-overlap'
+import BlockOverlapMobile from 'components/block/block-overlap-mobile/block-overlap-mobile'
+import BlockOverlapTablet from 'components/block/block-overlap-tablet/block-overlap-tablet'
 import BlockTextImage from 'components/block/block-text-image/block-text-image'
 
 export default {
@@ -12,7 +14,9 @@ export default {
     }
   },
   components: {
-    BlockScrollOverlap,
+    BlockOverlap,
+    BlockOverlapMobile,
+    BlockOverlapTablet,
     BlockTextImage
   }
 }

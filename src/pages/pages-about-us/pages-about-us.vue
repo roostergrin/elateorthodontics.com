@@ -2,6 +2,8 @@
 
 <script>
 import BlockScroll from 'components/block/block-scroll/block-scroll'
+import BlockScrollMobile from 'components/block/block-scroll-mobile/block-scroll-mobile'
+import BlockScrollTablet from 'components/block/block-scroll-tablet/block-scroll-tablet'
 import CustomAboutTour from 'components/custom/custom-about-tour/custom-about-tour'
 
 export default {
@@ -13,6 +15,8 @@ export default {
   },
   components: {
     BlockScroll,
+    BlockScrollMobile,
+    BlockScrollTablet,
     CustomAboutTour
   }
 }
