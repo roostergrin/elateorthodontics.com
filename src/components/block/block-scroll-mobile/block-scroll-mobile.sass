@@ -1,0 +1,12 @@
+.block-scroll-mobile
+  @include phone-lg
+    display: block
+  display: none
+
+  &__container
+    @extend .container
+
+  &__content,
+  &__images,
+  &__tabs
+    @extend .col-12
