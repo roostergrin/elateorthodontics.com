@@ -32,11 +32,6 @@ export default {
       this.currentPage = document.location.pathname
       this.hoveredPage = document.location.pathname
       this.hoveredSection = null
-      if (this.$route.path.includes('/contact')) {
-        document.body.classList.add('body-stop')
-      } else {
-        document.body.classList.remove('body-stop')
-      }
     }
   },
   mounted () {
@@ -73,6 +68,9 @@ export default {
     },
     setHovered (i) {
       this.hoveredPage = i
+    },
+    scrollTo (i) {
+      VueScrollTo.scrollTo(i)
     },
     toggleMenu () {
       if (window.pageYOffset > 0) {
