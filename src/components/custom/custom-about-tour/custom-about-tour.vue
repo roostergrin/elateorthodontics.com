@@ -34,11 +34,11 @@ export default {
       let halfOffset = (this.$refs.tour.offsetTop - window.pageYOffset) / 10000
 
       if (halfContainerHeight >= windowTopOffest && topHalf) {
-        this.percentage = 0.95 + ((0.1 - halfOffset) * 2)
+        this.percentage = 1 + ((0.1 - halfOffset) * 2)
       }
 
       if (halfContainerHeight >= windowTopOffest && bottomHalf) {
-        this.percentage = 0.95 + ((0.1 - halfOffset) * 2)
+        this.percentage = 1 + ((0.1 - halfOffset) * 2)
       }
     }
   }
