@@ -1,4 +1,6 @@
 .block-scroll
+  @include tablet-lg
+    display: none
   position: relative
   overflow: hidden
 
@@ -67,9 +69,6 @@
   &__image
     @include max-container
       background-position: top
-    @include tablet-lg
-      top: 75%
-      height: 50%
     position: absolute
     top: 50%
     left: 50%
