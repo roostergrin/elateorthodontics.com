@@ -39,3 +39,16 @@
     .hero__tagline-textbox
       .hero__tagline-text(v-html='tagline.tagline')
       .hero__tagline-line
+  
+  .hero__mobile
+    a.hero__mobile-link.hero__mobile-link-1(v-for='(contact, i) in content.social_bar', :key="'mobile-' + i", :href='contact.href' v-if='i !== 1')
+      Icon.hero__mobile-icon(:name='contact.icon')
+    router-link.hero__mobile-link.hero__mobile-link-2(v-for='(contact, i) in content.social_bar', :key="'mobile-' + i", :to='contact.href' v-if='i === 1')
+      Icon.hero__mobile-icon(:name='contact.icon')
+    .hero__mobile-home
+      router-link.hero__mobile-button(:to='content.home.button.to')
+        .hero__mobile-button-overlay
+        .hero__mobile-button-label(v-html='content.home.button.label')
+      .hero__mobile-welcome(v-html='content.mobile.home_text')
+    .hero__mobile-drawer
+      
