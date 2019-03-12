@@ -1,4 +1,4 @@
-<template lang="pug" src="./block-scroll-overlap.pug"></template>
+<template lang="pug" src="./block-overlap.pug"></template>
 
 <script>
 import VueScrollTo from 'vue-scrollto'
