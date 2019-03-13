@@ -12,9 +12,7 @@ export default {
       },
       active: 0,
       showing: false,
-      transformed: false,
-      fixed: false,
-      positionBottom: false
+      transformed: false
     }
   },
   methods: {
@@ -26,16 +24,11 @@ export default {
         }, 1250)
       }
     },
+    setActive (i) {
+      this.active = i
+    },
     cleanStr (i) {
       return i.toLowerCase().replace(/[.,/#!$%^&*;:{}=\-_`~()\s]/g, '')
-    },
-    onWaypoint ({going, direction, _entry}, i) {
-      if (going === 'out' && direction === 'bottom') {
-        this.active -= 1
-      }
-      if (going === 'in' && direction === 'top') {
-        this.active += 1
-      }
     }
   }
 }

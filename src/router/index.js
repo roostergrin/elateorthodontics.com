@@ -29,11 +29,13 @@ const router = new VueRouter({
       children: [
         {
           path: '/about-us#doctors',
-          name: 'Meet The Doctors'
+          name: 'Meet The Doctors',
+          hash: '#doctors'
         },
         {
           path: '/about-us#office',
-          name: 'Office Tour'
+          name: 'Office Tour',
+          hash: '#office'
         }
       ]
     },
@@ -45,15 +47,18 @@ const router = new VueRouter({
       children: [
         {
           path: '/treatments#invisalign',
-          name: 'Invisalign'
+          name: 'Invisalign',
+          hash: '#invisalign'
         },
         {
           path: '/treatments#metal',
-          name: 'Metal'
+          name: 'Metal',
+          hash: '#metal'
         },
         {
           path: '/treatments#ceramic',
-          name: 'Ceramic'
+          name: 'Ceramic',
+          hash: '#ceramic'
         }
       ]
     },
@@ -65,15 +70,18 @@ const router = new VueRouter({
       children: [
         {
           path: '/get-started#complimentary',
-          name: 'Complimentary Consultation'
+          name: 'Complimentary Consultation',
+          hash: '#complimentary'
         },
         {
           path: '/get-started#forms',
-          name: 'Patient Forms'
+          name: 'Patient Forms',
+          hash: '#forms'
         },
         {
           path: '/get-started#financing',
-          name: 'Innovative Financing'
+          name: 'Innovative Financing',
+          hash: '#financing'
         }
       ]
     },

@@ -31,6 +31,8 @@
     &-1
       @include tablet-lg
         min-height: 25rem
+      @include phone-lg
+        min-height: 15rem
       min-height: 20rem
       .block-text-image--alt &
         margin-left: 0
@@ -39,6 +41,9 @@
       @include tablet-lg
         min-height: 25rem
         overflow: visible
+      @include phone-lg
+        .pages-treatments &
+          min-height: 0
       min-height: 20rem
       overflow: hidden
 
@@ -98,6 +103,9 @@
   &__title
     @include tablet-lg
       padding-top: 0
+    @include phone-lg
+      transform: translateY(2rem)
+      padding: 2rem 0
     transform: translateX(2rem)
     transition: transform .35s ease-in, opacity .35s ease-in
     opacity: 0
@@ -119,8 +127,11 @@
     @include tablet-lg
       top: 6rem
     @include phone-lg
-      top: 7rem
+      position: static
       max-width: none
+      line-height: inherit
+      .pages-treatments &
+        padding-bottom: 0
     position: absolute
     top: 6rem
     transform: translateY(1rem)

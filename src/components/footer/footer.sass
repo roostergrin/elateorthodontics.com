@@ -4,6 +4,9 @@
   overflow: hidden
 
   &__contact
+    @include phone-lg
+      padding-bottom: 10rem
+      text-align: center
     padding: 3rem 0
     color: $warm-grey
 
@@ -21,6 +24,11 @@
         color: $cobalt-blue
 
     &-rg
+      @include phone-lg
+        bottom: 8.5rem
+        left: 0
+        width: 100%
+        text-align: center
       position: absolute
       bottom: 1rem
       left: 2rem
@@ -31,6 +39,9 @@
         color: $cobalt-blue
 
   &__social
+    @include tablet
+      width: 12.5rem
+      height: 12.5rem
     position: absolute
     top: 95%
     right: 50%

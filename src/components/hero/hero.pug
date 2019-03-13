@@ -1,4 +1,4 @@
-.hero(v-if='content && props', :class="{ 'hero--home': $route.path === '/', 'hero--showing': showing, 'hero--active': active }")
+.hero(v-if='content && props', :class="{ 'hero--home': $route.path === '/', 'hero--contact': $route.path.includes('/contact'), 'hero--showing': showing, 'hero--active': active }")
   router-link.hero__logo(to='/' @click.native='setPageHome("/")')
     Icon.hero__logo-icon(name='elate-logo')
       
@@ -40,7 +40,7 @@
       .hero__tagline-text(v-html='tagline.tagline')
       .hero__tagline-line
   
-  .hero__mobile(:class="{ 'hero__mobile--contact': $route.path.includes('/contact') }")
+  .hero__mobile(:class="{ 'hero__mobile--contact': $route.path.includes('/contact'), 'hero__mobile--home': $route.path === '/' }")
     a.hero__mobile-link.hero__mobile-link-1(v-for='(contact, i) in content.social_bar', :key="'mobile-' + i", :href='contact.href' v-if='i !== 1')
       Icon.hero__mobile-icon(:name='contact.icon')
     router-link.hero__mobile-link.hero__mobile-link-2(v-for='(contact, i) in content.social_bar', :key="'mobile-' + i", :to='contact.href' v-if='i === 1')
@@ -51,6 +51,8 @@
         .hero__mobile-button-overlay
         .hero__mobile-button-label(v-html='content.home.button.label')
       .hero__mobile-welcome(v-html='content.mobile.home_text')
+    
+    CustomContactPage(:content='props.page' v-if='$route.path.includes("/contact")')
         
     .hero__mobile-pages(v-if='page.navigation' v-for='(page, i) in links', :key="'page-' + i", :class="{ 'hero__mobile-pages--active': currentPage === page.path }")
       h2.hero__mobile-title(v-html='page.name')

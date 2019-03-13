@@ -3,11 +3,13 @@
   .block-scroll-mobile__anchor(v-for='(item, i) in content', :key='"anchor - " + i', :id='cleanStr(item.title)')
   .block-scroll-mobile__container
     .block-scroll-mobile__tabs
-      .block-scroll-mobile__tab(v-for='(tab, i) in content', :key="'tab-' + (i + 1)", :class="{ 'block-scroll-mobile__content--active': active === i }" @click='setActive(i)' v-html='tab.title')
-    .block-scroll-mobile__content(v-for='(tile, i) in content', :key="'tile-' + (i + 1)", :class="{ 'block-scroll-mobile__content--active': active === i }")
-      .block-scroll-mobile__tile(:class="{ 'block-scroll-mobile__tile--active': active === i }")
+      .block-scroll-mobile__tab(v-for='(tab, i) in content', :key="'tab-' + (i + 1)", :class="{ 'block-scroll-mobile__tab--active': active === i }" @click='setActive(i)' v-html='tab.title')
+    .block-scroll-mobile__images
+      .block-scroll-mobile__background(:class="{ 'block-scroll-mobile__background--active': active === 1 }")
+      .block-scroll-mobile__image(:class="{ 'block-scroll-mobile__image--active': active === 1 }")
+        .block-scroll-mobile__image-actual(v-for='(tile, i) in content', :key="'tile-' + (i + 1)", :class="{ 'block-scroll-mobile__image-actual--active': active === i }", :style="{ backgroundImage: 'url(' + tile.image + ')' }", role='img', aria-label='Doctors and their Children')
+    .block-scroll-mobile__content
+      .block-scroll-mobile__text-box(v-for='(tile, i) in content', :key="'tile-' + (i + 1)", :class="{ 'block-scroll-mobile__text-box--active': active === i }")
         .block-scroll-mobile__body(v-html='tile.body')
         router-link.block-scroll-mobile__button(:to='tile.button.href' v-if='tile.button.href')
-          .block-scroll-mobile__button-click(v-html='tile.button.label')
-      .block-scroll-mobile__col-2
-        .block-scroll-mobile__image(:style="{ backgroundImage: 'url(' + tile.image + ')' }", :class="{ 'block-scroll-mobile__image--active': active === i }" role='img', aria-label='Doctors and their Children')
+          .block-scroll-mobile__button-click(v-html='"..." + tile.button.label')

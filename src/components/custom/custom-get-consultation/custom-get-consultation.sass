@@ -23,8 +23,9 @@
     @extend .col-1--offset
     position: relative
 
-
     &-1
+      @include phone-lg
+        min-height: 15rem
       transition: opacity .35s .35s ease-in
       opacity: 0
       margin-left: 0
@@ -77,6 +78,8 @@
   &__title
     @extend .col-11
     @extend .col-1--offset
+    @include phone-lg
+      padding-bottom: 2rem
     transform: translateX(-2rem)
     transition: transform .35s ease-in, opacity .35s ease-in
     opacity: 0
@@ -89,6 +92,8 @@
       opacity: 1
 
   &__body
+    @include phone-lg
+      padding-top: 2rem
     transform: translateX(-2rem)
     transition: transform .35s .7s ease-in, opacity .35s .7s ease-in
     opacity: 0

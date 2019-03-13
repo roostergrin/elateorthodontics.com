@@ -10,3 +10,98 @@
   &__images,
   &__tabs
     @extend .col-12
+
+  &__tabs
+    @extend .flex-center
+    display: flex
+    padding-bottom: 2rem
+
+  &__tab
+    @extend h3
+    @include phone-lg
+      font-size: 1.75rem
+    @include phone
+      font-size: 1.25rem
+    padding-right: .5rem
+    color: $warm-grey
+
+    &--active
+      color: $black
+
+    &:after
+      padding-left: .5rem
+      color: $black
+      content: '|'
+
+    &:last-child
+      &:after
+        display: none
+
+  &__images
+    position: relative
+    min-height: 12.5rem
+
+  &__image
+    position: absolute
+    top: 0
+    left: 1rem
+    transition: left .5s ease-in
+    background-repeat: no-repeat
+    background-position: center 10%
+    background-size: cover
+    width: 55%
+    height: 100%
+
+    &--active
+      left: calc(45% - 1rem)
+      opacity: 1
+
+    &-actual
+      position: absolute
+      top: 0
+      left: 0
+      transition: left .5s ease-in
+      background-repeat: no-repeat
+      background-position: center 10%
+      background-size: cover
+      width: 100%
+      height: 100%
+
+  &__background
+    position: absolute
+    top: 50%
+    left: 30%
+    transform: translateY(-50%)
+    transition: transform .5s ease-in
+    background-image: url('https://d26tmduemto9nk.cloudfront.net/white_texture.jpg')
+    background-repeat: no-repeat
+    background-position: center 10%
+    background-size: cover
+    width: 50%
+    height: 80%
+
+    &--active
+      transform: translateY(-50%) translateX(-20%)
+
+  &__content
+    position: relative
+    margin-top: 2rem
+    min-height: 20rem
+
+    .pages-about-us &
+      min-height: 15rem
+
+  &__text-box
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translateX(-50%)
+    transition: opacity .25s ease-in
+    opacity: 0
+    width: calc(100% - #{$gutter})
+    height: 100%
+    pointer-events: none
+
+    &--active
+      opacity: 1
+      pointer-events: all

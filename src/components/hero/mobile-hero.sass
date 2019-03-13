@@ -1,12 +1,16 @@
 .hero
   @include tablet
     margin-bottom: 4rem
+  @include phone-lg
+    margin: 0
+    &--contact
+      height: 150vh
 
   &__logo
     @include phone-lg
       top: 1rem
       left: 1rem
-      z-index: 999
+      z-index: 99999
 
     &-icon
       @include phone-lg
@@ -16,7 +20,7 @@
     @include tablet-lg
       top: 2rem
       left: calc(100% - 4rem)
-      z-index: 9999
+      z-index: 99999
     @include phone-lg
       top: 3rem
 
@@ -24,15 +28,20 @@
       @include phone-lg
         display: none
 
+    &--contact
+      @include tablet-lg
+        color: $white
+        span
+          background: $white
+      @include phone-lg
+        span
+          background: $cobalt-blue
+
     &--white
       @include tablet-lg
         top: calc(2rem + 3px)
       @include phone-lg
         top: calc(3rem + 3px)
-
-    &--contact
-      @include tablet-lg
-        color: $white
         span
           background: $white
 
@@ -47,7 +56,7 @@
 
   &__background
     @include phone-lg
-      height: 50%
+      height: 50vh
 
     &-image
       @include tablet-lg
@@ -100,9 +109,11 @@
   &__mobile
     @include phone-lg
       display: block
+      &--contact
+        height: 100vh
     display: none
     position: absolute
-    top: 50%
+    top: 50vh
     left: 0
     padding: 0 2rem
     width: 100%
@@ -110,6 +121,7 @@
 
     &-link
       @include svg-size(2.5rem, 2.5rem)
+      display: none
       position: absolute
       bottom: 2rem
       z-index: 9999
@@ -121,6 +133,9 @@
 
       &-2
         right: 2rem
+
+      .hero__mobile--home &
+        display: block
 
     &-home
       @extend .flex-center
@@ -158,9 +173,9 @@
       left: 0
       transform: translateY(-100%)
       transition: transform .75s ease-in
-      z-index: 99
+      z-index: 9999
       width: 100%
-      height: 100%
+      height: 100vh
 
       &--active
         transform: translateY(0)
@@ -199,6 +214,7 @@
       height: 100%
 
     &-title
+      padding-bottom: 1rem
       text-align: center
       text-transform: uppercase
       color: $cobalt-blue
@@ -212,7 +228,7 @@
 
     &-pages
       position: absolute
-      top: 40%
+      top: 50%
       left: 50%
       transform: translate(-50%, -50%)
       transition: opacity .25s ease-in

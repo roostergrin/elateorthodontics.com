@@ -9,6 +9,7 @@ import BlockScrollMobile from 'components/block/block-scroll-mobile/block-scroll
 import BlockScrollTablet from 'components/block/block-scroll-tablet/block-scroll-tablet'
 import BlockTextImage from 'components/block/block-text-image/block-text-image'
 import CustomHomeTestimonials from 'components/custom/custom-home-testimonials/custom-home-testimonials'
+import CustomHomeTreatments from 'components/custom/custom-home-treatments/custom-home-treatments'
 import CustomHomeWelcome from 'components/custom/custom-home-welcome/custom-home-welcome'
 
 export default {
@@ -27,6 +28,7 @@ export default {
     BlockScrollTablet,
     BlockTextImage,
     CustomHomeTestimonials,
+    CustomHomeTreatments,
     CustomHomeWelcome
   }
 }
