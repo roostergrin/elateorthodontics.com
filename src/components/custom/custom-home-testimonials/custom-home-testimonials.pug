@@ -7,5 +7,14 @@
     .custom-home-testimonials__content(v-for='(textbox, i) in content', :key="'textbox - ' + (i + 1)", :class="{ 'custom-home-testimonials__content--active': activeSlide === i }")
       Icon.custom-home-testimonials__quote-left(name='quoteLft')
       .custom-home-testimonials__body(v-html='textbox.body')
+      .custom-home-testimonials__body.custom-home-testimonials__body--mobile(v-html='truncText(textbox.body)')
+      .custom-home-testimonials__modal-button(@click='toggleModal') Read More
       .custom-home-testimonials__name(v-html='textbox.name')
       Icon.custom-home-testimonials__quote-right(name='quoteRt')
+  
+  .custom-home-testimonials__modal(:class="{ 'custom-home-testimonials__modal--active': modalShowing }")
+    .custom-home-testimonials__modal-overlay(@click='toggleModal')
+    .custom-home-testimonials__modal-close(@click='toggleModal') Close
+    .custom-home-testimonials__modal-content(v-for='(textbox, i) in content', :key="'textbox - ' + (i + 1)", :class="{ 'custom-home-testimonials__modal-content--active': activeSlide === i }")
+      .custom-home-testimonials__body.custom-home-testimonials__body--mobile(v-html='textbox.body')
+      .custom-home-testimonials__name.custom-home-testimonials__name--mobile(v-html='textbox.name')

@@ -2,6 +2,9 @@
   @include tablet-lg
     margin: 4rem 0
     min-height: 55rem
+  @include phone-lg
+    margin: 4rem 0 0
+    min-height: 35rem
   position: relative
   padding: 4rem 0
   min-height: 40rem
@@ -29,6 +32,8 @@
     max-width: calc(#{$screen-desktop} / 2)
 
     .custom-home-testimonials--showing &
+      @include phone-lg
+        transform: translateX(-50%)
       transform: none
       opacity: 1
 
@@ -36,7 +41,14 @@
     @include tablet-lg
       top: 2rem
       height: 50%
-    transform: translateX(-2rem)
+    @include phone-lg
+      top: 0
+      left: 45%
+      transform: translateX(-50%)
+      z-index: 2
+      width: 75%
+      height: 35%
+    transform: translateY(-2rem)
     transition: transform .35s ease-in, opacity .35s ease-in
 
   &__text-box
@@ -45,6 +57,18 @@
       left: 15%
       width: 85%
       height: 50%
+    @include phone-lg
+      top: 35%
+      left: 50%
+      transform: translateX(-50%)
+      width: calc(100% - 6rem)
+      height: 65%
+    @include phone
+      top: 35%
+      left: 50%
+      transform: translateX(-50%)
+      width: calc(100% - 4rem)
+      height: 65%
     left: 50%
     transform: none
     transition: opacity .25s ease-in
@@ -69,6 +93,10 @@
 
   &__button
     @extend .p2
+    @include phone-lg
+      right: -10%
+      bottom: -1rem
+      padding: 1.25rem 2rem
     position: absolute
     right: 0
     bottom: 0
@@ -87,6 +115,8 @@
   &__content
     @include tablet-lg
       padding: 3rem
+    @include phone-lg
+      padding: 0 1rem
     position: absolute
     top: 50%
     left: 50%
@@ -101,9 +131,29 @@
       opacity: 1
       pointer-events: all
 
+  &__body
+    @include phone-lg
+      display: none
+    display: inline
+
+    &--mobile
+      @include phone-lg
+        display: block
+      display: none
+
+  &__modal-button
+    @include phone-lg
+      display: inline
+    display: none
+    color: $cobalt-blue
+
   &__name
+    @include phone-lg
+      padding-top: 1rem
+      padding-right: 0
     padding-top: 2rem
     padding-right: 3rem
+    width: 100%
     text-align: right
 
   &__quote-left,
@@ -111,6 +161,8 @@
     @include svg-size(5rem, 5rem)
     @include tablet-lg
       @include svg-size(3rem, 3rem)
+    @include phone-lg
+      display: none
     position: absolute
     top: 0
     left: 4rem
@@ -119,3 +171,48 @@
   &__quote-right
     right: 4rem
     left: auto
+
+  &__modal
+    position: fixed
+    top: 0
+    left: 0
+    transition: opacity .35s ease-in
+    opacity: 0
+    z-index: 9999
+    width: 100%
+    height: 100%
+    pointer-events: none
+
+    &--active
+      opacity: 1
+      pointer-events: all
+
+    &-overlay
+      position: absolute
+      top: 0
+      left: 0
+      background: $cobalt-blue-85
+      width: 100%
+      height: 100%
+
+    &-close
+      position: absolute
+      top: 2rem
+      right: 2rem
+      color: $white
+
+    &-content
+      @extend .flex-center
+      display: none
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      padding: 2rem 1rem
+      width: calc(100% - 2rem)
+      height: auto
+      color: $white
+
+      &--active
+        display: flex
+        flex-direction: column
