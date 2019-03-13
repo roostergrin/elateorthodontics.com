@@ -1,15 +1,11 @@
-.block-overlap-mobile(:class="{ 'block-overlap-mobile--alt': alt, 'block-overlap-mobile--active': showing, 'block-overlap-mobile--transformed': transformed }" ref='component')
-  .block-overlap-mobile__waypoint.block-overlap-mobile__waypoint--in(v-waypoint="{ active: true, callback: onWaypointIn, options: intersectionOptions }")
-  .block-overlap-mobile__anchor(v-for='(item, i) in content.scroll', :key='"anchor - " + i', :id='cleanStr(item.title)')
-  .block-overlap-mobile__scroll(:class="{ 'block-overlap-mobile__scroll--fixed': showing }")
-    h2.block-overlap-mobile__section-title(v-html='content.title')
-    .block-overlap-mobile__content(v-for='(section, i) in content.scroll', :key="'section-' + (i + 1)", :class="{ 'block-overlap-mobile__content--active': active === i }")
-      .block-overlap-mobile__image(:style="{ backgroundImage: 'url(' + section.image + ')' }", :class="{ 'block-overlap-mobile__image--active': active === i }" role='img', :aria-label='"treatment image " + (i + 1)')
-      .block-overlap-mobile__container
-        .block-overlap-mobile__col-1(:class="{ 'block-overlap-mobile__col-1--active': active === i }", :style="{ top: 2 * (i + 1) + 'rem' }")
-          h3.block-overlap-mobile__title(:class="{ 'block-overlap-mobile__title--active': showing }")
-            .block-overlap-mobile__title-text(v-html='section.title', :style="{ transition: 'opacity .45s ' + (.75 + (.15 * i)) + 's ease-in'  }" @click='setActive(i)')
-            .block-overlap-mobile__title-line(:style="{ transition: transformed ? 'transform .35s .35s ease-in' : 'transform .45s ' + (.75 + (.15 * content.scroll.length)) + 's ease-in' }")
-          .block-overlap-mobile__body(v-html='section.body', :style="{ transitionDelay: transformed ? 'inherit' : .75 + (.15 * content.scroll.length) + 's' }")
-          router-link.block-overlap-mobile__button(:to='section.button.href' v-if='section.button.href', :style="{ transitionDelay: transformed ? 'inherit' : .75 + (.15 * content.scroll.length) + 's' }")
-            .block-overlap-mobile__button-click(v-html='section.button.label')
+.block-overlap-mobile(:class="{ 'block-overlap-mobile--active': active }" ref='component')
+  .block-overlap-mobile(v-for='(section, i) in content.scroll', :key="'section -' + i", :id="section.title")
+    .block-overlap-mobile__waypoint(v-waypoint='{ active: true, callback: onWaypoint, options: intersectionOptions }' v-if='loaded')
+    .block-overlap-mobile__container
+      .block-overlap-mobile__col.block-overlap-mobile__col-1
+        .block-overlap-mobile__image
+          .block-overlap-mobile__image-container
+            .block-overlap-mobile__image-image(:style="{ backgroundImage: 'url(' + section.image + ')', transform: 'scale(' + percentage + ')' }")
+      .block-overlap-mobile__col.block-overlap-mobile__col-2
+        h2.block-overlap-mobile__title(v-html='section.title')
+        .block-overlap-mobile__body(v-html='section.body')
