@@ -1,0 +1,7 @@
+.custom-home-treatments
+  .custom-home-treatments__background(v-for='(background, i) in content.scroll', :key="'background - ' + i", :style="{ backgroundImage: 'url(' + background.image + ')' }")
+  .custom-home-treatments__container
+    .custom-home-treatments__col
+      h2.custom-home-treatments__title(v-html='content.title')
+    .custom-home-treatments__col.custom-home-treatments__col--body
+      router-link.custom-home-treatments__link(v-for='(link, i) in content.scroll', :key="'link - ' + i", :to='link.button.href' v-html='link.title')
