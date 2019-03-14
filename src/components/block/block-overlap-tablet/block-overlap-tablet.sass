@@ -1,11 +1,14 @@
 .block-overlap-tablet
   @include tablet-lg
-    display: block
+    visibility: visible
+    height: auto !important
   @include phone-lg
-    display: none
-  display: none
+    visibility: hidden
+    height: 0 !important
   position: relative
   transition: opacity .35s ease-in
+  visibility: hidden
+  height: 0 !important
   overflow: hidden
 
   &--scrolling

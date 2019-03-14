@@ -73,10 +73,7 @@
     left: 30%
     transform: translateY(-50%)
     transition: transform .5s ease-in
-    background-image: url('https://d26tmduemto9nk.cloudfront.net/white_texture.jpg')
-    background-repeat: no-repeat
-    background-position: center 10%
-    background-size: cover
+    background: $black-50
     width: 50%
     height: 80%
 
@@ -84,6 +81,8 @@
       transform: translateY(-50%) translateX(-20%)
 
   &__content
+    @include phone
+      min-height: 25rem
     position: relative
     margin-top: 2rem
     min-height: 20rem

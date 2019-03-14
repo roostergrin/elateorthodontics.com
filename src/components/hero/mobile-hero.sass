@@ -8,9 +8,12 @@
 
   &__logo
     @include phone-lg
-      top: 1rem
+      top: 1.5rem
       left: 1rem
       z-index: 99999
+    @include phone-land-lg
+      top: 1rem
+      left: 1rem
 
     &-icon
       @include phone-lg
@@ -18,15 +21,11 @@
 
   &__hamburger
     @include tablet-lg
-      top: 2rem
+      top: 3rem
       left: calc(100% - 4rem)
       z-index: 99999
-    @include phone-lg
-      top: 3rem
-
-    &:before
-      @include phone-lg
-        display: none
+    @include phone
+      top: 2.5rem
 
     &--contact
       @include tablet-lg
@@ -39,11 +38,12 @@
 
     &--white
       @include tablet-lg
-        top: calc(2rem + 3px)
-      @include phone-lg
         top: calc(3rem + 3px)
+      @include phone-lg
         span
           background: $white
+      @include phone
+        top: calc(2.5rem + 3px)
 
   &__contact
     @include tablet-lg
@@ -172,7 +172,7 @@
       top: 0
       left: 0
       transform: translateY(-100%)
-      transition: transform .75s ease-in
+      transition: transform .5s ease-in
       z-index: 9999
       width: 100%
       height: 100vh
