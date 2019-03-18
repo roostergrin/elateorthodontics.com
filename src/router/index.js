@@ -74,11 +74,6 @@ const router = new VueRouter({
           hash: '#complimentary'
         },
         {
-          path: '/get-started#forms',
-          name: 'Patient Forms',
-          hash: '#forms'
-        },
-        {
           path: '/get-started#financing',
           name: 'Innovative Financing',
           hash: '#financing'
