@@ -12,13 +12,6 @@
 </style>
 <title>elate-logo</title>
 <radialGradient id="rad-grad-1" cx="808.5" cy="809.5" r="806.15" gradientTransform="matrix(1 0 0 -1 -1.86 1616.14)" gradientUnits="userSpaceOnUse">
-	<stop  offset="0" style="stop-color:#000000"/>
-	<stop  offset="0" style="stop-color:#040513"/>
-	<stop  offset="0" style="stop-color:#0A0C32"/>
-	<stop  offset="0" style="stop-color:#0F134E"/>
-	<stop  offset="0" style="stop-color:#141864"/>
-	<stop  offset="0" style="stop-color:#171C75"/>
-	<stop  offset="0" style="stop-color:#191F80"/>
 	<stop  offset="0" style="stop-color:#08358E"/>
 	<stop  offset="0.2888" style="stop-color:#072E83"/>
 	<stop  offset="0.398" style="stop-color:#062B7D"/>
