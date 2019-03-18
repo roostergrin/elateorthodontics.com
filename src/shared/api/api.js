@@ -1,4 +1,4 @@
-const route = 'https://elateorthodontics.roostertest3.com/wp-json'
+const route = 'https://elateorthodontic.com/wp-json'
 
 const api = () => {
   return route
