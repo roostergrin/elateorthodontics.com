@@ -1,4 +1,12 @@
-.custom-about-tour(ref='tour')
+//- .custom-about-tour(ref='tour', :class="{ 'custom-about-tour--showing': showing, 'custom-about-tour--active': active }")
+#tour.custom-about-tour(ref='tour')
   .custom-about-tour__container
     .custom-about-tour__background(:style="{ backgroundImage: 'url(' + content.background + ')', transform: 'translate(-50%, -50%) scale(' + this.percentage + ')' }")
+    //- h2.custom-about-tour__title(v-html='content.title', :class="{ 'custom-about-tour__title--active': menuOpen }" @click='toggleMenu')
     h2.custom-about-tour__title(v-html='content.title')
+
+    .custom-about-tour__links(:class="{ 'custom-about-tour__links--active': menuOpen }")
+      .custom-about-tour__office_photos(v-for='(content, i) in content.office_photos ', :key="'office_photos-' + i")
+        .custom-about-tour__icon
+          .custom-about-tour__icon-holder(v-html='content.image')
+        //- .custom-about-tour__image(v-html='content.image')

@@ -1,11 +1,17 @@
 <template lang='pug' src='./custom-about-tour.pug'></template>
 
 <script>
+import VueScrollTo from 'vue-scrollto'
+
 export default {
   props: ['content'],
   data () {
     return {
-      percentage: 1
+      percentage: 1,
+      menuOpen: false,
+      showing: null,
+      active: null,
+      currentPage: null
     }
   },
   mounted () {
@@ -40,6 +46,18 @@ export default {
       if (halfContainerHeight >= windowTopOffest && bottomHalf) {
         this.percentage = 1 + ((0.1 - halfOffset) * 2)
       }
+    },
+    toggleMenu () {
+      console.log(this.active)
+      // this.active = true
+      // VueScrollTo.scrollTo('#tour', { offset: 0, easing: 'ease-in', duration: 500 })
+      this.menuOpen = !this.menuOpen
+      // if (this.menuOpen) {
+      //   document.body.classList.add('body-stop')
+      // } else {
+      //   this.hoveredPage = this.currentPage
+      //   document.body.classList.remove('body-stop')
+      // }
     }
   }
 }
