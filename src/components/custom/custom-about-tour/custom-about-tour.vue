@@ -60,7 +60,7 @@ export default {
     toggleSlider () {
       setInterval(() => {
         this.hoveredPage === this.content.office_photos.length - 1 ? this.hoveredPage = 0 : this.hoveredPage++
-      }, 4000)
+      }, 4500)
     }
   }
 }

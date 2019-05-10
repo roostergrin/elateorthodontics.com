@@ -15,10 +15,10 @@
         :style="{ backgroundImage: 'url(' + content.image + ')' }", 
         :class="{ 'custom-about-tour__background-image--active': hoveredPage === i }")
       .custom-about-tour__navigation(:class="{ 'custom-about-tour__navigation--active': modalOpen }")
-        .custom-about-tour__office_photos(
+        .custom-about-tour__navigation-icon(
           v-for='(content, i) in content.office_photos ',
           :key="'office_photos-' + i")
-          .custom-about-tour__icon(@mouseover='setHovered(i)')
+          .custom-about-tour__icon(@mouseover='setHovered(i)', :class="{ 'custom-about-tour__icon--active': hoveredPage === i }")
             .custom-about-tour__icon-holder(v-html='content.image')
       .custom-about-tour__background-solid
               
