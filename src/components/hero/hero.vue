@@ -67,6 +67,7 @@ export default {
       }
     },
     setHovered (i) {
+      console.log(this.hoveredPage)
       this.hoveredPage = i
     },
     scrollTo (i) {

@@ -1,17 +1,17 @@
 <template lang='pug' src='./custom-about-tour.pug'></template>
 
 <script>
-import VueScrollTo from 'vue-scrollto'
 
 export default {
   props: ['content'],
   data () {
     return {
       percentage: 1,
-      menuOpen: false,
+      modalOpen: false,
       showing: null,
       active: null,
-      currentPage: null
+      currentPage: null,
+      hoveredPage: 0
     }
   },
   mounted () {
@@ -48,16 +48,19 @@ export default {
       }
     },
     toggleMenu () {
-      console.log(this.active)
-      // this.active = true
-      // VueScrollTo.scrollTo('#tour', { offset: 0, easing: 'ease-in', duration: 500 })
-      this.menuOpen = !this.menuOpen
-      // if (this.menuOpen) {
-      //   document.body.classList.add('body-stop')
-      // } else {
-      //   this.hoveredPage = this.currentPage
-      //   document.body.classList.remove('body-stop')
-      // }
+      this.modalOpen = !this.modalOpen
+      this.modalOpen ? document.body.classList.add('body-stop') : document.body.classList.remove('body-stop')
+      if (this.modalOpen) {
+        this.toggleSlider()
+      }
+    },
+    setHovered (i) {
+      this.hoveredPage = i
+    },
+    toggleSlider () {
+      setInterval(() => {
+        this.hoveredPage === this.content.office_photos.length - 1 ? this.hoveredPage = 0 : this.hoveredPage++
+      }, 4000)
     }
   }
 }

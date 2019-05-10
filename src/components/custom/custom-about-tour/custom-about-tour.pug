@@ -1,12 +1,35 @@
-//- .custom-about-tour(ref='tour', :class="{ 'custom-about-tour--showing': showing, 'custom-about-tour--active': active }")
-#tour.custom-about-tour(ref='tour')
+#office.custom-about-tour(ref='tour')
   .custom-about-tour__container
-    .custom-about-tour__background(:style="{ backgroundImage: 'url(' + content.background + ')', transform: 'translate(-50%, -50%) scale(' + this.percentage + ')' }")
-    //- h2.custom-about-tour__title(v-html='content.title', :class="{ 'custom-about-tour__title--active': menuOpen }" @click='toggleMenu')
-    h2.custom-about-tour__title(v-html='content.title')
-
-    .custom-about-tour__links(:class="{ 'custom-about-tour__links--active': menuOpen }")
-      .custom-about-tour__office_photos(v-for='(content, i) in content.office_photos ', :key="'office_photos-' + i")
-        .custom-about-tour__icon
-          .custom-about-tour__icon-holder(v-html='content.image')
-        //- .custom-about-tour__image(v-html='content.image')
+    .custom-about-tour__background(
+      :style="{ backgroundImage: 'url(' + content.background + ')', transform: 'translate(-50%, -50%) scale(' + this.percentage + ')' }",
+      :class="{ 'custom-about-tour__background--inactive': modalOpen}")
+    h2.custom-about-tour__title(
+      v-html='content.title'
+      @click='toggleMenu',
+      :class="{ 'custom-about-tour__title--inactive': modalOpen }")
+                
+    .custom-about-tour__modal(:class="{ 'custom-about-tour__modal--open': modalOpen }")
+      .custom-about-tour__background-image(
+        v-for='(content, i) in content.office_photos ',
+        :key="'office_backgrounds-' + i",
+        :style="{ backgroundImage: 'url(' + content.image + ')' }", 
+        :class="{ 'custom-about-tour__background-image--active': hoveredPage === i }")
+      .custom-about-tour__navigation(:class="{ 'custom-about-tour__navigation--active': modalOpen }")
+        .custom-about-tour__office_photos(
+          v-for='(content, i) in content.office_photos ',
+          :key="'office_photos-' + i")
+          .custom-about-tour__icon(@mouseover='setHovered(i)')
+            .custom-about-tour__icon-holder(v-html='content.image')
+      .custom-about-tour__background-solid
+              
+      .custom-about-tour__tagline(:class="{ 'custom-about-tour__tagline--active': modalOpen }")
+          .custom-about-tour__tagline-textbox
+                    .custom-about-tour__tagline-text(v-html='content.tagline')
+                    .custom-about-tour__tagline-line(:class="{ 'custom-about-tour__tagline-line--active': modalOpen }")
+              
+      .custom-about-tour__hamburger(:class="{ 'custom-about-tour__hamburger--active': modalOpen}" @click='toggleMenu')
+        span
+        span
+      .custom-about-tour__hamburger.custom-about-tour__hamburger--white(:class="{ 'custom-about-tour__hamburger--active': modalOpen }")
+        span
+        span
