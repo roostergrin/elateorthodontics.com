@@ -129,3 +129,16 @@
   opacity: 0
   &.fade
     animation: fade-out-left $duration ease-in-out forwards
+
+@mixin fade-in-modal
+  &-enter-active
+    transition: all .35s ease-in-out
+
+  &-leave-active
+    transition: all .35s ease-in-out
+
+  &-enter
+    opacity: 0
+
+  &-leave-to
+    opacity: 0

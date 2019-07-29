@@ -2,6 +2,7 @@
 
 <script>
 import VueScrollTo from 'vue-scrollto'
+import ModalBio from 'components/modal/modal-bio/modal-bio'
 
 export default {
   props: ['content'],
@@ -16,7 +17,8 @@ export default {
       showing: false,
       transformed: false,
       fixed: false,
-      positionBottom: false
+      positionBottom: false,
+      bio: false
     }
   },
   mounted () {
@@ -81,7 +83,15 @@ export default {
       if (going === 'in' && direction === 'top') {
         this.active += 1
       }
+    },
+    openBio (i) {
+      if (!this.bio) this.bio = i
+      else this.bio = false
+      this.bio ? document.body.classList.add('body-stop') : document.body.classList.remove('body-stop')
     }
+  },
+  components: {
+    ModalBio
   }
 }
 </script>

@@ -140,7 +140,8 @@
           transition-delay: .35s
 
   &__body,
-  &__button
+  &__button,
+  &__read-more
     transition: opacity .4s .75s ease-in
     opacity: 0
 
@@ -159,6 +160,14 @@
     padding-bottom: 4rem
     pointer-events: none
 
+  &__read-more
+    position: relative
+    z-index: 99
+    pointer-events: all
+
+    &:hover
+      cursor: pointer
+
 
   &__button
     &-click
@@ -166,3 +175,6 @@
 
     .block-scroll__col-1--active &
       pointer-events: all
+
+  .fade-in-modal
+    @include fade-in-modal

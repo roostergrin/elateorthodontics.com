@@ -11,5 +11,9 @@
     .block-scroll-mobile__content
       .block-scroll-mobile__text-box(v-for='(tile, i) in content', :key="'tile-' + (i + 1)", :class="{ 'block-scroll-mobile__text-box--active': active === i }")
         .block-scroll-mobile__body(v-html='tile.body')
+        .block-scroll-mobile__read-more(@click='openBio(tile)', v-if='$route.path === "/about-us"') Read More
         router-link.block-scroll-mobile__button(:to='tile.button.href' v-if='tile.button.href')
           .block-scroll-mobile__button-click(v-html='"..." + tile.button.label')
+            
+  transition(name='fade-in-modal')  
+    ModalBio(v-if='bio', @closeBioModal='openBio()', :props='bio')

@@ -1,0 +1,5 @@
+.modal-bio(v-if='props')
+  .modal-bio__overlay(@click='$emit("closeBioModal")')
+  .modal-bio__container(@click='$emit("closeBioModal")')
+    .modal-bio__title(v-html='props.title')
+    .modal-bio__body(v-html='props.full_bio')

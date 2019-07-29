@@ -9,7 +9,11 @@
             .block-scroll-tablet__title-text(v-html='section.title', :style="{ transitionDelay: i * .15 + 's' }")
             .block-scroll-tablet__title-line(:style="{ transition: 'translateY(' + active * 2 + 'rem)' }")
           .block-scroll-tablet__body(v-html='section.body')
+          .block-scroll-tablet__read-more(@click='openBio(section)', v-if='$route.path === "/about-us"') Read More
           router-link.block-scroll-tablet__button(:to='section.button.href' v-if='section.button.href')
             .block-scroll-tablet__button-click(v-html='section.button.label')
         .block-scroll-tablet__col-2
           .block-scroll-tablet__image(:style="{ backgroundImage: 'url(' + section.image + ')' }", :class="{ 'block-scroll-tablet__image--active': active === i }" role='img', aria-label='Doctors and their Children')
+
+  transition(name='fade-in-modal')  
+    ModalBio(v-if='bio', @closeBioModal='openBio()', :props='bio')

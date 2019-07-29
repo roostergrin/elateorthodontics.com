@@ -1,6 +1,8 @@
 <template lang="pug" src="./block-scroll-mobile.pug"></template>
 
 <script>
+import ModalBio from 'components/modal/modal-bio/modal-bio'
+
 export default {
   props: ['content'],
   data () {
@@ -12,7 +14,8 @@ export default {
       },
       active: 0,
       showing: false,
-      transformed: false
+      transformed: false,
+      bio: false
     }
   },
   methods: {
@@ -29,7 +32,15 @@ export default {
     },
     cleanStr (i) {
       return i.toLowerCase().replace(/[.,/#!$%^&*;:{}=\-_`~()\s]/g, '')
+    },
+    openBio (i) {
+      if (!this.bio) this.bio = i
+      else this.bio = false
+      this.bio ? document.body.classList.add('body-stop') : document.body.classList.remove('body-stop')
     }
+  },
+  components: {
+    ModalBio
   }
 }
 </script>
