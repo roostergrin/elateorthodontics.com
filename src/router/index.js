@@ -7,6 +7,7 @@ const AboutUs = () => import('@/pages/pages-about-us/pages-about-us')
 const GetStarted = () => import('@/pages/pages-get-started/pages-get-started')
 const Treatments = () => import('@/pages/pages-treatments/pages-treatments')
 const Contact = () => import('@/pages/pages-contact/pages-contact')
+const Promotion = () => import('@/pages/pages-promotion/pages-promotion')
 const Styleguide = () => import('@/pages/styleguide/styleguide')
 const PageNotFound = () => import('@/pages/404/404')
 
@@ -85,6 +86,12 @@ const router = new VueRouter({
       name: 'contact',
       navigation: true,
       component: Contact
+    },
+    {
+      path: '/special',
+      name: 'special',
+      navigation: true,
+      component: Promotion
     },
     {
       path: '/styleguide',

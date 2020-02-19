@@ -1,0 +1,34 @@
+.special-form      
+  form.special-form__form(@submit.prevent='validate', method='post', v-if='!formSubmitted')
+    
+    .special-form__group
+      input.special-form__input(name='fullName', v-model='fullName', v-validate="'required|alpha_spaces'", :class="{ 'special-form__input--error': errors.has('fullName') }", type='text')
+      label.special-form__label(:class="{ 'special-form__label--active': fullName }") Name
+      .special-form__message(v-show="errors.has('fullName')") Your name is required.
+    
+    .special-form__group.special-form__group--half
+      input.special-form__input(name='clientEmail', v-model='clientEmail', v-validate="'required|email'", :class="{ 'input': true, 'special-form__input--error': errors.has('clientEmail') }")
+      label.special-form__label(:class="{ 'special-form__label--active': clientEmail }") E-mail
+      .special-form__message(v-show="errors.has('clientEmail')")  Please Input a Valid E-mail
+    
+    .special-form__group.special-form__group--half
+      input.special-form__input(name='clientPhone', v-model='clientPhone', v-validate="'required|numeric'", :class="{ 'input': true, 'special-form__input--error': errors.has('clientPhone') }")
+      label.special-form__label(:class="{ 'special-form__label--active': clientPhone }") Phone
+      .special-form__message(v-show="errors.has('clientPhone')") Please Input a Valid Phone Number, Only Numbers
+    
+    .special-form__group.special-form__group-message
+      textarea.special-form__input(name='comments', v-model='comments', v-validate="'required'", :class="{ 'input': true, 'special-form__input--error': errors.has('comments') }")
+      label.special-form__label(:class="{ 'special-form__label--active': comments }") Comments
+      .special-form__message(v-show="errors.has('comments')") Please Input a Reason for Contacting Us
+    
+    .special-form__button-group
+      .special-form__submit-button.active(@click='validate')
+        span Submit
+  transition(name='fade-in')
+    h1.special-form__thank-you(v-if='formSuccess && formSubmitted') Thank you for Contacting Us!
+  transition(name='fade-in')
+    .special-form__sending-overlay(v-if='!formSuccess && formSubmitted')
+      h1.special-form__sending Sending
+        span .
+        span .
+        span .
