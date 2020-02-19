@@ -116,7 +116,7 @@ function rg_serve_route_promotion () {
 
   $data = json_decode(file_get_contents("php://input"), true);
   $from = 'info@wordpress.com';
-  $to = 'austin.wiese@roostergrin.com';
+  $to = 'info@elateorthodontics.com';
   $subject = 'Promotion Form';
   $headers = array('Content-Type: text/html; charset=UTF-8');
   $message = '<html><body>';
