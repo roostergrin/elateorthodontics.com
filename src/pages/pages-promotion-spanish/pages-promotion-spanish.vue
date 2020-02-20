@@ -2,7 +2,7 @@
 
 <script>
 import BlockTextImage from 'components/block/block-text-image/block-text-image'
-import CustomSpecialPage from 'components/custom/custom-special-page/custom-special-page'
+import CustomSpecialPageSpanish from 'components/custom/custom-special-page-spanish/custom-special-page-spanish'
 
 export default {
   name: 'Special',
@@ -13,7 +13,7 @@ export default {
   },
   components: {
     BlockTextImage,
-    CustomSpecialPage
+    CustomSpecialPageSpanish
   }
 }
 </script>
