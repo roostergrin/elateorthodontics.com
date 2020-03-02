@@ -2,4 +2,20 @@
 
   &__container
     @extend .container
-    align-items: flex-start
+    align-items: center
+    justify-content: center
+    
+  &__col
+    @extend .col-10
+    @extend .col-1--offset
+    position: relative
+    margin-top: 40px
+
+    &-1
+      @include tablet-lg
+        min-height: 25rem
+      @include phone-lg
+        min-height: 15rem
+      min-height: 20rem
+      .block-text-image--alt &
+        margin-left: 0

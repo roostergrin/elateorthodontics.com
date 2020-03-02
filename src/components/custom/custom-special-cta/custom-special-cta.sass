@@ -1,0 +1,31 @@
+.custom-special-cta
+  @include tablet-lg
+    padding: 0rem 0
+  padding: 4rem 0
+
+  &__container
+    @extend .container
+    align-items: center
+    justify-content: center
+
+  &__logo
+    @extend .col-2
+    @extend .col-1--offset
+    text-align: center
+    margin: 15px 0
+
+  &__number
+    @extend .col-6
+    text-align: center
+    margin: 15px 0
+
+    a 
+      transition: color .15s ease-in
+      font-size: 2rem
+
+      &:hover
+        color: $sapphire
+
+  &__cta
+    @extend .col-2
+    margin: 15px 0
