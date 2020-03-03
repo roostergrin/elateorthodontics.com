@@ -90,13 +90,13 @@ const router = new VueRouter({
     },
     {
       path: '/special',
-      name: 'special',
+      name: 'Braces Special at Elate Orthodontics',
       navigation: true,
       component: Promotion
     },
     {
       path: '/special-es',
-      name: 'special',
+      name: 'Especial De Frenos en Elate Orthodontics',
       navigation: true,
       component: PromotionSpanish
     },
