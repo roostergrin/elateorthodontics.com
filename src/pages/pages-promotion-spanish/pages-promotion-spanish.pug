@@ -1,5 +1,5 @@
 .pages-promotion(v-if='props')
-  CustomSpecialCta
+  CustomSpecialCta(:content='props.cta')
   BlockTextImage(:content='props.text_image')
   // CustomHomeWelcome(:content='props.welcome')
   BlockTextImage(:content='props.text_image_3' :alt='true')

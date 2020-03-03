@@ -4,6 +4,6 @@
       router-link(to='/')
         Icon.hero__logo-icon(name='elate-logo')
     .custom-special-cta__number
-      a(href='tel:+19725384343') Call 972.538.4343
+      a(:href='content.phone_link' v-html='content.phone_text')
     .custom-special-cta__cta
-      router-link(style="display: table; margin: auto; text-align: center" class="hero__home-button" to='/contact') Schedule a free consultation
+      router-link.custom-special-cta__consultation-link(class="hero__home-button" to='/contact' v-html='content.button_text')
