@@ -53,28 +53,28 @@ export default {
     },
     onScroll () {
       // Finds Ratio of Component to Scroll
-      let scrollRatio = (this.content.length - 1) / this.content.length
-
-      // Height of whole container
-      let containerHeight = this.$refs.component.clientHeight
-
-      // Finds point on page where the container is
-      let scrollDistance = window.pageYOffset - this.$refs.component.offsetTop
-
-      // Toggles the start of the component
-      let isInside = window.pageYOffset > this.$refs.component.offsetTop
-
-      if ((containerHeight * scrollRatio) >= scrollDistance && isInside) {
-        this.fixed = true
-      } else {
-        this.fixed = false
-      }
-
-      if ((containerHeight * scrollRatio) <= scrollDistance && isInside) {
-        this.positionBottom = true
-      } else {
-        this.positionBottom = false
-      }
+      // let scrollRatio = (this.content.length - 1) / this.content.length
+      //
+      // // Height of whole container
+      // let containerHeight = this.$refs.component.clientHeight
+      //
+      // // Finds point on page where the container is
+      // let scrollDistance = window.pageYOffset - this.$refs.component.offsetTop
+      //
+      // // Toggles the start of the component
+      // let isInside = window.pageYOffset > this.$refs.component.offsetTop
+      //
+      // if ((containerHeight * scrollRatio) >= scrollDistance && isInside) {
+      //   this.fixed = true
+      // } else {
+      //   this.fixed = false
+      // }
+      //
+      // if ((containerHeight * scrollRatio) <= scrollDistance && isInside) {
+      //   this.positionBottom = true
+      // } else {
+      //   this.positionBottom = false
+      // }
     },
     onWaypoint ({going, direction, _entry}, i) {
       if (going === 'out' && direction === 'bottom') {
