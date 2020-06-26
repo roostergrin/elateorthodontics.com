@@ -7,6 +7,7 @@ const AboutUs = () => import('@/pages/pages-about-us/pages-about-us')
 const GetStarted = () => import('@/pages/pages-get-started/pages-get-started')
 const Treatments = () => import('@/pages/pages-treatments/pages-treatments')
 const Contact = () => import('@/pages/pages-contact/pages-contact')
+const ElateAligner = () => import('@/pages/pages-elate-aligner/pages-elate-aligner')
 const Promotion = () => import('@/pages/pages-promotion/pages-promotion')
 const PromotionSpanish = () => import('@/pages/pages-promotion-spanish/pages-promotion-spanish')
 const Styleguide = () => import('@/pages/styleguide/styleguide')
@@ -87,6 +88,12 @@ const router = new VueRouter({
       name: 'contact',
       navigation: true,
       component: Contact
+    },
+    {
+      path: '/elate-aligner',
+      name: 'elate aligner',
+      navigation: true,
+      component: ElateAligner
     },
     {
       path: '/special',

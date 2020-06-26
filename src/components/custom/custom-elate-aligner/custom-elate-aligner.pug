@@ -1,0 +1,8 @@
+.custom-elate-aligner
+  .custom-elate-aligner__container
+    .custom-elate-aligner__col-1
+      .custom-elate-aligner__block(v-if='content.blocks.length > 0' v-for='(block,i) in content.blocks' :key='"block " + i')
+        h2.custom-elate-aligner__title(v-html='block.block.title')
+        .custom-elate-aligner__body(v-html='block.block.body')
+    .custom-elate-aligner__col-2
+      img.custom-elate-aligner__image(:src='content.image')
