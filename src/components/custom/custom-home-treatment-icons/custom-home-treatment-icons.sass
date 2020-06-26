@@ -1,0 +1,46 @@
+.custom-home-treatment-icons
+  position: relative
+  padding: 2rem 0
+  overflow: hidden
+
+  &__container
+    @extend .container
+    padding: 0 2rem
+
+  &__title
+    display: block
+    padding-bottom: 1.75rem
+    text-transform: uppercase
+    color: $cobalt-blue
+
+  &__links
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: center
+
+  &__link
+    @include phone-lg
+      width: 40%
+    display: flex
+    flex-direction: column
+    width: 20%
+    margin: 0 1rem
+    color: $warm-grey
+    transition: all ease .5s
+
+    &:hover
+      color: rgba(0, 0, 0, .4)
+
+    &:hover img
+      opacity: .7
+
+  &__image
+    border-radius: 50%
+    width: 100%
+    height: 85%
+    transition: all ease .5s
+
+  &__type
+    margin: .5rem 0
+    text-align: center

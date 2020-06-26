@@ -1,0 +1,7 @@
+.custom-home-treatment-icons
+  .custom-home-treatment-icons__container
+    h2.custom-home-treatment-icons__title(v-html='content.title')
+    .custom-home-treatment-icons__links
+      router-link.custom-home-treatment-icons__link(v-for='(link, i) in content.type', :key="'link - ' + i", :to='link.href')
+        img.custom-home-treatment-icons__image(:src='link.image')
+        h4.custom-home-treatment-icons__type(v-html='link.title')
