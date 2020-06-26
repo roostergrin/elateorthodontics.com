@@ -1,0 +1,11 @@
+.custom-home-smile-assessment(:class="{ 'custom-home-smile-assessment--alt': alt, 'custom-home-smile-assessment--active': active }" ref='component')
+  .custom-home-smile-assessment__waypoint(v-waypoint='{ active: true, callback: onWaypoint, options: intersectionOptions }' v-if='loaded')
+  .custom-home-smile-assessment__container
+    .custom-home-smile-assessment__col.custom-home-smile-assessment__col-1
+      .custom-home-smile-assessment__box
+        h3.custom-home-smile-assessment__title(v-html='content.title')
+        .custom-home-smile-assessment__body(v-html='content.body')
+        a.custom-home-smile-assessment__button(v-html='content.button.label' :href='content.button.href' target='_blank')
+    .custom-home-smile-assessment__col.custom-home-smile-assessment__col-2
+      img.custom-home-smile-assessment__image(:style="{ transform: 'scale(' + this.percentage + ')' }" :src='content.image')
+      
