@@ -99,7 +99,7 @@ const router = new VueRouter({
     {
       path: '/elate-aligner',
       name: 'elate aligner',
-      navigation: true,
+      navigation: false,
       component: ElateAligner
     },
     {
