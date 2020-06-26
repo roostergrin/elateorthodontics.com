@@ -1,12 +1,31 @@
 .footer
+  @include phone-lg
+    flex-direction: column-reverse
+  display: flex
   position: relative
   padding: 2.5rem 2rem 0
   overflow: hidden
 
+  &__map
+    @include phone-lg
+      width: 100%
+      padding-bottom: .5rem
+    float: left
+    width: 50%
+    padding: 3rem 0
+
+    iframe
+      width: 100%
+      height: 300px
+
   &__contact
     @include phone-lg
+      width: 100%
+      padding-top: .5rem
       padding-bottom: 10rem
       text-align: center
+    float: left
+    width: 50%
     padding: 3rem 0
     color: $warm-grey
 

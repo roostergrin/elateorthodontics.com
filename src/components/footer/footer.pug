@@ -4,6 +4,7 @@
     a.footer__contact-address(:href='content.address.href', v-html='content.address.label')
     a.footer__contact-phone(:href='content.phone.href', v-html='content.phone.label')
     a.footer__contact-rg(href='https://roostergrin.com') 2019 © Online Advantage By Rooster Grin Media
+  .footer__map(v-html='content.map')
   .footer__social
     .footer__social-container
       a.footer__social-items(v-for='(link, i) in content.social_bar', :key="'link - ' + i", :href='link.href')
