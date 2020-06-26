@@ -17,6 +17,8 @@
 
   &__container
     @extend .container
+    @include phone-lg
+      flex-direction: column
     align-items: flex-start
     background: rgba(0,0,0,.05)
     padding-top: 4rem
@@ -52,6 +54,13 @@
       height: 100%
 
   &__image
+    @include phone-lg
+      position: relative
+      display: block
+      margin: 2rem auto
+      width: 70%
+      height: auto
+      left: unset
     position: absolute
     top: 0
     bottom: 0
@@ -71,6 +80,9 @@
       opacity: 1
 
   &__box
+    @include phone-lg
+      float: none
+      margin: 0 auto
     background: $white
     width: 75%
     height: fit-content
@@ -78,11 +90,8 @@
     float: right
 
   &__title
-    @include tablet-lg
-      padding-top: 0
     @include phone-lg
       transform: translateY(2rem)
-      padding: 2rem 0
     @include phone-land-lg
       transform: translateY(2rem)
     transform: translateX(2rem)
