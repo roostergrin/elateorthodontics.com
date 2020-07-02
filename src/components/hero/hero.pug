@@ -24,7 +24,7 @@
       a.hero__contact-link(v-for='(contact, i) in content.social_bar', :key="'contact-' + i", :href='contact.href')
         Icon.hero__contact-icon(:name='contact.icon')
       
-  .hero__home(:class="{ 'hero__home--active': $route.path === '/' && !menuOpen, 'hero__home--active': $route.path === '/test-home' && !menuOpen }")
+  .hero__home(:class="{ 'hero__test-home--active': $route.path.includes('/test-home') && !menuOpen, 'hero__home--active': $route.path === '/' && !menuOpen }")
     h1.hero__home-title(v-html='content.home.title')
     router-link.hero__home-button(:to='content.home.button.to')
       .hero__home-button-overlay
