@@ -1,4 +1,4 @@
-.hero(v-if='content && props', :class="{ 'hero--home': $route.path === '/', 'hero--contact': $route.path.includes('/contact'), 'hero--showing': showing, 'hero--active': active }")
+.hero(v-if='content && props', :class="{ 'hero--home': $route.path === '/', 'hero--test-home': $route.path === '/test-home', 'hero--elate-aligner': $route.path === '/elate-aligner', 'hero--contact': $route.path.includes('/contact'), 'hero--showing': showing, 'hero--active': active }")
   router-link.hero__logo(to='/' @click.native='setPageHome("/")')
     Icon.hero__logo-icon(name='elate-logo')
       
@@ -24,7 +24,7 @@
       a.hero__contact-link(v-for='(contact, i) in content.social_bar', :key="'contact-' + i", :href='contact.href')
         Icon.hero__contact-icon(:name='contact.icon')
       
-  .hero__home(:class="{ 'hero__home--active': $route.path === '/' && !menuOpen }")
+  .hero__home(:class="{ 'hero__home--active': $route.path === '/' && !menuOpen, 'hero__home--active': $route.path === '/test-home' && !menuOpen }")
     h1.hero__home-title(v-html='content.home.title')
     router-link.hero__home-button(:to='content.home.button.to')
       .hero__home-button-overlay
