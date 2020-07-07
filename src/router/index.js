@@ -69,6 +69,11 @@ const router = new VueRouter({
           path: '/treatments#ceramic',
           name: 'Ceramic',
           hash: '#ceramic'
+        },
+        {
+          path: '/treatments#elatejunior',
+          name: 'Elate Junior Club',
+          hash: '#elatejunior'
         }
       ]
     },
