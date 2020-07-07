@@ -1,4 +1,6 @@
 .block-doctors
+  @include phone-lg
+    overflow: scroll
   position: relative
   overflow: hidden
 
@@ -48,6 +50,8 @@
 
   &__container
     @extend .container
+    @include phone-lg
+      height: fit-content
     height: calc(100vh - 8rem)
     pointer-events: none
 
@@ -62,11 +66,18 @@
 
     &-2
       @extend .col-5
+      @include phone-lg
+        margin-top: 1rem
       position: relative
 
   &__image
     @include max-container
       background-position: top
+    @include phone-lg
+      position: relative
+      height: 40vh
+      width: 100%
+      background-size: contain
     position: absolute
     top: 50%
     left: 50%
@@ -89,6 +100,8 @@
         opacity: 1
 
   &__title
+    @include phone-lg
+      top: unset
     position: absolute
     top: 2rem
     right: calc(#{$gutter} / 2)
@@ -152,6 +165,11 @@
 
 
   &__body
+    @include phone-lg
+      padding-top: unset
+      padding-right: unset
+      padding-bottom: unset
+      padding: 6rem 1rem 2rem
     padding-top: 10rem
     padding-right: 25%
     padding-bottom: 4rem
