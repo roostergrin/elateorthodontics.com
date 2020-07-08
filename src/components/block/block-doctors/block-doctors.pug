@@ -1,4 +1,4 @@
-.block-doctors(:class="{ 'block-doctors--active': showing }", :style="{ height: content.length * 100 + 'vh' }" ref='component')
+.block-doctors(:class="{ 'block-doctors--active': showing }" ref='component')
   .block-doctors__waypoint.block-doctors__waypoint--in(v-waypoint="{ active: true, callback: onWaypointIn, options: intersectionOptions }")
   .block-doctors__waypoint(v-waypoint="{ active: true, callback: onWaypoint, options: intersectionOptions }")
   .block-doctors__anchor(v-for='(item, i) in content', :key='"anchor - " + i', :id='cleanStr(item.title)', :style="{ top: 'calc(1vh + ' + i * 100 + 'vh)' }")
