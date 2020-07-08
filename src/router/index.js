@@ -62,12 +62,12 @@ const router = new VueRouter({
         },
         {
           path: '/treatments#metal',
-          name: 'Metal',
+          name: 'Metal Braces',
           hash: '#metal'
         },
         {
           path: '/treatments#ceramic',
-          name: 'Ceramic',
+          name: 'Ceramic Braces',
           hash: '#ceramic'
         },
         {
