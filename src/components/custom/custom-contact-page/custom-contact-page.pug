@@ -11,6 +11,10 @@
         .custom-contact-page__address-title(v-html='content.address.title')
         .custom-contact-page__address-body(v-html='content.address.body')
         a.custom-contact-page__address-button(:href='content.address.href', v-html='content.address.label')
+      .custom-contact-page__address
+        .custom-contact-page__address-title(v-html='content.address2.title')
+        .custom-contact-page__address-body(v-html='content.address2.body')
+        a.custom-contact-page__address-button(:href='content.address2.href', v-html='content.address2.label')
       .custom-contact-page__hours(v-html='content.hours')
       .custom-contact-page__contacts
         a.custom-contact-page__contact(v-for='(link, i) in content.contacts', :key='"link - " + i', :href='link.href')
