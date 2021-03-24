@@ -4,6 +4,9 @@
 import BlockScroll from 'components/block/block-scroll/block-scroll'
 import BlockScrollMobile from 'components/block/block-scroll-mobile/block-scroll-mobile'
 import BlockScrollTablet from 'components/block/block-scroll-tablet/block-scroll-tablet'
+import CustomElateTeam from 'components/block/custom-elate-team/custom-elate-team'
+import CustomElateTeamTablet from 'components/block/custom-elate-team-tablet/custom-elate-team-tablet'
+import CustomElateTeamMobile from 'components/block/custom-elate-team-mobile/custom-elate-team-mobile'
 import CustomAboutTour from 'components/custom/custom-about-tour/custom-about-tour'
 
 export default {
@@ -17,7 +20,10 @@ export default {
     BlockScroll,
     BlockScrollMobile,
     BlockScrollTablet,
-    CustomAboutTour
+    CustomElateTeam,
+    CustomElateTeamTablet,
+    CustomAboutTour,
+    CustomElateTeamMobile
   }
 }
 </script>

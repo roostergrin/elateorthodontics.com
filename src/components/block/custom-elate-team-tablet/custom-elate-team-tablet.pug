@@ -1,0 +1,16 @@
+.block-scroll-tablet(:class="{ 'block-scroll-tablet--active': showing, 'block-scroll-tablet--transformed': transformed }" ref='component')
+  .block-scroll-tablet__waypoint.block-scroll-tablet__waypoint--in(v-waypoint="{ active: true, callback: onWaypointIn, options: intersectionOptions }")
+  //- .block-scroll-tablet__anchor(v-for='(item, i) in content', :key='"anchor - " + i', :id='cleanStr(item.title)')
+  .block-scroll-tablet__scroll
+    .block-scroll-tablet__content(v-for='(section, i) in content', :key="'section-' + (i + 1)", :class="{ 'block-scroll-tablet__content--active': active === i }")
+      .block-scroll-tablet__container
+        .block-scroll-tablet__col-1(:class="[ { 'block-scroll-tablet__col-1--active': active === i }, 'block-scroll-tablet__col-1--' + i ]")
+          h3.block-scroll-tablet__title(:class="{ 'block-scroll-tablet__title--active': showing }" @click='setActive(i)')
+            .block-scroll-tablet__title-text(v-html='section.title_team', :style="{ transitionDelay: i * .15 + 's' }")
+            .block-scroll-tablet__title-line(:style="{ transition: 'translateY(' + active * 2 + 'rem)' }")
+          .block-scroll-tablet__body(v-html='section.content_team')
+        .block-scroll-tablet__col-2
+          .block-scroll-tablet__image(:style="{ backgroundImage: 'url(' + section.image_team + ')' }", :class="{ 'block-scroll-tablet__image--active': active === i }" role='img', aria-label='Doctors and their Children')
+
+  transition(name='fade-in-modal')  
+    ModalBio(v-if='bio', @closeBioModal='openBio()', :props='bio')

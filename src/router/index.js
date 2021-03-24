@@ -43,6 +43,11 @@ const router = new VueRouter({
           hash: '#doctors'
         },
         {
+          path: '/about-us#team',
+          name: 'Elate Team',
+          hash: '#team'
+        },
+        {
           path: '/about-us#office',
           name: 'Office Tour',
           hash: '#office'

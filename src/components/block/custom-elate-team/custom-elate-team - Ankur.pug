@@ -1,0 +1,11 @@
+.block-scroll__content--active
+      .block-scroll__container.container-598(v-for='(Team, index) in content')
+        .block-scroll__col-1.block-scroll__col-1--1.block-scroll__col-1--2.block-scroll__col-1--active.block-scroll__col-1--active.block-scroll__col-1--0
+          h3.block-scroll__title
+            .block-scroll__title-text(style='transition-delay: 0s;') (v-if='Team.title_team' v-html:span='Team.title_team')
+            .block-scroll__title-line
+          .block-scroll__body
+            span(v-if='Team.content_team' v-html:span='Team.content_team')
+        .block-scroll__col-2
+          .block-scroll__image.block-scroll__image--active(role='img' aria-label='Doctors and their Children' v-bind:style="{ backgroundImage: 'url('+ Team.image_team +')'}")
+          .block-scroll__image.block-scroll__image--active.actibve_hover(role='img' aria-label='Doctors and their Children' v-bind:style="{ backgroundImage: 'url('+ Team.image_over +')'}")
