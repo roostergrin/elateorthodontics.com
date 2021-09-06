@@ -50,4 +50,22 @@
 
 #team .block-scroll-tablet__body
   padding-top: 12rem
+  
+.hero-home__video
+  position: absolute
+  z-index: -1
+
+
+.hero__background-image--active
+  z-index: 3
+
+.hero__background-image.hero__background-image--active.hero__background-image--trans:nth-child(1)
+  display: none
+
+.hero__background-image.hero__background-image--active:nth-child(1)
+  display: none
+
+@media screen and (max-width:480px)
+  .hero-home__video
+    height: 50vh  
 
