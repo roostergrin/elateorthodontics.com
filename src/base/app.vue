@@ -3,6 +3,7 @@
 <script>
 import Hero from 'components/hero/hero'
 import Footer from 'components/footer/footer'
+import BaseBaseAccess from 'components/base-access/index'
 
 export default {
   async created () {
@@ -16,7 +17,8 @@ export default {
   },
   components: {
     Footer,
-    Hero
+    Hero,
+    BaseBaseAccess
   }
 }
 </script>

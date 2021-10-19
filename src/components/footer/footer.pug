@@ -13,5 +13,5 @@
     a.footer__contact-rg(href='https://roostergrin.com') 2019 © Online Advantage By Rooster Grin Media
   .footer__social
     .footer__social-container
-      a.footer__social-items(v-for='(link, i) in content.social_bar', :key="'link - ' + i", :href='link.href')
+      a.footer__social-items(:aria-label='"social_icon-" + i', v-for='(link, i) in content.social_bar', :key="'link - ' + i", :href='link.href')
         Icon.footer__social-icon(:name='link.icon')

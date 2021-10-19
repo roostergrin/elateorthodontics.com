@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import scrollBehavior from '@/shared/functionality/scroll-behavior.js'
+import Accessibility from '@/pages/accessibility/index'
 
 const TestHome = () => import('@/pages/pages-test-home/pages-test-home')
 const Home = () => import('@/pages/pages-home/pages-home')
@@ -105,6 +106,12 @@ const router = new VueRouter({
       name: 'contact',
       navigation: true,
       component: Contact
+    },
+    {
+      path: '/accessibility',
+      name: 'Accessibility',
+      navigation: false,
+      component: Accessibility
     },
     {
       path: '/elate-aligner',
