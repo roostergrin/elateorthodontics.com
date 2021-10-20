@@ -7,5 +7,5 @@
         .custom-home-smile-assessment__body(v-html='content.body')
         a.custom-home-smile-assessment__button(v-html='content.button.label' :href='content.button.href' target='_blank')
     .custom-home-smile-assessment__col.custom-home-smile-assessment__col-2
-      img.custom-home-smile-assessment__image(:style="{ transform: 'scale(' + this.percentage + ')' }" :src='content.image')
+      img.custom-home-smile-assessment__image(:style="{ transform: 'scale(' + this.percentage + ')' }" :src='content.image', alt='')
       
