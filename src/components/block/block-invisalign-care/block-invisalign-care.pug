@@ -1,0 +1,14 @@
+.invisaligncare
+  .block-scroll__anchor(v-for='(item, i) in content', :key='"anchor - " + i', :id='cleanStr(item.title)')
+  .invisaligncare__wrap
+    .invisaligncare__inner
+      .invisaligncare__title(v-if='propslatest.invisalign_care_title' v-html:p='propslatest.invisalign_care_title')
+      .invisaligncare__listouter
+        .invisaligncare__list(v-if='propslatest.invisalign_care_list' v-for='AlignerList in propslatest.invisalign_care_list')
+          .invisaligncare__listtitle(v-html='AlignerList.title')
+          .video-container
+            iframe.invisaligncare__iframe(width='100%' height='315' v-bind:src='AlignerList.iframes' title='' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+          p(v-if='AlignerList.iframe_2') and
+          .video-container(v-if='AlignerList.iframe_2')
+            iframe.invisaligncare__iframe(width='100%' height='315' v-bind:src='AlignerList.iframe_2' title='' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')            
+                   

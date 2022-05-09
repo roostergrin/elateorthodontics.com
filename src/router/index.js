@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import scrollBehavior from '@/shared/functionality/scroll-behavior.js'
 import Accessibility from '@/pages/accessibility/index'
+import elateLibrary from '@/pages/elate-library/elate-library'
 
 const TestHome = () => import('@/pages/pages-test-home/pages-test-home')
 const Home = () => import('@/pages/pages-home/pages-home')
@@ -130,6 +131,24 @@ const router = new VueRouter({
       name: 'Especial De Frenos en Elate Orthodontics',
       navigation: true,
       component: PromotionSpanish
+    },
+    {
+      path: '/elate-library',
+      name: 'Elate Library',
+      navigation: true,
+      component: elateLibrary,
+      children: [
+        {
+          path: '/elate-library#bracescare',
+          name: 'Braces Care',
+          hash: '#bracescare'
+        },
+        {
+          path: '/elate-library#invisaligncare',
+          name: 'Invisalign Care',
+          hash: '#invisaligncare'
+        }
+      ]
     },
     {
       path: '/styleguide',

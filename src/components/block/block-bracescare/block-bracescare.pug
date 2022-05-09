@@ -1,0 +1,10 @@
+.bracescare
+  .block-scroll__anchor(v-for='(item, i) in content', :key='"anchor - " + i', :id='cleanStr(item.title)')
+  .bracescare__wrap
+    .bracescare__inner
+      .bracescare__title(v-if='propsnew.braces_care_title' v-html:p='propsnew.braces_care_title')
+      .bracescare__listouter
+        .bracescare__list(v-if='propsnew.braces_list' v-for='BracesList in propsnew.braces_list')
+          .bracescare__listtitle(v-html='BracesList.title')
+          .video-container
+            iframe.bracescare__iframe(width='100%' height='315' v-bind:src='BracesList.iframes' title='' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')       

@@ -3,7 +3,7 @@
     Icon.hero__logo-icon(name='elate-logo')
       
   .hero__background
-    .hero__background-image(v-for='(image, i) in content.heroes', :key="'hero-' + i", :style="{ backgroundImage: 'url(' + image.image + ')' }", :class="{ 'hero__background-image--active': hoveredPage === image.path, 'hero__background-image--trans': !menuOpen, 'hero__background-image--right': $route.path.includes('/treatments') || $route.path.includes('/get-started') }")
+    .hero__background-image(v-for='(image, i) in content.heroes', :key="'hero-' + i", :style="{ backgroundImage: 'url(' + image.image + ')' }", :class="{ 'hero__background-image--active': hoveredPage === image.path, 'hero__background-image--trans': !menuOpen, 'hero__background-image--right': $route.path.includes('/treatments') || $route.path.includes('/get-started') || $route.path.includes('/elate-library') }")
     video.hero-home__video(muted='muted' loop='loop' autoplay='autoplay' playsinline='')
       source(v-if='content.hero_video.video_url' v-bind:src='content.hero_video.video_url')
       
