@@ -147,6 +147,11 @@ const router = new VueRouter({
           path: '/elate-library#invisaligncare',
           name: 'Invisalign Care',
           hash: '#invisaligncare'
+        },
+        {
+          path: '/elate-library#retainerscare',
+          name: 'Retainers Care',
+          hash: '#retainerscare'
         }
       ]
     },

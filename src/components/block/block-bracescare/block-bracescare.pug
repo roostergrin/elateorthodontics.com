@@ -3,6 +3,8 @@
   .bracescare__wrap
     .bracescare__inner
       .bracescare__title(v-if='propsnew.braces_care_title' v-html:p='propsnew.braces_care_title')
+      .bracescare__pdf
+        a.bracescare__pdfurl(v-if='propsnew.braces_pdf_title' v-bind:href='propsnew.braces_pdf_url' target='_blank' v-html:p='propsnew.braces_pdf_title')      
       .bracescare__listouter
         .bracescare__list(v-if='propsnew.braces_list' v-for='BracesList in propsnew.braces_list')
           .bracescare__listtitle(v-html='BracesList.title')

@@ -1,0 +1,16 @@
+.retainerscare
+  .block-scroll__anchor(v-for='(item, i) in content', :key='"anchor - " + i', :id='cleanStr(item.title)')
+  .retainerscare__wrap
+    .retainerscare__inner
+      .retainerscare__title(v-if='propsretainer.retainers_care_title' v-html:p='propsretainer.retainers_care_title')
+      .retainerscare__pdf
+        a.retainerscare__pdfurl(v-if='propsretainer.retainers_pdf_title' v-bind:href='propsretainer.retainers_pdf_url' target='_blank' v-html:p='propsretainer.retainers_pdf_title')       
+      .retainerscare__listouter
+        .retainerscare__list(v-if='propsretainer.retainers_care_list' v-for='RetainersList in propsretainer.retainers_care_list')
+          .retainerscare__listtitle(v-html='RetainersList.title')
+          .video-container
+            iframe.retainerscare__iframe(width='100%' height='315' v-bind:src='RetainersList.iframes' title='' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+          p(v-if='RetainersList.iframe_2') and
+          .video-container(v-if='RetainersList.iframe_2')
+            iframe.retainerscare__iframe(width='100%' height='315' v-bind:src='RetainersList.iframe_2' title='' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')            
+                   

@@ -3,6 +3,8 @@
   .invisaligncare__wrap
     .invisaligncare__inner
       .invisaligncare__title(v-if='propslatest.invisalign_care_title' v-html:p='propslatest.invisalign_care_title')
+      .invisaligncare__pdf
+        a.invisaligncare__pdfurl(v-if='propslatest.invisalign_pdf_title' v-bind:href='propslatest.invisalign_pdf_url' target='_blank' v-html:p='propslatest.invisalign_pdf_title')       
       .invisaligncare__listouter
         .invisaligncare__list(v-if='propslatest.invisalign_care_list' v-for='AlignerList in propslatest.invisalign_care_list')
           .invisaligncare__listtitle(v-html='AlignerList.title')

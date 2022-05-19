@@ -3,6 +3,7 @@
 <script>
 import BlockBracescare from 'components/block/block-bracescare/block-bracescare'
 import BlockInvisalignCare from 'components/block/block-invisalign-care/block-invisalign-care'
+import BlockRetainersCare from 'components/block/block-retainers-care/block-retainers-care'
 
 export default {
   name: 'Elate Library',
@@ -13,7 +14,8 @@ export default {
   },
   components: {
     BlockBracescare,
-    BlockInvisalignCare
+    BlockInvisalignCare,
+    BlockRetainersCare
   }
 }
 </script>
