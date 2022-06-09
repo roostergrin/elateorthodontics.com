@@ -39,7 +39,7 @@
     try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
     catch(e){window.attachEvent("onload", $buo_f)}
   </script>
-  <script defer src="https://connect.podium.com/widget.js#API_TOKEN=3ce11a45-65aa-4d0b-a753-e3a9dc1febdc" id="podium-widget" data-api-token="3ce11a45-65aa-4d0b-a753-e3a9dc1febdc"></script>
+  <!-- <script defer src="https://connect.podium.com/widget.js#API_TOKEN=3ce11a45-65aa-4d0b-a753-e3a9dc1febdc" id="podium-widget" data-api-token="3ce11a45-65aa-4d0b-a753-e3a9dc1febdc"></script> -->
   <script src="https://onlineschedulingv2.threadcommunication.com" type="text/javascript"></script>
   <script type="text/javascript"> OpenChair.init({ token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmlnaW4iOiJlbGF0ZW9ydGhvZG9udGljcy5jb20iLCJwcmFjdGljZV9pZCI6IjMzNCJ9.9JbW9QH1McnjmtVsO2lV4ePa1kRvG1hSz5DTKmOGoRk", mainButtonLeft: true, }) </script>
 
