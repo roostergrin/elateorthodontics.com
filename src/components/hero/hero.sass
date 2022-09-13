@@ -214,7 +214,7 @@
 
     &:nth-child(6)
       display: none
-      
+
 
   &__drawer
     @extend .flex-start-center
@@ -303,9 +303,63 @@
       .hero--showing &
         transform: translateX(0)
 
+  &__locations
+    position: absolute
+    display: flex
+    background-color: $cobalt-blue
+    opacity: .7
+    bottom: 10vh
+    width: 100vw
+    padding: 2.2rem 0
+    justify-content: space-evenly
+    text-align: center
+    @include tablet
+      display: none
+
+    &-icon
+      @include svg-size(1rem, 1rem)
+      position: relative
+      top: 13%
+      left: 30%
+      // display: inline-block
+      // text-align: left
+      width: 25px
+      height: 25px
+      fill: $white
+
+
+    &-container
+      display: flex
+      flex-direction: column
+      // justify-content: space-evenly
+      border-right: 6px solid $white
+      width: 33vw
+      a
+        font-size: 1rem
+    &-container:last-child()
+        border-right: none
+
+    &-title
+      // opacity: 1
+      padding-top: 1rem
+      padding-bottom: 2rem
+      color: $white
+
+    &-phone-number
+      padding: 5px 2rem
+      margin-left: 30%
+      color: $white
+      text-align: left
+
+    &-address
+      padding: 5px 2rem
+      margin-left: 30%
+      color: $white
+      text-align: left
+
   &__home-title
-    display: none;
+    display: none
 
 .hero__home
   top: 40%
-  left: 3rem  
+  left: 3rem

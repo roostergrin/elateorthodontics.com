@@ -47,16 +47,17 @@ function hide_editor() {
     return;
   }
 
+  // CAUSES CRITICAL ERROR - COMMENTED OUT FOR NOW
   // Hide the editor on the page titled 'Homepage'
-  if(in_array(get_the_title($post_id), json_decode(EDITOR_HIDE_PAGE_TITLES))) {
-    remove_post_type_support('page', 'editor');
-  }
+  // if(in_array(get_the_title($post_id), json_decode(EDITOR_HIDE_PAGE_TITLES))) {
+  //   remove_post_type_support('page', 'editor');
+  // }
 
-  // Hide the editor on a page with a specific page template
-  $template_filename = get_post_meta($post_id, '_wp_page_template', true);
+  // // Hide the editor on a page with a specific page template
+  // $template_filename = get_post_meta($post_id, '_wp_page_template', true);
 
-  if(in_array($template_filename, json_decode(EDITOR_HIDE_PAGE_TEMPLATES))) {
-    remove_post_type_support('page', 'editor');
-  }
+  // if(in_array($template_filename, json_decode(EDITOR_HIDE_PAGE_TEMPLATES))) {
+  //   remove_post_type_support('page', 'editor');
+  // }
 }
 add_action('admin_init', 'hide_editor');

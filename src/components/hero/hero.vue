@@ -25,6 +25,9 @@ export default {
     },
     links () {
       return this.$router.options.routes
+    },
+    locations () {
+      return this.$store.state.app.footer
     }
   },
   watch: {
