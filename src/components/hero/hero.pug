@@ -37,7 +37,7 @@
     router-link.hero__drawer-link(v-for='(child, j) in drawer.children', :key="'child-' + j" v-html='child.name', :to='child.path' @mouseover.native='setSection(j)', :class="{ 'hero__drawer-link--active': hoveredSection === j, 'hero__drawer-link--trans': delaySection !== null }" v-if='!$route.path.includes("/contact")')
     CustomContactPage(:content='props.page' v-if='$route.path.includes("/contact")')
 
-  .hero__locations(:class="{ 'hero__locations--active': menuOpen }")
+  .hero__locations(v-if='menuOpen === false')
     .hero__locations-container
       h3.hero__locations-title(v-html='locations.title')
       Icon.hero__locations-icon(name='Contact_Phone')
