@@ -34,6 +34,7 @@ function rg_serve_route () {
   $message .= '<p><h4><strong>Form Submission by: </strong></h4>' . $data['fullName'] . '</p>';
   $message .= '<p><h4><strong>Email: </strong></h4>' . $data['clientEmail'] . '</p>';
   $message .= '<p><h4><strong>Phone: </strong></h4>' . $data['clientPhone'] . '</p>';
+  $message .= '<p><h4><strong>Prefered Location: </strong></h4>' . $data['selected'] . '</p>';
   $message .= '<p><h4><strong>Message:</strong></h4> ' . $data['comments'] . '</p>';
   $message .= '</body></html>';
 

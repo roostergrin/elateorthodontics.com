@@ -24,6 +24,17 @@
       input.main-form__input(name='clientPhone', v-model='clientPhone', v-validate="'required|numeric'", :class="{ 'input': true, 'main-form__input--error': errors.has('clientPhone') }")
       label.main-form__label(:class="{ 'main-form__label--active': clientPhone }") Phone
       .main-form__message(v-show="errors.has('clientPhone')") Please Input a Valid Phone Number, Only Numbers
+
+    .main-form__group.main-form__group-select
+      .main-form__groupouter
+        BaseIcon.main-form__arrow-icon(name='arrow-down')      
+        select.main-form__input.main-form__input--select(name='selected', v-model='selected', v-validate="'required'", :class="{ 'input': true, 'main-form__input--error': errors.has('selected') }")
+          option(hidden disabled value='')           
+          option(value='The Colony') The Colony
+          option(value='The Tribute') The Tribute
+          option(value='Hollyhock') Hollyhock
+        label.main-form__label.main-form__label-select(:class="{ 'main-form__label--active': selected }") Preferred Location
+        .main-form__message(v-show="errors.has('selected')") Please choose a location      
     
     .main-form__group.main-form__group-message
       textarea.main-form__input(name='comments', v-model='comments', v-validate="'required'", :class="{ 'input': true, 'main-form__input--error': errors.has('comments') }")

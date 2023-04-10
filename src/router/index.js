@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import scrollBehavior from '@/shared/functionality/scroll-behavior.js'
 import Accessibility from '@/pages/accessibility/index'
+import PrivacyPolicy from '@/pages/privacy-policy/index'
 import elateLibrary from '@/pages/elate-library/elate-library'
 
 const TestHome = () => import('@/pages/pages-test-home/pages-test-home')
@@ -50,9 +51,19 @@ const router = new VueRouter({
           hash: '#team'
         },
         {
-          path: '/about-us#office',
+          path: '',
           name: 'Office Tour',
           hash: '#office'
+        },
+        {
+          path: '/about-us#office',
+          name: ' -- The Colony',
+          hash: '#office'
+        },
+        {
+          path: '/about-us#officenew',
+          name: ' -- Hollyhock',
+          hash: '#officenew'
         }
       ]
     },
@@ -113,6 +124,12 @@ const router = new VueRouter({
       name: 'Accessibility',
       navigation: false,
       component: Accessibility
+    },
+    {
+      path: '/privacy-policy',
+      name: 'Privacy Policy',
+      navigation: false,
+      component: PrivacyPolicy
     },
     {
       path: '/elate-aligner',

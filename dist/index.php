@@ -55,8 +55,6 @@
     ns.innerHTML = `Please ensure Javascript is enabled for purposes of <a href="https://userway.org">website accessibility</a>`;
     (d.body || d.head).appendChild(ns);})(document);    
 </script>
-
-<div id="accessibilityWidget" tabindex="0">Click for Accessibility</div>
   
   </body>
 </html>

@@ -50,6 +50,17 @@
     width: 100%
     color: $white
 
+    &--select
+      border: 1px solid #fff
+      border-radius: 0
+      background-color: #000
+      padding-left: rem-calc(10)
+      width: 100%
+      height: auto
+      line-height: 22px
+      color: #fff
+      appearance: none     
+
     .main-form__group-message &
       border: 1px solid $white
       padding: 1rem .75rem
@@ -61,7 +72,7 @@
 
     &:focus + .main-form__label,
     &:active + .main-form__label
-      top: .25rem
+      top: .65rem
       transform: translateY(0)
       color: $white
       font-size: 11px
@@ -79,6 +90,20 @@
     &--error + .main-form__label,
     &--error + .main-form__label + .main-form__message
       color: $danger
+
+  &__group-select
+    margin-top: 25px
+
+  &__arrow-icon
+    position: absolute
+    top: 48%
+    right: 12px
+    transform: translateY(-50%)
+    z-index: 1
+    width: 13px
+    height: 13px
+    fill: #fff
+    pointer-events: none      
 
   &__message
     position: absolute
@@ -144,3 +169,6 @@
           opacity: 0
         100%
           opacity: 1
+
+.main-form__label-select.main-form__label--active, .main-form__label-select.main-form__label--active:focus
+  top: -9px !important         

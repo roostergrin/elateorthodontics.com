@@ -15,8 +15,9 @@
       a.footer__contact-address(:href='content.address3.href', v-html='content.address3.label')
       a.footer__contact-phone(:href='content.phone3.href', v-html='content.phone3.label')
     .footer__map(v-html='content.map3')
-    a.footer__contact-rg(href='https://roostergrin.com') 2019 © Online Advantage By Rooster Grin Media
+    .footer__contact-rg
+      a(href='https://roostergrin.com') 2019 © Online Advantage By Rooster Grin Media
   .footer__social
     .footer__social-container
       a.footer__social-items(:aria-label='"social_icon-" + i', v-for='(link, i) in content.social_bar', :key="'link - ' + i", :href='link.href')
-        Icon.footer__social-icon(:name='link.icon')
+        Icon.footer__social-icon(:name='link.icon')     

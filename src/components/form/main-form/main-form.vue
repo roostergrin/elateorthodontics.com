@@ -3,6 +3,7 @@
 <script>
 import api from 'api'
 import axios from 'axios'
+import BaseIcon from 'components/global/icon/icon'
 
 export default {
   data: () => {
@@ -10,6 +11,7 @@ export default {
       fullName: '',
       clientEmail: '',
       clientPhone: '',
+      selected: '',
       comments: '',
       postUrl: api + '/rg-mail/v1/contact',
       formSubmitted: false,
@@ -35,6 +37,7 @@ export default {
         fullName: this.fullName,
         clientEmail: this.clientEmail,
         clientPhone: this.clientPhone,
+        selected: this.selected,
         comments: this.comments
       })
         .then(res => {
@@ -46,12 +49,16 @@ export default {
           this.fullName = ''
           this.clientEmail = ''
           this.clientPhone = ''
+          this.selected = ''
           this.comments = ''
         })
         .catch(e => {
           console.log(e, 'submitted')
         })
     }
+  },
+  components: {
+    BaseIcon
   }
 }
 </script>
