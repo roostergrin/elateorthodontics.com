@@ -14,9 +14,14 @@
       .custom-contact-page__address
         .custom-contact-page__address-title(v-html='content.address2.title')
         .custom-contact-page__address-body(v-html='content.address2.body')
-        a.custom-contact-page__address-button(:href='content.address2.href', v-html='content.address2.label')
-      .custom-contact-page__hours(v-html='content.hours')
-      .custom-contact-page__contacts
-        a.custom-contact-page__contact(v-for='(link, i) in content.contacts', :key='"link - " + i', :href='link.href')
-          Icon.custom-contact-page__contact-icon(:name='link.icon')
-          .custom-contact-page__contact-label(v-html='link.label')
+        a.custom-contact-page__address-button(:href='content.address2.href', v-html='content.address2.label')        
+      .custom-contact-page__hours
+        .custom-contact-page__hoursinner(v-html='content.hours')
+        .custom-contact-page__contacts
+          a.custom-contact-page__contact(v-for='(link, i) in content.contacts', :key='"link - " + i', :href='link.href')
+            Icon.custom-contact-page__contact-icon(:name='link.icon')
+            .custom-contact-page__contact-label(v-html='link.label')
+      .custom-contact-page__address
+        .custom-contact-page__address-title(v-html='content.address_3.title')
+        .custom-contact-page__address-body(v-html='content.address_3.body')
+        a.custom-contact-page__address-button(:href='content.address_3.href', v-html='content.address_3.label')    
