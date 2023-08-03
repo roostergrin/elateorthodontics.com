@@ -55,6 +55,17 @@
   position: absolute
   z-index: -1
 
+.home_button_image 
+  position: absolute
+  width: 75px
+  left: 15%
+  z-index: 1
+
+.home_button_image3
+  position: absolute
+  width: 70px
+  left: 50px
+  top: -6px
 
 .hero__background-image--active
   z-index: 3
@@ -78,6 +89,13 @@
 
 .hero--access .hero__background-image
   display: none  
+
+@media screen and (max-width:1200px)
+  .home_button_image
+    display: none
+
+  .home_button_image3
+    display: none
 
 @media screen and (max-width:767px)
   #top.hero--access
