@@ -68,6 +68,14 @@ const router = new VueRouter({
       ]
     },
     {
+      path: '/patient-portal',
+      beforeEnter () {
+        window.open('https://d26tmduemto9nk.cloudfront.net/Elate-Standard.pdf', '_blank')
+      },
+      name: 'Elate Standard',
+      navigation: true
+    },
+    {
       path: '/treatments',
       name: 'treatments',
       navigation: true,
