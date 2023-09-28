@@ -1,0 +1,136 @@
+.block-overlap-mobile
+  @include phone-lg
+    visibility: visible
+    height: auto
+  position: relative
+  visibility: hidden
+  height: 0
+
+  &__waypoint
+    position: absolute
+    top: 25%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 100%
+    height: 1px
+
+  &__container
+    @extend .container
+    align-items: flex-start
+
+    .block-overlap-mobile--alt &
+      flex-direction: row-reverse
+      justify-content: flex-end
+
+  &__col
+    @extend .col-5
+    @extend .col-1--offset
+    position: relative
+
+
+    &-1
+      min-height: 20rem
+      .block-overlap-mobile--alt &
+        margin-left: 0
+
+  &__image
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    transition: opacity .45s ease-in
+    opacity: 0
+    z-index: 1
+    width: calc(100% - #{$gutter})
+    height: 100%
+
+    .block-overlap-mobile--alt &
+      transition-delay: .6s
+
+    .block-overlap-mobile--active &
+      opacity: 1
+
+    &-container
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      overflow: hidden
+
+    &-image
+      position: absolute
+      top: 0
+      left: 0
+      background-repeat: no-repeat
+      background-position: center
+      background-size: cover
+      width: 100%
+      height: 100%
+
+    &-background
+      @include max-container
+        display: none
+      position: absolute
+      top: 55%
+      left: -20%
+      z-index: -1
+      background-repeat: no-repeat
+      background-position: center
+      background-size: cover
+      width: 55%
+      height: 70%
+
+      .block-overlap-mobile--alt &
+        right: -10%
+        left: auto
+
+
+  &__title
+    @include tablet-lg
+      padding-top: 0
+    @include phone-lg
+      transform: translateY(2rem)
+      padding: 2rem 0
+    transform: translateX(2rem)
+    transition: transform .35s ease-in, opacity .35s ease-in
+    opacity: 0
+    padding: 2rem 0
+    text-transform: uppercase
+    color: $cobalt-blue
+    transition-delay: .45s
+
+    .block-overlap-mobile--alt &
+      transition-delay: 0s
+
+    .block-overlap-mobile--active &
+      transform: none
+      opacity: 1
+
+  &__body
+    @include max-container
+      top: 8rem
+    @include tablet-lg
+      top: 6rem
+    @include phone-lg
+      position: static
+      max-width: none
+      line-height: inherit
+    position: absolute
+    top: 6rem
+    transform: translateY(1rem)
+    transition: transform .55s ease-in, opacity .55s ease-in, line-height .55s ease-in
+    opacity: 0
+    padding-bottom: 2rem
+    max-width: 85%
+    line-height: 2
+    color: $warm-grey
+    transition-delay: .75s
+
+    .block-overlap-mobile--alt &
+      transition-delay: .25s
+
+    .block-overlap-mobile--active &
+      transform: none
+      opacity: 1
+      line-height: inherit

@@ -100,6 +100,11 @@ const router = new VueRouter({
           path: '/treatments#elatejunior',
           name: 'Elate Junior Club',
           hash: '#elatejunior'
+        },
+        {
+          path: '/treatments#block-overlap-retainer',
+          name: 'Retainer Assurance Program',
+          hash: '#block-overlap-retainer'
         }
       ]
     },

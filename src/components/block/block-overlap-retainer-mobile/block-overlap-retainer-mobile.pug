@@ -1,0 +1,11 @@
+.block-overlap-mobile(:class="{ 'block-overlap-mobile--active': active }" ref='component')
+  .block-overlap-mobile(v-for='(section, i) in content.scroll', :key="'section -' + i", :id="section.title")
+    .block-overlap-mobile__waypoint(v-waypoint='{ active: true, callback: onWaypoint, options: intersectionOptions }' v-if='loaded')
+    .block-overlap-mobile__container
+      .block-overlap-mobile__col.block-overlap-mobile__col-1
+        .block-overlap-mobile__image
+          .block-overlap-mobile__image-container
+            .block-overlap-mobile__image-image(:style="{ backgroundImage: 'url(' + section.image + ')', transform: 'scale(' + percentage + ')' }")
+      .block-overlap-mobile__col.block-overlap-mobile__col-2
+        h2.block-overlap-mobile__title(v-html='section.title')
+        .block-overlap-mobile__body(v-html='section.body')
