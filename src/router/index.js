@@ -72,7 +72,7 @@ const router = new VueRouter({
       beforeEnter () {
         window.open('https://elateorthodontics.com/Elate-Standard.pdf', '_blank')
       },
-      name: 'Elate Standard',
+      name: 'elate standard',
       navigation: true
     },
     {
@@ -164,7 +164,7 @@ const router = new VueRouter({
     },
     {
       path: '/elate-library',
-      name: 'Elate Library',
+      name: 'elate library',
       navigation: true,
       component: elateLibrary,
       children: [
