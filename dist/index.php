@@ -46,6 +46,10 @@
 
 </head>
 <body>
+
+  <div id='app' role='application'></div>
+  <?php wp_footer(); ?>
+
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="
   https://www.googletagmanager.com/ns.html?id=GTM-PP9TFH5B"
@@ -53,8 +57,6 @@
   style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <div id='app' role='application'></div>
-  <?php wp_footer(); ?>
   <script type="text/javascript">
     var $buoop = {notify:{e:-6,f:-4,o:-4,s:-2,c:-4},insecure:true,api:5};
 
