@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import scrollBehavior from '@/shared/functionality/scroll-behavior.js'
 import Accessibility from '@/pages/accessibility/index'
+import financeCalculator from '@/pages/finance-calculator/index'
 import PrivacyPolicy from '@/pages/privacy-policy/index'
 import elateLibrary from '@/pages/elate-library/elate-library'
 
@@ -137,6 +138,12 @@ const router = new VueRouter({
       name: 'Accessibility',
       navigation: false,
       component: Accessibility
+    },
+    {
+      path: '/finance-calculator',
+      name: 'Finance Calculator',
+      navigation: false,
+      component: financeCalculator
     },
     {
       path: '/privacy-policy',
