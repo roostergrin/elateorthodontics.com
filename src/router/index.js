@@ -110,6 +110,12 @@ const router = new VueRouter({
       ]
     },
     {
+      path: '/finance-calculator',
+      name: 'Finance Calculator',
+      navigation: true,
+      component: financeCalculator
+    },
+    {
       path: '/get-started',
       name: 'get started',
       navigation: true,
@@ -138,12 +144,6 @@ const router = new VueRouter({
       name: 'Accessibility',
       navigation: false,
       component: Accessibility
-    },
-    {
-      path: '/finance-calculator',
-      name: 'Finance Calculator',
-      navigation: false,
-      component: financeCalculator
     },
     {
       path: '/privacy-policy',

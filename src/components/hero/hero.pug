@@ -11,7 +11,7 @@
     span
     span
     
-    img.home_button_image3(v-show='!$store.state.nav && $route.name !== "home"' :src='content.hero_video.dinocorn_three', alt='')
+    //- img.home_button_image3(v-show='!$store.state.nav && $route.name !== "home"' :src='content.hero_video.dinocorn_three', alt='')
   .hero__hamburger.hero__hamburger--white(:class="{ 'hero__hamburger--active': menuOpen, 'hero__hamburger--contact': $route.path.includes('/contact') }" @click='toggleMenu')
     span
     span
@@ -34,7 +34,7 @@
       .hero__home-button-overlay
       .hero__home-button-label(v-html='content.home.button.label')
     
-    img.home_button_image(v-show='!$store.state.nav && $route.name !== "home"' :src='content.home.dinocorn_one', alt='')
+    //- img.home_button_image(v-show='!$store.state.nav && $route.name !== "home"' :src='content.home.dinocorn_one', alt='')
 
 
   .hero__drawer(v-if='drawer.navigation' v-for='(drawer, i) in links', :key="'drawer-' + i", :class="{ 'hero__drawer--active': currentPage === drawer.path && !menuOpen }")
