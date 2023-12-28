@@ -46,11 +46,11 @@ const router = new VueRouter({
           name: 'Meet The Doctors',
           hash: '#doctors'
         },
-        {
-          path: '/about-us#team',
-          name: 'Elate Team',
-          hash: '#team'
-        },
+        // {
+        //   path: '/about-us#team',
+        //   name: 'Elate Team',
+        //   hash: '#team'
+        // },
         {
           path: '',
           name: 'Office Tour',
