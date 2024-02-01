@@ -84,7 +84,7 @@ const router = new VueRouter({
       children: [
         {
           path: '/treatments#invisalign',
-          name: 'Invisalign',
+          name: 'Invisalign / Angle Aligners',
           hash: '#invisalign'
         },
         {
@@ -182,7 +182,7 @@ const router = new VueRouter({
         },
         {
           path: '/elate-library#invisaligncare',
-          name: 'Invisalign Care',
+          name: 'Invisalign / Angle Aligners Care',
           hash: '#invisaligncare'
         },
         {
