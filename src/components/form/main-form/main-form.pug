@@ -41,6 +41,19 @@
       label.main-form__label(:class="{ 'main-form__label--active': comments }") Comments
       .main-form__message(v-show="errors.has('comments')") Please Input a Reason for Contacting Us
     
+    .main-form__group
+      .main-form__checkbox
+        label.main-form__checkbox(:class="{ 'main-form__label--active': consent }")  By providing your phone number, you agree to receive text messages from Elate Orthodontics. Message and data rates may apply. Message frequency varies.
+        .main-form__checkbox-group
+          input.main-form__checkbox-input(
+            name='consent'
+            v-model='consent'
+            value='Yes'
+            type='checkbox'
+            aria-label='consent checkbox'
+            v-validate="'required'")
+          span.main-form__checkbox-overlay
+
     .main-form__button-group
       .main-form__submit-button.active(@click='validate')
         span Submit
