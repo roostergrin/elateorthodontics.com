@@ -65,6 +65,11 @@ const router = new VueRouter({
           path: '/about-us#officenew',
           name: ' -- Hollyhock',
           hash: '#officenew'
+        },
+        {
+          path: '/about-us#officetribute',
+          name: ' -- Tribute',
+          hash: '#officetribute'
         }
       ]
     },
