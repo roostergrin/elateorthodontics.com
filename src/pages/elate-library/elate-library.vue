@@ -4,6 +4,7 @@
 import BlockBracescare from 'components/block/block-bracescare/block-bracescare'
 import BlockInvisalignCare from 'components/block/block-invisalign-care/block-invisalign-care'
 import BlockRetainersCare from 'components/block/block-retainers-care/block-retainers-care'
+import CustomFreeConsultation from 'components/custom/custom-free-consultation/custom-free-consultation'
 
 export default {
   name: 'Elate Library',
@@ -15,7 +16,8 @@ export default {
   components: {
     BlockBracescare,
     BlockInvisalignCare,
-    BlockRetainersCare
+    BlockRetainersCare,
+    CustomFreeConsultation
   }
 }
 </script>

@@ -8,6 +8,7 @@ import BlockOverlapRetainerMobile from 'components/block/block-overlap-retainer-
 import BlockOverlapMobile from 'components/block/block-overlap-mobile/block-overlap-mobile'
 import BlockOverlapTablet from 'components/block/block-overlap-tablet/block-overlap-tablet'
 import BlockTextImage from 'components/block/block-text-image/block-text-image'
+import CustomFreeConsultation from 'components/custom/custom-free-consultation/custom-free-consultation'
 
 export default {
   name: 'Home',
@@ -23,7 +24,8 @@ export default {
     BlockOverlapRetainerMobile,
     BlockOverlapMobile,
     BlockOverlapTablet,
-    BlockTextImage
+    BlockTextImage,
+    CustomFreeConsultation
   }
 }
 </script>

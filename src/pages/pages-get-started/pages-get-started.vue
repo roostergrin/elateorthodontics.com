@@ -4,6 +4,7 @@
 import BlockTextImage from 'components/block/block-text-image/block-text-image'
 import CustomGetConsultation from 'components/custom/custom-get-consultation/custom-get-consultation'
 import CustomGetForms from 'components/custom/custom-get-forms/custom-get-forms'
+import CustomFreeConsultation from 'components/custom/custom-free-consultation/custom-free-consultation'
 
 export default {
   name: 'Get-Started',
@@ -15,7 +16,8 @@ export default {
   components: {
     BlockTextImage,
     CustomGetConsultation,
-    CustomGetForms
+    CustomGetForms,
+    CustomFreeConsultation
   }
 }
 </script>

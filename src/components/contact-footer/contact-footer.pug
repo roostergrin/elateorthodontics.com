@@ -1,0 +1,24 @@
+.footer2(v-if='content')
+  .footer2__contact-container
+    .footer2__contact
+      .footer2__listing
+        .footer2__map(v-html='content.map')
+        .footer2__contact-title(v-html='content.title')
+        a.footer2__contact-address(:href='content.address.href', v-html='content.address.label')
+        a.footer2__contact-phone(:href='content.phone.href', v-html='content.phone.label')
+      .footer2__listing
+        .footer2__map(v-html='content.map2')
+        .footer2__contact-title(v-html='content.title2')
+        a.footer2__contact-address(:href='content.address2.href', v-html='content.address2.label')
+        a.footer2__contact-phone(:href='content.phone2.href', v-html='content.phone2.label')
+      .footer2__listing
+        .footer2__map(v-html='content.map3')
+        .footer2__contact-title(v-html='content.title3')
+        a.footer2__contact-address(:href='content.address3.href', v-html='content.address3.label')
+        a.footer2__contact-phone(:href='content.phone3.href', v-html='content.phone3.label')
+    .footer2__contact-rg
+      a(href='https://roostergrin.com') 2019 © Online Advantage By Rooster Grin Media
+  .footer2__social
+    .footer2__social-container
+      a.footer2__social-items(:aria-label='"social_icon-" + i', v-for='(link, i) in content.social_bar', :key="'link - ' + i", :href='link.href')
+        Icon.footer2__social-icon(:name='link.icon')     

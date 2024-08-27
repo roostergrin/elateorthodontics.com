@@ -12,6 +12,7 @@ const AboutUs = () => import('@/pages/pages-about-us/pages-about-us')
 const GetStarted = () => import('@/pages/pages-get-started/pages-get-started')
 const Treatments = () => import('@/pages/pages-treatments/pages-treatments')
 const Contact = () => import('@/pages/pages-contact/pages-contact')
+const FreeConsultation = () => import('@/pages/pages-free-consultation/pages-free-consultation')
 const ElateAligner = () => import('@/pages/pages-elate-aligner/pages-elate-aligner')
 const Promotion = () => import('@/pages/pages-promotion/pages-promotion')
 const PromotionSpanish = () => import('@/pages/pages-promotion-spanish/pages-promotion-spanish')
@@ -121,6 +122,12 @@ const router = new VueRouter({
       component: financeCalculator
     },
     {
+      path: '/free-consultation',
+      name: 'Free Consultation/Contact',
+      navigation: false,
+      component: FreeConsultation
+    },
+    {
       path: '/get-started',
       name: 'get started',
       navigation: true,
@@ -165,13 +172,13 @@ const router = new VueRouter({
     {
       path: '/special',
       name: 'Braces Special at Elate Orthodontics',
-      navigation: true,
+      navigation: false,
       component: Promotion
     },
     {
       path: '/special-es',
       name: 'Especial De Frenos en Elate Orthodontics',
-      navigation: true,
+      navigation: false,
       component: PromotionSpanish
     },
     {

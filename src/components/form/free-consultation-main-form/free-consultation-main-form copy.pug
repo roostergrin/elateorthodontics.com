@@ -1,0 +1,83 @@
+.main-form
+  transition(name='fade-in')
+    h1.main-form__thank-you(v-if='formSuccess && formSubmitted') Thank you for Contacting Us!
+  transition(name='fade-in')
+    .main-form__sending-overlay(v-if='!formSuccess && formSubmitted')
+      h1.main-form__sending Sending
+        span .
+        span .
+        span .
+        
+  form.main-form__form(@submit.prevent='validate', method='post', v-if='!formSubmitted')
+    
+    .main-form__group
+      input.main-form__input(name='fullName', v-model='fullName', v-validate="'required|alpha_spaces'", :class="{ 'main-form__input--error': errors.has('fullName') }", type='text')
+      label.main-form__label(:class="{ 'main-form__label--active': fullName }") Name
+      .main-form__message(v-show="errors.has('fullName')") Your name is required.
+    
+    .main-form__group.main-form__group--half
+      input.main-form__input(name='clientEmail', v-model='clientEmail', v-validate="'required|email'", :class="{ 'input': true, 'main-form__input--error': errors.has('clientEmail') }")
+      label.main-form__label(:class="{ 'main-form__label--active': clientEmail }") E-mail
+      .main-form__message(v-show="errors.has('clientEmail')")  Please Input a Valid E-mail
+    
+    .main-form__group.main-form__group--half
+      input.main-form__input(name='clientPhone', v-model='clientPhone', v-validate="'required|numeric'", :class="{ 'input': true, 'main-form__input--error': errors.has('clientPhone') }")
+      label.main-form__label(:class="{ 'main-form__label--active': clientPhone }") Phone
+      .main-form__message(v-show="errors.has('clientPhone')") Please Input a Valid Phone Number, Only Numbers
+
+    .main-form__group.main-form__group-select
+      .main-form__groupouter
+        BaseIcon.main-form__arrow-icon(name='arrow-down')      
+        select.main-form__input.main-form__input--select(name='selected', v-model='selected', v-validate="'required'", :class="{ 'input': true, 'main-form__input--error': errors.has('selected') }")
+          option(hidden disabled value='')           
+          option(value='The Colony') The Colony
+          option(value='The Tribute') The Tribute
+          option(value='Hollyhock') Hollyhock
+        label.main-form__label.main-form__label-select(:class="{ 'main-form__label--active': selected }") Preferred Location
+        .main-form__message(v-show="errors.has('selected')") Please choose a location      
+    
+    .main-form__group.main-form__group-message
+      textarea.main-form__input(name='comments', v-model='comments', v-validate="'required'", :class="{ 'input': true, 'main-form__input--error': errors.has('comments') }")
+      label.main-form__label(:class="{ 'main-form__label--active': comments }") Comments
+      .main-form__message(v-show="errors.has('comments')") Please Input a Reason for Contacting Us
+    
+    .main-form__group
+      .main-form__checkbox
+        label.main-form__checkbox(:class="{ 'main-form__label--active': consent }")  By providing your phone number, you agree to receive text messages from Elate Orthodontics. Message and data rates may apply. Message frequency varies.
+        .main-form__checkbox-group
+          input.main-form__checkbox-input(
+            name='consent'
+            v-model='consent'
+            value='Yes'
+            type='checkbox'
+            aria-label='consent checkbox'
+            v-validate="'required'")
+          span.main-form__checkbox-overlay
+
+    .main-form__button-group
+      .main-form__submit-button.active(@click='validate')
+        span Submit
+
+  .custom-contact-page__info
+    .custom-contact-page__address
+      .custom-contact-page__address-title
+        |  Elate Orthodontics in The Colony
+      .custom-contact-page__address-body
+        |  4713 Highway 121<br> Suite #304<br> The Colony, Texas, 75056
+    .custom-contact-page__address
+      .custom-contact-page__address-title
+        |  Elate Orthodontics at The Tribute
+      .custom-contact-page__address-body
+        |  5605 FM 423<br> Suite #600<br> Frisco, TX 75034
+        .custom-contact-page__address-button
+          <a href="https://g.page/elateorthothetribute?share" target="_blank">Get Directions</a>
+    .custom-contact-page__hours
+      .custom-contact-page__hoursinner
+        |  Mon-Tue-Wed-Thur 8-5<br> Fridays 8-2<br> Saturdays by Appt
+    .custom-contact-page__address
+      .custom-contact-page__address-title
+        |  Elate Orthodontics at Hollyhock
+      .custom-contact-page__address-body
+        |  2155 University Dr<br> Suite #110<br> Frisco, TX, 75033
+        .custom-contact-page__address-button
+          <a href="https://goo.gl/maps/mPWAUqDYVDTNyTdcA" target="_blank">Get Directions</a>

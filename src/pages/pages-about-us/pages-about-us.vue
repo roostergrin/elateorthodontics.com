@@ -8,6 +8,7 @@ import CustomElateTeam from 'components/block/custom-elate-team/custom-elate-tea
 import CustomElateTeamTablet from 'components/block/custom-elate-team-tablet/custom-elate-team-tablet'
 import CustomElateTeamMobile from 'components/block/custom-elate-team-mobile/custom-elate-team-mobile'
 import CustomAboutTour from 'components/custom/custom-about-tour/custom-about-tour'
+import CustomFreeConsultation from 'components/custom/custom-free-consultation/custom-free-consultation'
 
 export default {
   name: 'About-Us',
@@ -23,7 +24,8 @@ export default {
     CustomElateTeam,
     CustomElateTeamTablet,
     CustomAboutTour,
-    CustomElateTeamMobile
+    CustomElateTeamMobile,
+    CustomFreeConsultation
   }
 }
 </script>

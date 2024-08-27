@@ -13,6 +13,7 @@ import CustomHomeTreatments from 'components/custom/custom-home-treatments/custo
 import CustomHomeTreatmentIcons from 'components/custom/custom-home-treatment-icons/custom-home-treatment-icons'
 import CustomHomeSmileAssessment from 'components/custom/custom-home-smile-assessment/custom-home-smile-assessment'
 import CustomHomeWelcome from 'components/custom/custom-home-welcome/custom-home-welcome'
+import CustomFreeConsultation from 'components/custom/custom-free-consultation/custom-free-consultation'
 import BlockDoctors from 'components/block/block-doctors/block-doctors'
 export default {
   name: 'Home',
@@ -34,7 +35,8 @@ export default {
     CustomHomeTreatmentIcons,
     CustomHomeWelcome,
     CustomHomeSmileAssessment,
-    BlockDoctors
+    BlockDoctors,
+    CustomFreeConsultation
   }
 }
 </script>
