@@ -36,6 +36,9 @@
     flex-wrap: wrap
 
   &__contact
+    @media(max-width: 1023px)
+      width: 100%
+      max-width: 100%
     @include tablet
       display: flex
       flex-direction: column
@@ -50,7 +53,9 @@
     width: 100%
     padding: 0 0 3rem
     color: $warm-grey
-    max-width: 49%
+    max-width: 48%
+
+
 
     &-title
       color: $cobalt-blue
